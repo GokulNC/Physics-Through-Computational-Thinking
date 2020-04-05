@@ -1,0 +1,288 @@
+Notebook[{Cell[
+CellGroupData[{Cell[
+TextData[{"Week"," ","5",StyleBox[RowBox[{" ","-"," "}]],"Lecture"," ","1",StyleBox[
+RowBox[{" ",":"}]],"\n","Technical"," ","Prelim"," ","5",StyleBox[RowBox[{":"," "}]],"Writing"," ","Custom"," ","Functions"," ","using"," ","Module"}],
+"Section",ExpressionUUID -> "d00014de-f803-4aeb-980b-ddd24faf1f61"],Cell[
+TextData[
+{"Resources",StyleBox[RowBox[{" ","--"," "}]],ButtonBox["Video",BaseStyle -> "Hyperlink",
+ButtonData -> {URL["https://youtu.be/P0ZjK76imw0"],None}]}],"Text",ExpressionUUID -> "7bbd5fb2-f622-4b75-84c5-142f2cbc2b30"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{RowBox[{"g","[","x_","]"}]," ","="," ",RowBox[{"x","^","2"," ",RowBox[
+{"(*",RowBox[{"Underscore"," ","after"," ","a"," ","var"," ","tells"," ","that"," ",RowBox[
+{"it","'"}],"s"," ","a"," ","pattern"," ","to"," ","match"}],"*)"}]}]}]],"Input",
+ExpressionUUID -> "d8c03c74-3ea1-4c80-aeb1-09afe7c0cbaa",CellLabel -> "In[1]:= "],Cell[
+BoxData[
+SuperscriptBox["x","2"],StandardForm],"Output",ExpressionUUID -> "0aa312f4-3197-461f-b8e7-d85843685d50",
+CellLabel -> "Out[1]= "]},Open],ExpressionUUID -> "8974c97b-9b96-4971-8b90-1e0415d2c9ea"],Cell[
+TextData[
+{"Note"," ","that"," ","the"," ","above"," ","notation"," ","helps"," ","only"," ","in"," ","creating"," ","a"," ","single","-","line"," ","function","."}],
+"Text",ExpressionUUID -> "0809de26-ad42-4524-9c62-4832aef57dfe"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{"g","[","5","]"}]],"Input",ExpressionUUID -> "cc41f987-07be-41ec-bf43-78c41a5f0ec1",
+CellLabel -> "In[3]:= "],Cell[
+BoxData["25",StandardForm],"Output",ExpressionUUID -> "92b39bbd-378a-4845-817f-2f63a228f433",
+CellLabel -> "Out[3]= "]},Open],ExpressionUUID -> "85874481-3d4e-4d51-a02a-b0eda8a732fb"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{"a","=","2"," ",RowBox[{"(*",RowBox[{RowBox[{"When"," ","you"," ","do"," ","this"}],"..."}],"*)"}]}]],
+"Input",ExpressionUUID -> "ef00b650-5395-43c9-8092-94beff514172",CellLabel -> "In[15]:= "],Cell[
+BoxData[
+"2",StandardForm],"Output",ExpressionUUID -> "5aa15b7d-3245-470f-ab0b-11cb8ac6b979",
+CellLabel -> "Out[15]= "]},Open],ExpressionUUID -> "c3c8c65c-913e-4371-9b5f-80e0a3dde69e"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{RowBox[{"Set","[",RowBox[{"a",",","2"}],"]"}]," ",RowBox[{"(*",RowBox[
+{"...","this"," ","happens"," ","by"," ","default"}],"*)"}]}]],"Input",ExpressionUUID -> "8df50b4e-43dc-433c-8a1c-c5a667a8b555",
+CellLabel -> "In[16]:= "],Cell[
+BoxData["2",StandardForm],"Output",ExpressionUUID -> "a06c0779-3226-4a03-8683-e9a0ed569f81",
+CellLabel -> "Out[16]= "]},Open],ExpressionUUID -> "1f4ba7e7-2544-491f-9b3f-567dcecc486b"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{"a"," ",RowBox[{"(*",RowBox[{RowBox[{"When"," ","you"," ","do"," ","this"}],"..."}],"*)"}]}]],
+"Input",ExpressionUUID -> "70187b20-ce4c-4e00-9fd9-9183d63405fa",CellLabel -> "In[17]:= "],Cell[
+BoxData[
+"2",StandardForm],"Output",ExpressionUUID -> "2237cd04-1a1d-4c56-b731-b9842cc1c2e2",
+CellLabel -> "Out[17]= "]},Open],ExpressionUUID -> "0d54ef4b-12c2-472a-9d6c-9475248da216"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{"Get"," ","a"," ",RowBox[{"(*",RowBox[{"...","this"," ","happens"," ","automatically"}],"*)"}]}]],
+"Input",ExpressionUUID -> "dbaf59fc-0adf-4349-838f-a52c54b79e19",CellLabel -> "In[18]:= "],Cell[
+BoxData[
+RowBox[{"2"," ","Get"}],StandardForm],"Output",ExpressionUUID -> "a0c07b0c-71e4-4dd1-a044-43156f749325",
+CellLabel -> "Out[18]= "]},Open],ExpressionUUID -> "c08a8624-88f1-4080-8b51-3162f090f7db"],Cell[
+BoxData[
+RowBox[{RowBox[{RowBox[{"g","[","y","]"}],"=","7"}],";"}]],"Input",ExpressionUUID -> "76321190-a0bb-416f-b065-3a66ed7ead82",
+CellLabel -> "In[27]:= "],Cell[
+CellGroupData[{Cell[
+BoxData[RowBox[{"g","[","y","]"}]],
+"Input",ExpressionUUID -> "6363db9a-5268-469d-b8bd-efa952acb4df",CellLabel -> "In[20]:= "],Cell[
+BoxData[
+"7",StandardForm],"Output",ExpressionUUID -> "14e4c98f-ca1d-4b22-8df3-afe71f350f91",
+CellLabel -> "Out[20]= "]},Open],ExpressionUUID -> "adcdd84b-055b-4c2b-bf74-272a736da707"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{"g","[","t","]"}]],"Input",ExpressionUUID -> "b379591d-78fa-4983-bb54-83bf591bcba7",
+CellLabel -> "In[21]:= "],Cell[
+BoxData[SuperscriptBox["t","2"],StandardForm],"Output",
+ExpressionUUID -> "35235ab9-4eb9-467c-85c1-8d5c73873c6f",CellLabel -> "Out[21]= "]},
+Open],ExpressionUUID -> "23f040d2-33b9-4124-9ab6-463cde7b83b6"],Cell[
+TextData[{"Realize"," ","that"," ","g","[","y",StyleBox[
+RowBox[{"]"," "}]],"sets"," ","the"," ","value"," ","of",StyleBox[RowBox[{" ","`"}]],"g",StyleBox[
+RowBox[{"`"," "}]],"for"," ","that"," ","specific"," ","symbol","/","value",StyleBox[
+RowBox[{" ","`"}]],"y","`.","\n","For"," ","other"," ","values",StyleBox[RowBox[{","," "}]],"it"," ","goes"," ","to"," ","the"," ","default"," ","case",StyleBox[
+RowBox[{":"," "}]],"it"," ","tries"," ","to"," ","match"," ","by"," ","matching"," ","the"," ","pattern"," ","to"," ","the"," ","equation"," ","given"}],
+"Text",ExpressionUUID -> "d783aed8-c2bc-4de4-8199-b1fd0f7da584"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{RowBox[{"g","[",RowBox[{"Sin","[","y","]"}],"]"}]," ",RowBox[
+{"(*",RowBox[{"Works"," ","for"," ","any"," ","pattern"}],"*)"}]}]],"Input",ExpressionUUID -> "25ead4ff-41c9-4c92-b418-25f22ba9c44e",
+CellLabel -> "In[22]:= "],Cell[
+BoxData[SuperscriptBox[RowBox[{"Sin","[","y","]"}],
+"2"],StandardForm],"Output",ExpressionUUID -> "1bd5572e-d0e8-4450-ac4d-491d77da7f06",
+CellLabel -> "Out[22]= "]},Open],ExpressionUUID -> "b8a7b9e1-e83a-4a5d-b6af-916e8d49b34d"],Cell[
+BoxData[
+RowBox[{RowBox[{RowBox[{"g","[","3","]"}],"=","10"}],";"," ",RowBox[{"(*",RowBox[
+{RowBox[{"(","Function",")"}]," ","Overloading"," ","the"," ","value"," ","of"," ",RowBox[
+{"g","[","3","]"}]," ","to"," ","use"," ","the"," ","given"," ","value"}],"*)"}]}]],
+"Input",ExpressionUUID -> "3e8fe829-01d6-4e3c-b653-9e0d4c9de49c",CellLabel -> "In[31]:= "],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{"g","[","3","]"}]],"Input",ExpressionUUID -> "a7439acc-afce-41cc-a687-a682dcd32a4a",
+CellLabel -> "In[26]:= "],Cell[
+BoxData["10",StandardForm],"Output",ExpressionUUID -> "3ec7c750-32a7-44f6-b806-61b74f3047cf",
+CellLabel -> "Out[26]= "]},Open],ExpressionUUID -> "8ad2e206-ed5b-4b2d-b5d1-1cfcadec6b27"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{"g","[","4","]"}]],"Input",ExpressionUUID -> "f7707e41-6e73-4248-8749-38ef0185e249",
+CellLabel -> "In[28]:= "],Cell[
+BoxData["16",StandardForm],"Output",ExpressionUUID -> "40611947-7366-462e-87a8-a2a3c4d2aa67",
+CellLabel -> "Out[28]= "]},Open],ExpressionUUID -> "fc78180f-7f7d-4681-8883-5ff81b615f1e"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{"g","[","2","]"}]],"Input",ExpressionUUID -> "9c652e7a-8a68-48fb-85ab-b7dd3945366b",
+CellLabel -> "In[29]:= "],Cell[
+BoxData["4",StandardForm],"Output",ExpressionUUID -> "6e2e32a4-fead-40e4-b136-93f48b48216b",
+CellLabel -> "Out[29]= "]},Open],ExpressionUUID -> "804deff9-f547-40f6-adcb-90c4046b0e2c"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{"g","[","3.0","]"}]],"Input",ExpressionUUID -> "729ceb7a-f681-40b4-927e-7f55e33b3966",
+CellLabel -> "In[30]:= "],Cell[
+BoxData["9.`",StandardForm],"Output",ExpressionUUID -> "46bd9d10-344e-4afe-8b74-540df0cc729a",
+CellLabel -> "Out[30]= "]},Open],ExpressionUUID -> "5f907559-8494-4113-9672-a62e334d4316"],Cell[
+TextData[
+{"Depending"," ","on"," ","the"," ","context",StyleBox[RowBox[{","," "}]],"the"," ","system"," ","can"," ","use"," ","the"," ","corresponding"," ","function"," ","definition","."}],
+"Text",ExpressionUUID -> "c72668aa-0b89-4273-b2e7-be7eda5b1986"],Cell[
+TextData[{StyleBox[
+"SetDelayed",FontWeight -> Bold],StyleBox[RowBox[{" ","->"," "}]],"lhs",":=","rhs","\n","Assigns"," ","rhs"," ","to"," ","be"," ","the"," ","delayed"," ","value"," ","of"," ","lhs",StyleBox[
+RowBox[{"."," "}]],"rhs"," ","is"," ","maintained"," ","in"," ","an"," ","unevaluated"," ","form",StyleBox[
+RowBox[{"."," "}]],"When"," ","lhs"," ","appears",StyleBox[RowBox[{","," "}]],"it"," ","is"," ","replaced"," ","by"," ","rhs",StyleBox[
+RowBox[{","," "}]],"evaluated"," ","afresh"," ","each"," ","time",".","\n","\n","Set"," ","vs"," ","SetDelayed",":"}],
+"Text",ExpressionUUID -> "9a7385f1-dc76-4a5e-a3bc-0ac2dbfe8396"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{"NIntegrate","[",RowBox[{RowBox[{"x","^","2"}],","," ",RowBox[
+{"{",RowBox[{"x",","," ","0",",","1"}],"}"}]}],"]"}]],"Input",ExpressionUUID -> "3ff8fd80-9235-4ec5-8504-1e97a24c9817",
+CellLabel -> "In[32]:= "],Cell[
+BoxData["0.3333333333333338`",StandardForm],"Output",
+ExpressionUUID -> "07adf9a8-d6ee-4141-99c4-8b4e01a70074",CellLabel -> "Out[32]= "]},
+Open],ExpressionUUID -> "79916d6d-0e28-433f-9271-410ac2bbf3d5"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{"NIntegrate","[",RowBox[{RowBox[{"x","^","2"}],","," ",RowBox[
+{"{",RowBox[{"x",","," ","0",",","y"}],"}"}]}],"]"}]],"Input",ExpressionUUID -> "e51c9cbb-f9f2-4caf-8546-7451ca20e29b",
+CellLabel -> "In[33]:= "],Cell[
+BoxData[TemplateBox[{"NIntegrate","nlim","\"\\!\\(\\*TagBox[\\\"x\\\", Short[#1, 5] & ]\\) = \\!\\(\\*TagBox[\\\"y\\\", Short[#1, 5] & ]\\) is not a valid limit of integration.\"",2,33,7,17121901558957132125,"Local"},
+"MessageTemplate"],StandardForm],"Message","MSG",ExpressionUUID -> "8d63ebbe-7a59-4f9c-8159-16c0378e0bda"],Cell[
+BoxData[
+TemplateBox[{"NIntegrate","nlim","\"\\!\\(\\*TagBox[\\\"x\\\", Short[#1, 5] & ]\\) = \\!\\(\\*TagBox[\\\"y\\\", Short[#1, 5] & ]\\) is not a valid limit of integration.\"",2,33,8,17121901558957132125,"Local"},
+"MessageTemplate"],StandardForm],"Message","MSG",ExpressionUUID -> "8dfcaa1a-9135-48ae-a079-a8de607b2435"],Cell[
+BoxData[
+TemplateBox[{"NIntegrate","nlim","\"\\!\\(\\*TagBox[\\\"x\\\", Short[#1, 5] & ]\\) = \\!\\(\\*TagBox[\\\"y\\\", Short[#1, 5] & ]\\) is not a valid limit of integration.\"",2,33,9,17121901558957132125,"Local"},
+"MessageTemplate"],StandardForm],"Message","MSG",ExpressionUUID -> "e93be434-f6db-4d9e-93f7-1b862003ee48"],Cell[
+BoxData[
+TemplateBox[{"General","stop","\"Further output of \\!\\(\\*TagBox[StyleBox[RowBox[{\\\"NIntegrate\\\", \\\"::\\\", \\\"nlim\\\"}], \\\"MessageName\\\"], Short[#1, 5] & ]\\) will be suppressed during this calculation.\"",2,33,10,17121901558957132125,"Local"},
+"MessageTemplate"],StandardForm],"Message","MSG",ExpressionUUID -> "0b1def54-662e-4cfb-b989-dda7fa8432c0"],Cell[
+BoxData[
+TemplateBox[{"NIntegrate","nlim","\"\\!\\(\\*TagBox[\\\"x\\\", Short[#1, 5] & ]\\) = \\!\\(\\*TagBox[\\\"y\\\", Short[#1, 5] & ]\\) is not a valid limit of integration.\"",2,33,11,17121901558957132125,"Local"},
+"MessageTemplate"],StandardForm],"Message","MSG",ExpressionUUID -> "27d9f508-9921-405c-a463-8786f18b93cf"],Cell[
+BoxData[
+TemplateBox[{"NIntegrate","nlim","\"\\!\\(\\*TagBox[\\\"x\\\", Short[#1, 5] & ]\\) = \\!\\(\\*TagBox[\\\"y\\\", Short[#1, 5] & ]\\) is not a valid limit of integration.\"",2,33,12,17121901558957132125,"Local"},
+"MessageTemplate"],StandardForm],"Message","MSG",ExpressionUUID -> "875acaa2-ebd7-482d-b036-524cf95f1f3d"],Cell[
+BoxData[
+RowBox[{"NIntegrate","[",RowBox[{SuperscriptBox["x","2"],",",RowBox[{"{",RowBox[{"x",",","0",",","y"}],"}"}]}],"]"}],
+StandardForm],"Output",ExpressionUUID -> "4b2b1991-4d74-4168-994d-15e0b008c6b7",CellLabel -> "Out[33]= "]},
+Open],ExpressionUUID -> "033ef1a4-269f-452a-8642-9e630c27db08"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{RowBox[{"g2","[","y_","]"}],"=",RowBox[{"NIntegrate","[",RowBox[
+{RowBox[{"x","^","2"}],","," ",RowBox[{"{",RowBox[{"x",","," ","0",",","y"}],"}"}]}],"]"}]," ",RowBox[
+{"(*",RowBox[{"Evaluates"," ","now"," ","itself"}],"*)"}]}]],"Input",ExpressionUUID -> "61bee853-98b8-49b4-9dd0-a631684d572c",
+CellLabel -> "In[43]:= "],Cell[
+BoxData[TemplateBox[{"NIntegrate","nlim","\"\\!\\(\\*TagBox[\\\"x\\\", Short[#1, 5] & ]\\) = \\!\\(\\*TagBox[\\\"y\\\", Short[#1, 5] & ]\\) is not a valid limit of integration.\"",2,43,31,17121901558957132125,"Local"},
+"MessageTemplate"],StandardForm],"Message","MSG",ExpressionUUID -> "2250e76f-4a78-4367-9ecf-2ece1f951df4"],Cell[
+BoxData[
+TemplateBox[{"NIntegrate","nlim","\"\\!\\(\\*TagBox[\\\"x\\\", Short[#1, 5] & ]\\) = \\!\\(\\*TagBox[\\\"y\\\", Short[#1, 5] & ]\\) is not a valid limit of integration.\"",2,43,32,17121901558957132125,"Local"},
+"MessageTemplate"],StandardForm],"Message","MSG",ExpressionUUID -> "8cfcfe67-2d38-4f17-a6e1-d8f3600ff204"],Cell[
+BoxData[
+TemplateBox[{"NIntegrate","nlim","\"\\!\\(\\*TagBox[\\\"x\\\", Short[#1, 5] & ]\\) = \\!\\(\\*TagBox[\\\"y\\\", Short[#1, 5] & ]\\) is not a valid limit of integration.\"",2,43,33,17121901558957132125,"Local"},
+"MessageTemplate"],StandardForm],"Message","MSG",ExpressionUUID -> "2124bb74-2252-4b74-91e1-49886b82031c"],Cell[
+BoxData[
+TemplateBox[{"General","stop","\"Further output of \\!\\(\\*TagBox[StyleBox[RowBox[{\\\"NIntegrate\\\", \\\"::\\\", \\\"nlim\\\"}], \\\"MessageName\\\"], Short[#1, 5] & ]\\) will be suppressed during this calculation.\"",2,43,34,17121901558957132125,"Local"},
+"MessageTemplate"],StandardForm],"Message","MSG",ExpressionUUID -> "106d1c9b-b870-48de-967f-851c11a4d088"],Cell[
+BoxData[
+TemplateBox[{"NIntegrate","nlim","\"\\!\\(\\*TagBox[\\\"x\\\", Short[#1, 5] & ]\\) = \\!\\(\\*TagBox[\\\"y\\\", Short[#1, 5] & ]\\) is not a valid limit of integration.\"",2,43,35,17121901558957132125,"Local"},
+"MessageTemplate"],StandardForm],"Message","MSG",ExpressionUUID -> "4b254ac5-e34e-4d1c-81fa-be01089b650f"],Cell[
+BoxData[
+TemplateBox[{"NIntegrate","nlim","\"\\!\\(\\*TagBox[\\\"x\\\", Short[#1, 5] & ]\\) = \\!\\(\\*TagBox[\\\"y\\\", Short[#1, 5] & ]\\) is not a valid limit of integration.\"",2,43,36,17121901558957132125,"Local"},
+"MessageTemplate"],StandardForm],"Message","MSG",ExpressionUUID -> "80e0fc65-3c08-47b5-a2f1-0aec3d72d7ed"],Cell[
+BoxData[
+RowBox[{"NIntegrate","[",RowBox[{SuperscriptBox["x","2"],",",RowBox[{"{",RowBox[{"x",",","0",",","y"}],"}"}]}],"]"}],
+StandardForm],"Output",ExpressionUUID -> "5c12efbe-9e01-4ea8-8575-5f5af5200999",CellLabel -> "Out[43]= "]},
+Open],ExpressionUUID -> "f819251e-35fc-4b6d-8b56-1c3c7ef0c705"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{"g2","[","1","]"}]],"Input",ExpressionUUID -> "7aad5fb9-79a7-44bf-9c94-c160e93a3ecb",
+CellLabel -> "In[37]:= "],Cell[
+BoxData["0.3333333333333338`",StandardForm],"Output",
+ExpressionUUID -> "fa0a1648-699f-4d25-af78-031d7c626b18",CellLabel -> "Out[37]= "]},
+Open],ExpressionUUID -> "27e97825-ba14-4649-a461-862b5f6020b0"],Cell[
+BoxData[RowBox[
+{RowBox[{"g2","[","y_","]"}],":=",RowBox[{"NIntegrate","[",RowBox[{RowBox[{"x","^","2"}],","," ",RowBox[
+{"{",RowBox[{"x",","," ","0",",","y"}],"}"}]}],"]"}]," ",RowBox[{"(*",RowBox[{"Does"," ","not"," ","evaluate"," ","now"," ","itself"}],"*)"}]}]],
+"Input",ExpressionUUID -> "1a99db2f-84df-4ee7-9e93-ea9de6d0d64f",CellLabel -> "In[44]:= "],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{"g2","[","y","]"}]],"Input",ExpressionUUID -> "5c691cad-ba29-463f-8c19-802eeedc8fdb",
+CellLabel -> "In[40]:= "],Cell[
+BoxData[TemplateBox[{"NIntegrate","nlim","\"\\!\\(\\*TagBox[\\\"x\\\", Short[#1, 5] & ]\\) = \\!\\(\\*TagBox[\\\"y\\\", Short[#1, 5] & ]\\) is not a valid limit of integration.\"",2,40,25,17121901558957132125,"Local"},
+"MessageTemplate"],StandardForm],"Message","MSG",ExpressionUUID -> "f5f0093f-84b5-46a4-b559-9fd66359e5c3"],Cell[
+BoxData[
+TemplateBox[{"NIntegrate","nlim","\"\\!\\(\\*TagBox[\\\"x\\\", Short[#1, 5] & ]\\) = \\!\\(\\*TagBox[\\\"y\\\", Short[#1, 5] & ]\\) is not a valid limit of integration.\"",2,40,26,17121901558957132125,"Local"},
+"MessageTemplate"],StandardForm],"Message","MSG",ExpressionUUID -> "bda5feee-2e87-49d1-94db-b1685c65c61d"],Cell[
+BoxData[
+TemplateBox[{"NIntegrate","nlim","\"\\!\\(\\*TagBox[\\\"x\\\", Short[#1, 5] & ]\\) = \\!\\(\\*TagBox[\\\"y\\\", Short[#1, 5] & ]\\) is not a valid limit of integration.\"",2,40,27,17121901558957132125,"Local"},
+"MessageTemplate"],StandardForm],"Message","MSG",ExpressionUUID -> "46ff40fc-23c0-4805-868d-fcfa49dd3dee"],Cell[
+BoxData[
+TemplateBox[{"General","stop","\"Further output of \\!\\(\\*TagBox[StyleBox[RowBox[{\\\"NIntegrate\\\", \\\"::\\\", \\\"nlim\\\"}], \\\"MessageName\\\"], Short[#1, 5] & ]\\) will be suppressed during this calculation.\"",2,40,28,17121901558957132125,"Local"},
+"MessageTemplate"],StandardForm],"Message","MSG",ExpressionUUID -> "5e9cd848-b9c1-46d5-b8a6-b70dd42c08e4"],Cell[
+BoxData[
+TemplateBox[{"NIntegrate","nlim","\"\\!\\(\\*TagBox[\\\"x\\\", Short[#1, 5] & ]\\) = \\!\\(\\*TagBox[\\\"y\\\", Short[#1, 5] & ]\\) is not a valid limit of integration.\"",2,40,29,17121901558957132125,"Local"},
+"MessageTemplate"],StandardForm],"Message","MSG",ExpressionUUID -> "53428dbe-e4b8-44dc-94ac-414359e1afad"],Cell[
+BoxData[
+TemplateBox[{"NIntegrate","nlim","\"\\!\\(\\*TagBox[\\\"x\\\", Short[#1, 5] & ]\\) = \\!\\(\\*TagBox[\\\"y\\\", Short[#1, 5] & ]\\) is not a valid limit of integration.\"",2,40,30,17121901558957132125,"Local"},
+"MessageTemplate"],StandardForm],"Message","MSG",ExpressionUUID -> "6c9185bc-aecf-4758-81df-300571b8b952"],Cell[
+BoxData[
+RowBox[{"NIntegrate","[",RowBox[{SuperscriptBox["x","2"],",",RowBox[{"{",RowBox[{"x",",","0",",","y"}],"}"}]}],"]"}],
+StandardForm],"Output",ExpressionUUID -> "4f44ff34-7bfd-4b76-a2de-eb7f40eb9960",CellLabel -> "Out[40]= "]},
+Open],ExpressionUUID -> "9180fc26-33c2-4cae-a64f-de3a91bac083"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{"g2","[","1","]"}]],"Input",ExpressionUUID -> "6facb3db-24cf-4ea0-b69b-676013bd5bb7",
+CellLabel -> "In[42]:= "],Cell[
+BoxData["0.3333333333333338`",StandardForm],"Output",
+ExpressionUUID -> "3c34f5cb-b344-4d59-a8c5-a4cd03980353",CellLabel -> "Out[42]= "]},
+Open],ExpressionUUID -> "863dff4e-0f65-4fd0-9a90-59b90a40e269"],Cell[
+TextData[{"Now"," ","we"," ","will"," ","create"," ","multi","-","step"," ","functions"," ","which"," ","can"," ","have"," ","local"," ","variables",StyleBox[
+RowBox[{","," "}]],"global","/","local"," ","context",StyleBox[RowBox[{","," "}]],"etc",StyleBox[
+RowBox[{"."," "}]],"using"," ","a"," ","construct"," ","called"," ","Module"}],"Text",
+ExpressionUUID -> "397629cd-c699-4346-b61b-86d064d8f002"],Cell[
+CellGroupData[{Cell[
+BoxData[
+RowBox[{RowBox[{"ff","[","x_","]"}]," ","="," ",RowBox[{"Module","[",RowBox[{RowBox[
+{"{","}"}],","," ",RowBox[{"x","^","2"}]}],"]"}]," ",RowBox[{"(*",RowBox[{"Format",":"," ",RowBox[
+{"{",RowBox[{"Local_Variables",","," ","Function_Block"}],"}"}]}]," ","*)"}]}]],"Input",
+ExpressionUUID -> "03a5970a-fae8-463e-b745-978bac8be8aa",CellLabel -> "In[7]:= "],Cell[
+BoxData[
+SuperscriptBox["x","2"],StandardForm],"Output",ExpressionUUID -> "9fffe0f8-ce79-4a19-a1e5-4f24ac56102e",
+CellLabel -> "Out[7]= "]},Open],ExpressionUUID -> "cf7b06bc-5002-4359-a27f-1883220ded39"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{"ff","[","10","]"}]],"Input",ExpressionUUID -> "76f233fb-7585-4836-9266-acb8dcbf530a",
+CellLabel -> "In[8]:= "],Cell[
+BoxData["100",StandardForm],"Output",ExpressionUUID -> "03b79cf7-9915-4961-9fd2-c74250c11dd4",
+CellLabel -> "Out[8]= "]},Open],ExpressionUUID -> "e8000361-ee6c-4b3e-bd0c-57bc0b14114e"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{RowBox[{"speed","[",RowBox[{"dist_",",","time_"}],"]"}]," ","="," ",RowBox[
+{"Module","[",RowBox[{RowBox[{"{","spd","}"}],",","\n",RowBox[{RowBox[{"spd","=",RowBox[
+{"dist","/","time"}]}],";","\n",RowBox[{"Return","[","spd","]"}],";"}]}],"]"}]}]],
+"Input",ExpressionUUID -> "892c64aa-ca67-4d0f-a354-16d8c460e3ec",CellLabel -> "In[9]:= "],Cell[
+BoxData[
+FractionBox["dist","time"],StandardForm],"Output",ExpressionUUID -> "5c729dfe-47dc-495a-a437-0428ed6dc691",
+CellLabel -> "Out[9]= "]},Open],ExpressionUUID -> "ec5fee6a-bbbc-4917-a90c-f0bcc5228c45"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{"speed","[",RowBox[{"10",",","2"}],"]"}]],"Input",ExpressionUUID -> "8e0057b2-e34e-41e4-8ad0-b03c996005d7",
+CellLabel -> "In[10]:= "],Cell[
+BoxData["5",StandardForm],"Output",ExpressionUUID -> "122a6ec4-6cc4-4d88-a60b-799a063f8e6d",
+CellLabel -> "Out[10]= "]},Open],ExpressionUUID -> "702032a7-803e-41f1-8d11-bd334b27fd48"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{RowBox[{"speed2","[",RowBox[{"dist_",",","time_"}],"]"}]," ","="," ",RowBox[
+{"Module","[",RowBox[{RowBox[{"{",RowBox[{"timeinsec",","," ","distinmeters",","," ","spd"}],"}"}],","," ",RowBox[
+{"(*",RowBox[{RowBox[{"Input",":"," ",RowBox[{"Dist"," ","in"," ","kms"}]}],","," ",RowBox[
+{"Time"," ","in"," ","hrs"}]}],"*)"}],"\n",RowBox[{RowBox[{"timeinsec","=",RowBox[
+{"3600","time"}]}],";","\n",RowBox[{"distinmeters","=",RowBox[{"1000","dist"}]}],";"," ","\n",RowBox[
+{"spd","=",RowBox[{"distinmeters","/","timeinsec"}]}],";"," ",RowBox[{"(*"," ",RowBox[
+{"Result"," ","in"," ",RowBox[{"m","/","s"}]}]," ","*)"}],"\n",RowBox[{"Return","[","spd","]"}],";"}]}],"]"}]}]],
+"Input",ExpressionUUID -> "4f38ab15-1eab-4881-b6cd-ffbadddb9aec"],Cell[
+BoxData[FractionBox[
+RowBox[{"5"," ","dist"}],RowBox[{"18"," ","time"}]],StandardForm],"Output",ExpressionUUID -> "77168ca2-ca3b-4581-bde7-3a4283bb109e",
+CellLabel -> "Out[11]= "]},Open],ExpressionUUID -> "476a8f12-66a0-4b54-8298-264b0867ad53"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{"speed2","[",RowBox[{"36",",","1"}],"]"}]],"Input",ExpressionUUID -> "c442fae3-d5a8-4872-b83b-dac229955b70",
+CellLabel -> "In[13]:= "],Cell[
+BoxData["10",StandardForm],"Output",ExpressionUUID -> "8205ae31-150c-4d61-bca5-dcc9eac75169",
+CellLabel -> "Out[13]= "]},Open],ExpressionUUID -> "09b1dcc4-6212-45b3-ae9a-06a4afe51c9a"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{"timeinsec"," ",RowBox[{"(*"," ",RowBox[{"No"," ","result"," ","since"," ",RowBox[
+{"it","'"}],"s"," ","a"," ","local"," ","variable"}]," ","*)"}]}]],"Input",ExpressionUUID -> "7aba4625-e54e-4aee-a182-aabf0c46f99d",
+CellLabel -> "In[15]:= "],Cell[
+BoxData["timeinsec",StandardForm],"Output",ExpressionUUID -> "cc8ce79a-4e53-43f4-8208-d4bfdc314d74",
+CellLabel -> "Out[15]= "]},Open],ExpressionUUID -> "2e597bf5-e70a-4341-abb4-f4440eec6614"]},
+Open],ExpressionUUID -> "960e5adc-bd60-42c6-9b0e-f5868db7b6a1"]},StyleDefinitions -> "Default.nb",
+FrontEndVersion -> "12.1 for Wolfram Cloud 1.54.2 (March 10, 2020)"]
