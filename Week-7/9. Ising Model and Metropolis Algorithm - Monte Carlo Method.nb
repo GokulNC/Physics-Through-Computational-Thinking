@@ -1,0 +1,275 @@
+Notebook[{Cell[
+CellGroupData[{Cell[
+TextData[{"Week"," ","7",StyleBox[RowBox[{" ","-"," "}]],"Lecture"," ","9",StyleBox[
+RowBox[{":"," "}]],"Ising"," ","Model"," ","and"," ","Metropolis"," ","Algorithm",StyleBox[
+RowBox[{" ","-"," "}]],"Monte"," ","Carlo"," ","Method"}],"Section",ExpressionUUID -> "3e48bac8-b3d3-488e-98ff-3981b708456e",
+TextAlignment -> Center,TextJustification -> 0],Cell[
+TextData[{"Resources",StyleBox[
+RowBox[{" "," "}]],"--",StyleBox[RowBox[{" "," "}]],ButtonBox["Video",BaseStyle -> "Hyperlink",
+ButtonData -> {URL["https://youtu.be/-83S3z06flY"],None}],StyleBox[RowBox[{" "," ","&"," "," "}]],ButtonBox[
+"Notes",BaseStyle -> "Hyperlink",ButtonData -> {URL["https://drive.google.com/drive/folders/1dIRhnwGLzZjERJaTYZjGh-uQMzEXhEDt"],None}],ButtonBox[
+" ",BaseStyle -> "Hyperlink",ButtonData -> {URL["https://drive.google.com/drive/folders/1dIRhnwGLzZjERJaTYZjGh-uQMzEXhEDt"],None}],ButtonBox[
+"7i",BaseStyle -> "Hyperlink",ButtonData -> {URL["https://drive.google.com/drive/folders/1dIRhnwGLzZjERJaTYZjGh-uQMzEXhEDt"],None}]}],
+"Text",ExpressionUUID -> "c80a3ef8-402d-4f40-aa0e-390e480b8c9e"],Cell[
+TextData[{"Ising"," ","Model"," ","is"," ","a"," ","standard"," ","model"," ","for"," ","magnetism",StyleBox[
+RowBox[{"."," "}]],"In"," ","this"," ","lecture",StyleBox[RowBox[{","," "}]],"we"," ","will"," ","see"," ","an"," ","1D"," ","model"," ","for"," ","the"," ","magnetic"," ","moments",StyleBox[
+RowBox[{" ","("}]],"classical"," ","spins",StyleBox[RowBox[{")"," "}]],"of"," ","the"," ","metal"," ","atoms"," ","at"," ","their"," ","lattice"," ","sites",StyleBox[
+RowBox[{"."," "}]],"We"," ","study"," ","if"," ","there"," ","are"," ","any"," ","internal"," ","forces"," ","in"," ","the"," ","system"," ","which"," ","aligns"," ","all"," ","the"," ","local"," ","magnetic"," ","moments"," ","along"," ","the"," ","same"," ","line",StyleBox[
+RowBox[{" ","("}]],"direction",StyleBox[RowBox[{")."," "}]],"If"," ","they"," ","do",StyleBox[
+RowBox[{","," "}]],"the"," ","overall"," ","system"," ","has"," ","its"," ","own"," ","magnetism",StyleBox[
+RowBox[{","," "}]],"called"," ","a"," ","ferromagnet",".","\n","\n","For"," ","instance",StyleBox[
+RowBox[{","," "}]],"a"," ","bar"," ","magnet"," ","has"," ","a"," ","really"," ","lot"," ","magnetic"," ","dipoles"," ","aligned"," ","in"," ","a"," ","direction",StyleBox[
+RowBox[{","," "}]],"hence"," ","exhibiting"," ","a"," ","magnetic"," ","field",StyleBox[
+RowBox[{","," "}]],"which"," ","say"," ","has"," ","a"," ","tangible"," ","force"," ","to"," ","attract"," ","iron"," ","filings",StyleBox[
+RowBox[{"."," "}]],"One"," ","successful"," ","microscopic"," ","model"," ","for"," ","this"," ","kind"," ","of"," ","magnetism",StyleBox[
+RowBox[{" "," "}]],"is"," ","Ising"," ","Model",".","\n","\n","For"," ","1D"," ","models",StyleBox[
+RowBox[{","," "}]],"it"," ","turns"," ","out"," ","the"," ","problem"," ","can"," ","be"," ","solved"," ","simply"," ","exactly"," ","analytically",StyleBox[
+RowBox[{"."," "}]],"We"," ","will"," ","not"," ","go"," ","into"," ","the"," ","precise"," ","details"," ","of"," ","the"," ","statistical"," ","mechanics"," ","behind"," ","them",StyleBox[
+RowBox[{"."," "}]],"Consider"," ","a"," ","1D"," ","line"," ","with"," ","N"," ","spins",StyleBox[
+RowBox[{","," "}]],"where"," ","each"," ","spin"," ","can"," ","be"," ","up","/","down",StyleBox[
+RowBox[{" ","(\[PlusMinus]"}]],"1",StyleBox[RowBox[{")."," "}]],"When"," ","all"," ","the"," ","spins"," ","align"," ","in"," ","a"," ","direction",StyleBox[
+RowBox[{","," "}]],"the"," ","energy"," ","is"," ","minimal",StyleBox[RowBox[{" ","("}]],"which"," ","is"," ","the"," ","ferromagnetic"," ","tendency",StyleBox[
+RowBox[{")."," "}]],"In"," ","anti","-","ferromagnetic"," ","order",StyleBox[RowBox[
+{","," "}]],"the"," ","system"," ","has"," ","minimal"," ","energy"," ","only"," ","when"," ","all"," ","the"," ","alternate"," ","spins"," ","are"," ","up",StyleBox[
+RowBox[{" ","&"," "}]],"down",StyleBox[RowBox[{","," "}]],"and"," ","hence"," ","doesn\[CloseCurlyQuote]t"," ","have"," ","a"," ","net"," ","magnetic"," ","moment"," ","associated"," ","with"," ","it",".","\n","\n","Now"," ","we"," ","will"," ","consider"," ","a"," ","classical"," ","Ising"," ","ferromagnet",StyleBox[
+RowBox[{" ","("}]],"check"," ","page"," ","1",StyleBox[RowBox[{"),"," "}]],"which"," ","has"," ","J","=","positive",StyleBox[
+RowBox[{"."," "}]],"According"," ","to"," ","statistical"," ","mechanics",StyleBox[
+RowBox[{","," "}]],"there"," ","is"," ","a"," ","competition"," ","between"," ","the"," ","system"," ","trying"," ","to"," ","make"," ","its"," ","energy"," ","as"," ","low"," ","as"," ","possible",StyleBox[
+RowBox[{","," "}]],"and"," ","the"," ","entropic"," ","effects"," ","to"," ","increase"," ","the"," ","entropy",StyleBox[
+RowBox[{" ","("}]],"that"," ","is",StyleBox[RowBox[{","," "}]],"an"," ","increasing"," ","tendency"," ","to"," ","exist"," ","in"," ","the"," ","lot"," ","of"," ","accessible"," ","microstates",StyleBox[
+RowBox[{")."," "}]],"In"," ","simple"," ","words",StyleBox[RowBox[{","," "}]],"the"," ","system"," ","can"," ","have"," ","a"," ","certain"," ","macroscopic"," ","energy"," ","and"," ","remain"," ","in"," ","that",StyleBox[
+RowBox[{","," "}]],"though"," ","microscopically"," ","that"," ","same"," ","energy"," ","can"," ","be"," ","exhibited"," ","in"," ","tons"," ","of"," ","different"," ","micro","-","states",StyleBox[
+RowBox[{" ","/"," "}]],"arrangements",StyleBox[RowBox[{"."," "}]],"Hence",StyleBox[
+RowBox[{","," "}]],"if"," ","your"," ","system"," ","has"," ","more"," ","choices"," ","to"," ","occupy"," ","states"," ","and"," ","wiggles"," ","around"," ","that"," ","but"," ","exhibiting"," ","same"," ","energy",StyleBox[
+RowBox[{","," "}]],"then"," ","you"," ","can"," ","say"," ","that"," ","the"," ","system"," ","has"," ","higher"," ","entropy",StyleBox[
+RowBox[{"."," "}]],"So"," ","basically",StyleBox[RowBox[{","," "}]],"the"," ","tendency"," ","for"," ","a"," ","system"," ","to"," ","be"," ","in"," ","low"," ","energy"," ","state"," ","and"," ","high"," ","entropy"," ","are"," ","often"," ","forces"," ","which"," ","are"," ","competitive"," ","in"," ","nature",StyleBox[
+RowBox[{","," "}]],"which"," ","gives"," ","a"," ","delicate"," ","equilibrium",".","\n","\n","For"," ","a"," ","1D"," ","ferromagnet",StyleBox[
+RowBox[{","," "}]],"with"," ","N"," ","dipole"," ","moments",StyleBox[RowBox[{" ","(\[PlusMinus]"}]],"1",StyleBox[
+RowBox[{"),"," "}]],"there"," ","are"," ","totally"," ","2","^","N"," ","configurations",StyleBox[
+RowBox[{"."," "}]],"For"," ","a"," ","temperature"," ","T",StyleBox[RowBox[{","," "}]],"the"," ","system"," ","can"," ","be"," ","in"," ","each"," ","configuration"," ","with"," ","some"," ","given"," ","probability","/",StyleBox[
+"weightage",IgnoreSpellCheck -> True],StyleBox[RowBox[{"."," "}]],"The"," ","states"," ","which"," ","have"," ","energy"," ","close"," ","to"," ","the"," ","average"," ","energy"," ","available"," ","at"," ","T"," ","are"," ","more"," ","likely"," ","than"," ","others",StyleBox[
+RowBox[{"."," "}]],"The"," ","sum"," ","of"," ","all"," ","these"," ","weights"," ","by"," ","which"," ","we"," ","divide"," ","to"," ","get"," ","a"," ","normalized"," ","value",StyleBox[
+RowBox[{" ","("}]],"probability",StyleBox[RowBox[{")"," "}]],"for"," ","each"," ","config"," ","is"," ","called"," ","the"," ","partition"," ","function"," ","Z",StyleBox[
+RowBox[{"."," "}]],"This"," ","is"," ","a"," ","hard"," ","problem",StyleBox[RowBox[
+{"."," "}]],"This"," ","is"," ","where"," ","Monte"," ","Carlo"," ","method"," ","helps",StyleBox[
+RowBox[{"."," "}]],"To"," ","do"," ","that"," ","we"," ","will"," ","use"," ","Metropolis"," ","algorithm",".","\n","\n","In"," ","other"," ","words",StyleBox[
+RowBox[{","," "}]],"to"," ","calculate"," ","average"," ","energy"," ","of"," ","the"," ","1D"," ","system",StyleBox[
+RowBox[{" ","("}]],"assuming"," ","O"," ","as"," ","the"," ","energy"," ","operator","):","\n","<","O",StyleBox[
+RowBox[{">"," ","="," "}]],"Sum"," ","of"," ","all"," ","energies",StyleBox[RowBox[
+{" ","/"," "}]],"sum"," ","of"," ","all"," ","weightages","\n","<","O",StyleBox[RowBox[
+{">"," ","="," "}]],"Sum","[","O"," ","e","^(-\[Beta]","H",StyleBox[RowBox[{")]"," ","/"," "}]],"Sum","[",StyleBox[
+"e",IgnoreSpellCheck -> True],StyleBox["^(-\[Beta]",IgnoreSpellCheck -> True],StyleBox[
+"H",IgnoreSpellCheck -> True],")]","\n",StyleBox[RowBox[{"-"," "}]],"where"," ","H"," ","is"," ","the"," ","Hamiltonian"," ","Operator"," ",StyleBox[
+"H",FontWeight -> Bold],StyleBox[RowBox[{StyleBox[" ",FontWeight -> Bold],StyleBox[
+"=",FontWeight -> Bold],StyleBox[" ",FontWeight -> Bold],StyleBox["-",FontWeight -> Bold]}]],StyleBox[
+"J",FontWeight -> Bold],StyleBox[RowBox[{StyleBox[" ",FontWeight -> Bold],StyleBox[
+"\[CapitalSigma]",FontWeight -> Bold]}]],StyleBox["S",FontWeight -> Bold],StyleBox[
+"(",FontWeight -> Bold],StyleBox["i",FontWeight -> Bold],StyleBox[").",FontWeight -> Bold],StyleBox[
+"S",FontWeight -> Bold],StyleBox["(",FontWeight -> Bold],StyleBox["i",FontWeight -> Bold],StyleBox[
+"+",FontWeight -> Bold],StyleBox["1",FontWeight -> Bold],StyleBox[RowBox[{StyleBox[
+")",FontWeight -> Bold]," ","("}]],"where"," ","i"," ","from"," ","1"," ","to"," ","N"," ","and"," ","periodic"," ","at"," ","boundaries",StyleBox[
+RowBox[{";"," "}]],"S"," ","are"," ","spins",")","\n","\n","From"," ","a"," ","statistical"," ","mechanics"," ","book",StyleBox[
+RowBox[{","," "}]],"we"," ","take"," ","the"," ","result"," ","for"," ","Avg",".","Energy"," ","per"," ","spin"," ","as",":","\n",StyleBox[
+"E",FontWeight -> Bold],StyleBox["/",FontWeight -> Bold],StyleBox["N",FontWeight -> Bold],StyleBox[
+RowBox[{StyleBox[" ",FontWeight -> Bold],StyleBox["=",FontWeight -> Bold],StyleBox[
+" ",FontWeight -> Bold],StyleBox["-",FontWeight -> Bold]}]],StyleBox["J",FontWeight -> Bold],StyleBox[
+" ",FontWeight -> Bold],StyleBox["tanh",FontWeight -> Bold],StyleBox["(\[Beta]",FontWeight -> Bold],StyleBox[
+"J",FontWeight -> Bold],StyleBox[RowBox[{StyleBox[")",FontWeight -> Bold]," "," "," "," "}]],"where",StyleBox[
+RowBox[{" ","\[Beta]"," ","="," "}]],"1","/",StyleBox[RowBox[{"K",StyleBox["B",FontSize -> 10],"T"}]],StyleBox[
+RowBox[{"."," "}]],"We"," ","will"," ","try"," ","to"," ","prove"," ","this"," ","numerically",StyleBox[
+RowBox[{"."," ","("}]],"Ensure"," ","you"," ","have"," ","read"," ","till"," ","page"," ","2",")"}],
+"Text",ExpressionUUID -> "178a7040-f523-4f5a-a5da-8736881aecc8"],Cell[
+CellGroupData[
+{Cell[
+TextData[{"Metropolis"," ","Algorithm"}],"Subsubsection",ExpressionUUID -> "dd99933e-6348-4226-ba03-be3173e1392c"],Cell[
+TextData[
+{"1",StyleBox[RowBox[{"."," "}]],"Generate"," ","an"," ","array"," ","of"," ","N"," ","random"," ","spins",StyleBox[
+RowBox[{" ","(\[PlusMinus]"}]],"1",")","\n","2",StyleBox[RowBox[{"."," "}]],"Sequentially"," ","scan"," ","the"," ","spins"," ","and"," ","attempt"," ","to"," ","flip"," ","the"," ","spin",StyleBox[
+RowBox[{"."," ","["}]],"This"," ","is"," ","1"," ","Monte"," ","Carlo"," ","Sweep","]","\n",StyleBox[
+RowBox[{" "," "," "," "}]],"If"," ","the"," ","flip"," ","causes",":","\n",StyleBox[
+RowBox[{" "," "," "," ","\[Bullet]"," "}]],"Decrease"," ","in"," ","Energy",StyleBox[
+RowBox[{","," "}]],"it's"," ","something"," ","desirable"," ","for"," ","our"," ","ferromagnet"," ","no"," ","matter"," ","what"," ","the"," ","equilibrium"," ","at"," ","T",StyleBox[
+RowBox[{"."," ","(\[Therefore]"," "}]],"Assign"," ","probability"," ","1",")","\n",StyleBox[
+RowBox[{"\[NonBreakingSpace]","\[NonBreakingSpace]","\[NonBreakingSpace]","\[NonBreakingSpace]","\[Bullet]"," "}]],"Increase"," ","in"," ","Energy",StyleBox[
+RowBox[{":"," "}]],"this"," ","increase"," ","is"," ","valid"," ","only"," ","if"," ","that"," ","energy",StyleBox[
+RowBox[{" ","\[CapitalDelta]"}]],"E"," ","is"," ","available"," ","in"," ","system"," ","at"," ","T",StyleBox[
+RowBox[{"."," "}]],"Hence"," ","model"," ","the"," ","flip"," ","probability"," ","based"," ","on"," ","that",".","\n",StyleBox[
+RowBox[{"\[NonBreakingSpace]","\[NonBreakingSpace]","\[NonBreakingSpace]","\[NonBreakingSpace]","\[Bullet]"," "}]],"No"," ","change"," ","in"," ","Energy",StyleBox[
+RowBox[{":"," "}]],"this"," ","means"," ","both"," ","condigurations"," ","are"," ","equally"," ","good",StyleBox[
+RowBox[{"."," "}]],"So"," ","just"," ","toss"," ","a"," ","coin"," ","and"," ","decide",".","\n","3",StyleBox[
+RowBox[{"."," "}]],"Run"," ","multiple"," ","independent"," ","Monte"," ","Carlo"," ","sweeps"," ","so"," ","that"," ","you"," ","allow"," ","the"," ","average"," ","system"," ","to"," ","equilibrate"," ","for"," ","that"," ","T",".","\n","4",StyleBox[
+RowBox[{"."," "}]],"Then"," ","run"," ","multiple"," ","iterations"," ","to"," ","estimate"," ","the"," ","required"," ","quantity"," ","and"," ","finally"," ","average"," ","them"," ","over"," ","the"," ","equilibrated"," ","configurated",".","\n","\n","(","Note",StyleBox[
+RowBox[{":"," "}]],"Check"," ","the"," ","implementation"," ","to"," ","know"," ","how"," ","to"," ","calculate",StyleBox[
+RowBox[{" ","\[CapitalDelta]"}]],"E"," ","for"," ","step","-","2",".)","\n","\n","This"," ","should"," ","give"," ","the"," ","statistic"," ","mechanical"," ","average"," ","of"," ","that"," ","quantity",StyleBox[
+RowBox[{"."," "}]],"Explanation"," ","of"," ","why"," ","this"," ","works"," ","is"," ","out"," ","of"," ","scope",".","\n","(","Underlying"," ","principle",StyleBox[
+RowBox[{":"," "}]],ButtonBox["Detailed",ButtonData -> {URL["https://en.wikipedia.org/wiki/Detailed_balance"],None},
+BaseStyle -> "Hyperlink"],ButtonBox[" ",ButtonData -> {URL["https://en.wikipedia.org/wiki/Detailed_balance"],None},
+BaseStyle -> "Hyperlink"],ButtonBox["balance",ButtonData -> {URL["https://en.wikipedia.org/wiki/Detailed_balance"],None},
+BaseStyle -> "Hyperlink"],ButtonBox[")",ButtonData -> {URL["https://en.wikipedia.org/wiki/Detailed_balance"],None},
+BaseStyle -> "Hyperlink"]}],"Text",ExpressionUUID -> "323bbb28-c889-434f-8267-497ec0124174"]},
+Open],ExpressionUUID -> "344968e6-3763-464d-8c84-3c9ba356d2b0"],Cell[
+CellGroupData[
+{Cell[
+"\<Implementation\>","Subsubsection",ExpressionUUID -> "9983e019-9870-4f38-adb3-45b853c1c82e"],Cell[
+TextData[
+{"Let's"," ","first"," ","write"," ","the"," ","function"," ","for"," ","step","-","2"," ","to"," ","decide"," ","the"," ","outcome"," ","based"," ","on"," ","change"," ","in"," ","energy"," ","for"," ","given"," ","T","."}],
+"Text",ExpressionUUID -> "8f2b682e-da55-4ab4-9922-23e83bc03a9c"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{RowBox[{"Pinc","[",RowBox[{"\[CapitalDelta]e_",","," ",ButtonBox[
+"\[Beta]_",BaseStyle -> "Hyperlink",ButtonData -> {URL["https://en.wikipedia.org/wiki/Detailed_balance"],None}]}],"]"}]," ","="," ",RowBox[
+{RowBox[{"Exp","[",RowBox[{RowBox[{"-","\[Beta]"}]," ","\[CapitalDelta]e"}],"]"}]," ","/"," ",RowBox[
+{"(",RowBox[{"1","+",RowBox[{"Exp","[",RowBox[{RowBox[{"-","\[Beta]"}]," ","\[CapitalDelta]e"}],"]"}]}],")"}]," ",RowBox[
+{"(*",RowBox[{"Probability"," ","of"," ","flipping"," ","in"," ","favor"," ","of"," ","increase"," ","in"," ","energy"}],"*)"}]}]}]],
+"Input",ExpressionUUID -> "c3c00889-d5be-4faf-9b45-fd07a6848d79",CellLabel -> "In[1]:= "],Cell[
+BoxData[
+FractionBox[SuperscriptBox["\[ExponentialE]",RowBox[{RowBox[{"-","\[Beta]"}]," ","\[CapitalDelta]e"}]],
+RowBox[{"1","+",SuperscriptBox["\[ExponentialE]",RowBox[{RowBox[{"-","\[Beta]"}]," ","\[CapitalDelta]e"}]]}]],
+StandardForm],"Output",ExpressionUUID -> "bc680087-f4c9-4e50-ac87-8d785310302b",CellLabel -> "Out[1]= "]},
+Open],ExpressionUUID -> "bd8ad8c9-4b11-4af9-acef-6db03d1e89d4"],Cell[
+BoxData[RowBox[
+{RowBox[{RowBox[{RowBox[{"decide","[",RowBox[{"\[CapitalDelta]e_",",","\[Beta]_"}]," ","]"}]," ",":="," ","\n",RowBox[
+{"If","[",RowBox[{RowBox[{"\[CapitalDelta]e","<","0"}],",",RowBox[{"-","1"}],","," ","\n",RowBox[
+{"If","[",RowBox[{RowBox[{"\[CapitalDelta]e","==","0"}],","," ",RowBox[{"RandomChoice","[",RowBox[
+{"{",RowBox[{RowBox[{"-","1"}],",","1"}],"}"}],"]"}],",","\n",RowBox[{"If","[",RowBox[
+{RowBox[{RowBox[{"RandomReal","[","]"}]," ","<"," ",RowBox[{"Pinc","[",RowBox[{"\[CapitalDelta]e",","," ","\[Beta]"}],"]"}]}],","," ",RowBox[
+{"-","1"}],",","1"}],"]"}]}],"\n","]"}]}],"]"}]}],";"}]," ",RowBox[{"(*",RowBox[{"Returns"," ","-",RowBox[
+{"1"," ","if"," ","flipping"," ","is"," ","fine"}]}],"*)"}]}]],"Input",ExpressionUUID -> "0c370fbc-cebe-4927-bb57-515e97e8b3ca",
+CellLabel -> "In[2]:= "],Cell[
+CellGroupData[{Cell[
+BoxData[RowBox[{"decide","[",RowBox[
+{RowBox[{"-","0.55"}],","," ","1"}],"]"}]],"Input",ExpressionUUID -> "b85936c3-d35b-4a4e-ba1d-bb0720d14461",
+CellLabel -> "In[3]:= "],Cell[
+BoxData[RowBox[{"-","1"}],StandardForm],"Output",ExpressionUUID -> "c4ec4be7-dbb9-473e-9ef1-f80a940ba2b4",
+CellLabel -> "Out[3]= "]},Open],ExpressionUUID -> "1e194520-977c-4630-a573-dce724c095cd"],Cell[
+TextData[
+{"LocalField",StyleBox[RowBox[{" ","="," "}]],"Average","[","H","(","i","-","1",StyleBox[
+RowBox[{"),"," "}]],"H","(","i","+","1",")]","\n","That"," ","is",StyleBox[RowBox[
+{","," "," "}]],"H","(","i",StyleBox[RowBox[{")"," ","="," ","-"}]],"J","*(","Si","-","1",StyleBox[
+RowBox[{" ","+"," "}]],"Si","+","1",")/","2","\n","We"," ","assume"," ","J","=","1","."}],
+"Text",ExpressionUUID -> "7534980a-5f8c-488c-9a4b-e40024669d6a"],Cell[
+BoxData[RowBox[
+{RowBox[{RowBox[{"localfieldspin","[",RowBox[{"i_",","," ","spins_"}],"]"}]," ",":="," ",RowBox[
+{"-",RowBox[{"Mean","[",RowBox[{"{","\n",RowBox[{RowBox[{"spins","[",RowBox[{"[",RowBox[
+{RowBox[{"Mod","[",RowBox[{RowBox[{"i","-","2"}],","," ",RowBox[{"Length","[","spins","]"}]}],"]"}],"+","1"}],"]"}],"]"}],","," ",RowBox[
+{"spins","[",RowBox[{"[",RowBox[{RowBox[{"Mod","[",RowBox[{"i",","," ",RowBox[{"Length","[","spins","]"}]}],"]"}],"+","1"}],"]"}],"]"}]}],"\n","}"}],"]"}]}]}],";"}]],
+"Input",ExpressionUUID -> "2bc79396-eb27-4473-908e-6a0aa48a39d8",CellLabel -> "In[4]:= "],Cell[
+TextData[
+{"Let"," ","us"," ","now"," ","write"," ","the"," ","Monte"," ","Carlo"," ","routine","."}],
+"Text",ExpressionUUID -> "71c6bb6f-7224-4785-b293-340adfa838dc"],Cell[
+BoxData[RowBox[
+{RowBox[{"monteCarlo","[",RowBox[{"nspins_",","," ","\[Beta]_",","," ","num_"}],"]"}]," ",":="," ",RowBox[
+{"Module","[",RowBox[{RowBox[{"{",RowBox[{"spins",","," ","hp",","," ","\[CapitalDelta]e",","," ","kleft",","," ","kright"}],"}"}],",","\n",RowBox[
+{"(*"," ",RowBox[{"Randomly"," ","generate"," ","N"," ","spins"}],"*)"}],"\n",RowBox[
+{RowBox[{"spins"," ","="," ",RowBox[{"Table","[",RowBox[{RowBox[{"RandomChoice","[",RowBox[
+{"{",RowBox[{RowBox[{"-","1"}],",","1"}],"}"}],"]"}],","," ",RowBox[{"{","nspins","}"}]}],"]"}]}],";","\n",RowBox[
+{"(*"," ",RowBox[{"Initialize"," ","the"," ","array"," ","of"," ","local"," ","fields"}]," ","*)"}],"\n",RowBox[
+{"hp","=",RowBox[{"Table","[",RowBox[{RowBox[{"localfieldspin","[",RowBox[{"k",",","spins"}],"]"}],","," ",RowBox[
+{"{",RowBox[{"k",",","1",",","nspins"}],"}"}]}],"]"}]}],";","\n",RowBox[{"(*"," ",RowBox[
+{"Run"," ","multiple"," ","Monte"," ","Carlo"," ","sweeps"," ","now"," ","for"," ","0.5","*",RowBox[
+{"2","^","num"}]," ","times"}]," ","*)"}],"\n",RowBox[{"Table","[",RowBox[{RowBox[
+{RowBox[{"Table","[","\n",RowBox[{RowBox[{RowBox[{"\[CapitalDelta]e"," ","="," ",RowBox[
+{RowBox[{"-","4"}]," ",RowBox[{"hp","[",RowBox[{"[","k","]"}],"]"}]," ",RowBox[{"spins","[",RowBox[
+{"[","k","]"}],"]"}]}]}],";","\n",RowBox[{RowBox[{"spins","[",RowBox[{"[","k","]"}],"]"}]," ","="," ",RowBox[
+{RowBox[{"spins","[",RowBox[{"[","k","]"}],"]"}]," ",RowBox[{"decide","[",RowBox[
+{"\[CapitalDelta]e",","," ","\[Beta]"}],"]"}]}]}],";","\n",RowBox[{"kleft"," ","="," ",RowBox[
+{RowBox[{"Mod","[",RowBox[{RowBox[{"k","-","2"}],",","nspins"}],"]"}],"+","1"}]}],";","\n",RowBox[
+{"kright","=",RowBox[{RowBox[{"Mod","[",RowBox[{"k",",","nspins"}],"]"}],"+","1"}]}],";","\n",RowBox[
+{RowBox[{"hp","[",RowBox[{"[","kleft","]"}],"]"}]," ","="," ",RowBox[{"localfieldspin","[",RowBox[
+{"kleft",","," ","spins"}],"]"}]}],";","\n",RowBox[{RowBox[{"hp","[",RowBox[{"[","kright","]"}],"]"}],"=",RowBox[
+{"localfieldspin","[",RowBox[{"kright",",","spins"}],"]"}]}],";"}],"\n",","," ",RowBox[
+{"{",RowBox[{"k",",","1",",","nspins"}],"}"}]}],"]"}],";"}],"\n",","," ",RowBox[{"{",RowBox[
+{"2","^",RowBox[{"(",RowBox[{"num","-","1"}],")"}]}],"}"}]}],"]"}],";","\n",RowBox[
+{"(*"," ",RowBox[{"We"," ","could"," ","say"," ","that"," ","the"," ","system"," ","has"," ","equilibrated"," ","if"," ","num"," ","is"," ","sufficiently"," ","large"}]," ","*)"}],"\n",RowBox[
+{"(*"," ",RowBox[{"Now"," ","estimate"," ","your"," ","quantity"," ",RowBox[{"(","energy",")"}]," ","by"," ","running"," ","another"," ","0.5","*",RowBox[
+{"2","^","num"}]," ","sweeps"}]," ","*)"}],"\n",RowBox[{"(*"," ",RowBox[{RowBox[{"\[CapitalDelta]E"," ","for"," ","flipping"," ","i"}]," ","="," ",RowBox[
+{RowBox[{"-","4"}],"HiSi"}]}]," ","*)"}],"\n",RowBox[{"(*"," ",RowBox[{RowBox[{"Total"," ","Energy"}]," ","="," ",RowBox[
+{"\[CapitalSigma]HiSi"," ","="," ",RowBox[{RowBox[{"Dot","[",RowBox[{"H",",","S"}],"]"}],"  ",RowBox[
+{"(",RowBox[{"Average"," ","it"," ","across"," ","all"," ","sweeps"}],")"}]}]}]}]," ","*)"}],"\n",RowBox[
+{"AvgEn"," ","="," ",RowBox[{"Mean","[",RowBox[{"Table","[",RowBox[{RowBox[{RowBox[
+{"Table","[","\n",RowBox[{RowBox[{RowBox[{"\[CapitalDelta]e"," ","="," ",RowBox[{RowBox[
+{"-","4"}]," ",RowBox[{"hp","[",RowBox[{"[","k","]"}],"]"}]," ",RowBox[{"spins","[",RowBox[
+{"[","k","]"}],"]"}]}]}],";","\n",RowBox[{RowBox[{"spins","[",RowBox[{"[","k","]"}],"]"}]," ","="," ",RowBox[
+{RowBox[{"spins","[",RowBox[{"[","k","]"}],"]"}]," ",RowBox[{"decide","[",RowBox[
+{"\[CapitalDelta]e",","," ","\[Beta]"}],"]"}]}]}],";","\n",RowBox[{"kleft"," ","="," ",RowBox[
+{RowBox[{"Mod","[",RowBox[{RowBox[{"k","-","2"}],",","nspins"}],"]"}],"+","1"}]}],";","\n",RowBox[
+{"kright","=",RowBox[{RowBox[{"Mod","[",RowBox[{"k",",","nspins"}],"]"}],"+","1"}]}],";","\n",RowBox[
+{RowBox[{"hp","[",RowBox[{"[","kleft","]"}],"]"}]," ","="," ",RowBox[{"localfieldspin","[",RowBox[
+{"kleft",","," ","spins"}],"]"}]}],";","\n",RowBox[{RowBox[{"hp","[",RowBox[{"[","kright","]"}],"]"}],"=",RowBox[
+{"localfieldspin","[",RowBox[{"kright",",","spins"}],"]"}]}],";"}],"\n",","," ",RowBox[
+{"{",RowBox[{"k",",","1",",","nspins"}],"}"}]}],"]"}],";","\n",RowBox[{RowBox[{"spins",".","hp"}],"/","nspins"}]}],","," ",RowBox[
+{"{",RowBox[{"2","^",RowBox[{"(",RowBox[{"num","-","1"}],")"}]}],"}"}]}],"]"}],"]"}]}],";","\n",RowBox[
+{RowBox[{"Return","[","AvgEn","]"}]," ","//","N"}]}]}],"\n","]"}]}]],"Input",ExpressionUUID -> "ed5ccc59-c631-48ac-ba25-d644575f060a",
+CellLabel -> "In[13]:= "],Cell[
+TextData[{"Let"," ","us"," ","now"," ","find"," ","the"," ","avg"," ","energy"," ","for"," ","different"," ","temperatures",StyleBox[
+RowBox[{" ","("}]],"defined"," ","by",StyleBox[RowBox[{" ","\[Beta])"}]]}],"Text",
+ExpressionUUID -> "d4d73662-aebc-4ebc-b034-3d3c2bd32ab4"],Cell[
+CellGroupData[{Cell[
+BoxData[
+RowBox[{" ",RowBox[{"en","=",RowBox[{"Table","[",RowBox[{RowBox[{"{",RowBox[{"\[Beta]",","," ",RowBox[
+{"monteCarlo","[",RowBox[{"64",",","\[Beta]",",","10"}],"]"}]}],"}"}],","," ",RowBox[
+{"{",RowBox[{"\[Beta]",",","1",",","5",",","0.2"}],"}"}]}],"]"}]}]}]],"Input",ExpressionUUID -> "1df33744-ff80-4222-a666-122ab60f5bfd",
+CellLabel -> "In[7]:= "],Cell[
+BoxData[RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{"1.`",",",RowBox[
+{"-","0.778564453125`"}]}],"}"}],",",RowBox[{"{",RowBox[{"1.2`",",",RowBox[{"-","0.8397216796875`"}]}],"}"}],",",RowBox[
+{"{",RowBox[{"1.4`",",",RowBox[{"-","0.9007568359375`"}]}],"}"}],",",RowBox[{"{",RowBox[
+{"1.6`",",",RowBox[{"-","0.9124755859375`"}]}],"}"}],",",RowBox[{"{",RowBox[{"1.8`",",",RowBox[
+{"-","0.9833984375`"}]}],"}"}],",",RowBox[{"{",RowBox[{"2.`",",",RowBox[{"-","0.9593505859375`"}]}],"}"}],",",RowBox[
+{"{",RowBox[{"2.2`",",",RowBox[{"-","0.962646484375`"}]}],"}"}],",",RowBox[{"{",RowBox[
+{"2.4000000000000004`",",",RowBox[{"-","0.9996337890625`"}]}],"}"}],",",RowBox[{"{",RowBox[
+{"2.6`",",",RowBox[{"-","0.9996337890625`"}]}],"}"}],",",RowBox[{"{",RowBox[{"2.8`",",",RowBox[
+{"-","0.999755859375`"}]}],"}"}],",",RowBox[{"{",RowBox[{"3.`",",",RowBox[{"-","0.96875`"}]}],"}"}],",",RowBox[
+{"{",RowBox[{"3.2`",",",RowBox[{"-","0.9993896484375`"}]}],"}"}],",",RowBox[{"{",RowBox[
+{"3.4000000000000004`",",",RowBox[{"-","1.`"}]}],"}"}],",",RowBox[{"{",RowBox[{"3.6`",",",RowBox[
+{"-","1.`"}]}],"}"}],",",RowBox[{"{",RowBox[{"3.8000000000000003`",",",RowBox[{"-","1.`"}]}],"}"}],",",RowBox[
+{"{",RowBox[{"4.`",",",RowBox[{"-","1.`"}]}],"}"}],",",RowBox[{"{",RowBox[{"4.2`",",",RowBox[
+{"-","1.`"}]}],"}"}],",",RowBox[{"{",RowBox[{"4.4`",",",RowBox[{"-","1.`"}]}],"}"}],",",RowBox[
+{"{",RowBox[{"4.6`",",",RowBox[{"-","1.`"}]}],"}"}],",",RowBox[{"{",RowBox[{"4.800000000000001`",",",RowBox[
+{"-","1.`"}]}],"}"}],",",RowBox[{"{",RowBox[{"5.`",",",RowBox[{"-","1.`"}]}],"}"}]}],"}"}],
+StandardForm],"Output",ExpressionUUID -> "826f8723-64e3-4be2-b776-6a8046b1be5b",CellLabel -> "Out[7]= "]},
+Open],ExpressionUUID -> "2375a297-e937-4b2b-936a-7a2179857418"],Cell[
+TextData[{"Compare"," ","the"," ","analytical"," ","solution"," ","that"," ","we"," ","had"," ","for"," ","E","/","N"," ","and"," ","the"," ","numerical"," ","data"," ","we"," ","have"," ","now","."}],
+"Text",ExpressionUUID -> "996b8c72-63ca-423a-bb79-f91ae89ba951"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{"Show","[",RowBox[{RowBox[{"ListPlot","[",RowBox[{"en",","," ",RowBox[
+{"Joined","\[Rule]","True"}],","," ",RowBox[{"PlotStyle","\[Rule]","Dashed"}],","," ",RowBox[
+{"PlotMarkers","\[Rule]",RowBox[{"Style","[",RowBox[{"\"x\"",","," ","14",","," ","Red"}],"]"}]}]}],"]"}],",","\n",RowBox[
+{"Plot","[",RowBox[{RowBox[{"-",RowBox[{"Tanh","[","x","]"}]}],",",RowBox[{"{",RowBox[
+{"x",",","1",",","5"}],"}"}]}],"]"}]}],"]"}]],"Input",ExpressionUUID -> "a8e9c319-2fae-43e8-ae47-2680355eac5a",
+CellLabel -> "In[12]:= "],Cell[
+BoxData[GraphicsBox[{{{},{{{},{},{Hue[0.67,0.6,0.6],Directive[
+PointSize[0.012833333333333334],RGBColor[0.368417,0.506779,0.709798],AbsoluteThickness[
+1.6],Dashing[{Small,Small}]],LineBox[CompressedData["1:eJxTTMoPSmViYGAQBWIQDQEf7MHUqxf7jcHgM4R//9X+NDD4BuFffrN/1kwQ+AnhG7/df/YMCPyB8Cve74ca6AAmN7+DqmeE8M+9228CNp8Zwv/7HqqfBc6H2McG4f+DmccB4TO8h5rHCeH/fg81jxsq/wFqHg+cnw42jw/Oh9ACaOoRfIj5gnA+xD1CcD7EPmE080TgfABT/2hN"]]}},{{Directive[
+PointSize[0.012833333333333334],RGBColor[0.368417,0.506779,0.709798],AbsoluteThickness[
+1.6],Dashing[{Small,Small}]],GeometricTransformationBox[InsetBox[BoxData[FormBox[
+StyleBox[StyleBox["\"x\"",14,RGBColor[1,0,0],StripOnInput -> False],GraphicsBoxOptions -> {DefaultBaseStyle -> Directive[
+PointSize[0.012833333333333334],RGBColor[0.368417,0.506779,0.709798],AbsoluteThickness[
+1.6],Dashing[{Small,Small}]]},StripOnInput -> False],TraditionalForm]],{0.0,0.0}],
+{{{1.0,-0.778564453125}},{{1.2,-0.8397216796875}},{{1.4,-0.9007568359375}},{{1.6,-0.9124755859375}},{{1.8,-0.9833984375}},{{2.0,-0.9593505859375}},{{2.2,-0.962646484375}},{{2.4000000000000004,-0.9996337890625}},{{2.6,-0.9996337890625}},{{2.8,-0.999755859375}},{{3.0,-0.96875}},{{3.2,-0.9993896484375}},{{3.4000000000000004,-1.0}},{{3.6,-1.0}},{{3.8000000000000003,-1.0}},{{4.0,-1.0}},{{4.2,-1.0}},{{4.4,-1.0}},{{4.6,-1.0}},{{4.800000000000001,-1.0}},{{5.0,-1.0}}}]}},{{Directive[
+PointSize[0.012833333333333334],RGBColor[0.368417,0.506779,0.709798],AbsoluteThickness[
+1.6],Dashing[{Small,Small}]]},{}},{{Directive[PointSize[0.012833333333333334],RGBColor[
+0.368417,0.506779,0.709798],AbsoluteThickness[1.6],Dashing[{Small,Small}]]},{}}},{{},{}}},{{{{},{},TagBox[
+{Directive[Opacity[1.0],RGBColor[0.368417,0.506779,0.709798],AbsoluteThickness[1.6]],LineBox[
+CompressedData["1:eJwVz3tUk3UYB3BgIdsgNt5XIBSGSFKeMAhZxUX2QARJqIAQttiSmSEqcbE2/1AUYYqHQFCaHEEEBVKWLRUR5PKzBnG/GMiQQsmQw2Xuhx4YbgPWuz+e85zPOd/ne87jJkqN2W9hZmb2CTWmPYI8i2a/WOQFbX+u6xiZQxVH+lkex7W85qsVATKhGtFTciTwYIkHXUpZ6VM1Erx0m0ri6Hht8tG/PPe8QN/c7c/3FOt5swec1NktL1DmhfIzI/UG3vkv0ZMBWw2SLsfl5hMrvN4ua+kRvgZdOeH99+b4VZ74lY79r0yDDoWsS9r3k5G3vjz37HiXBtl1Li7HSswgglVXz9Vp0JIhFR98yxxWulj3MAej3YuC/VYd5nBd0SgdCMYot2BIkpFhAd9faDg1IsSoo46/NYqgwU3j/Sb8A0bHKuIy6hAN6FPVtIg8jAKcRPy8xDegup4TzivDKC3+Wfs02xLc+cUvx+UYZXJn+9a2WEJeSnDTcANGsgraiTuCNUC0J4y4KjF6+2HhnVFrK/iQqBZd7sWoucCrKO1XK0iyb/vRfRijLeo4a9UOOmT0cMQZYxitZc3T2/R0UMMK/9MJjCxRqcK9jAEuO9f/9t8kRod9mx4zPmfCJrrfuPsMRr9sF1W0apng8HwioFaNkXZuHXtKZg35yZJ3xBij+t3htOJQG4i6OezIfIXRyc+kV+qmbIBINTDsFzDaOB4xek36JqzRSUQ9i9S/H+UUO/nYQiyXsWHvEkYCzoDOfMgWyksv0itfU/3d+c/SsljgFwNHO3UYRVp4+W8m2DDYPZN2W48RE/OjzUVs+EfEThYbMMpuhdqyBjZwGYMb31vGKCtWEZ/OsANJSi3/PmX/PlUYI9EOQjzP2QStYPTUPjSHfs8OfLydveSUGZv8HIKtCGAfGGs0X8VI4zA9EygkgNQ3pkdT3jPgSmQoCHCLlckKKSviS3NtjQS0MyMz2yn//scgfBdHgrFha5TWlF8o2GFVQ0KkJMHCxYjRn/0h3qk/k1ByUVFpsu8NLaG6TsLryfPAocwSCkdr5CRUgfVxV1O+Y8u+sFsknMrumXejzC3tPSptJmGXsk/pQZkIYVbRhkhIK5p18qZ80rn19KFhEi5FqOQma7TpyUOPSAgrEWz7gHKX/PH710ZJELM//trHlLe/0RjyhISkUM9yX8p4Onwga4aEqyW7GH6UE5SGWzOzJCyNa4tN7r6sKI5Wk5DNCdzgT7kmxpHvhkkIqKrkBlAWNk9NPlggIT1w4qttlHtllzre1ZLgrMqcNNk/fWdt4RIJdgUth4Mo23vUp+7Vk6ASOB/jUT5ldjCm00DC7eVAGlCeH3Pheq+QMKdcPWuy8O5Dx5JV6l6byA429Z+T6o1GEk4/+lZm8v9p+zSZ"]]},
+Function[Annotation[Slot[1],"Charting`Private`Tag$261213#1"]]]}},{}}},DisplayFunction -> Identity,
+DisplayFunction -> Identity,AspectRatio -> NCache[Power[GoldenRatio,-1],0.6180339887498948],
+Axes -> {True,True},AxesLabel -> {None,None},AxesOrigin -> {0.916666666666667,-0.7662624782986114},
+RuleDelayed[DisplayFunction,Identity],Frame -> {{False,False},{False,False}},FrameLabel -> {{None,None},{None,None}},
+FrameTicks -> {{Automatic,Automatic},{Automatic,Automatic}},GridLines -> {None,None},
+GridLinesStyle -> Directive[GrayLevel[0.5,0.4]],Method -> CompressedData["1:eJzNUD0LwjAUjB+Dm4Pg7m+pCIJiaYt7NC/wMOaF5GWov96kaIvQSReX4y539ziyuVClZ0KIME9wwMB6+lZVNFCvEjk5xjs+oDTER+lv4EMXaHyE3+LrRAoir9BKhtAQmdwmG4bgyKhlIlsMzsh2F+01F/QkJxYJ+pfPC72/V2AZuR38UvqXn1WdZmNWHXzTy4GRfynIIaizNBH+dfUT3rB0HA=="],
+PlotRange -> {{0.916666666666667,5.0},{-1.0,-0.778564453125}},PlotRangeClipping -> True,
+PlotRangePadding -> {{Scaled[0.02],Scaled[0.02]},{Scaled[0.05],Scaled[0.05]}},Ticks -> {Automatic,Automatic},
+ExpressionUUID -> "2732f3dc-ffc6-4024-a9d4-70f7e6f31d4f"],StandardForm],"Output",
+ExpressionUUID -> "e5d56d5b-edb8-460e-8bed-561b3c64ef30",CellLabel -> "Out[12]= "]},
+Open],ExpressionUUID -> "a00be90f-3d83-4879-92b3-773b5b0ab570"],Cell[
+TextData[{"Wee"," ","see"," ","that"," ","indeed"," ","the"," ","results"," ","match",".","\n","\n",StyleBox[
+"Homework",FontSlant -> Italic],":","\n",StyleBox[RowBox[{"-"," "}]],"Try"," ","Timing"," ","the"," ","Metropolis"," ","algorithm"," ","for"," ","different"," ","number"," ","of"," ","sweeps","\n",StyleBox[
+RowBox[{"-"," "}]],"Compare"," ","error","-","bars"," ","for"," ","different"," ","number"," ","of"," ","sweeps","\n",StyleBox[
+RowBox[{"-"," "}]],"Try"," ","implementing"," ","for"," ","a"," ","different"," ","quantity",StyleBox[
+RowBox[{" ","("}]],"other"," ","than"," ","energy",")","\n",StyleBox[RowBox[{"-"," "}]],"Difficult",StyleBox[
+RowBox[{":"," "}]],"Try"," ","2D"," ","Ising"," ","Model",StyleBox[RowBox[{" ","("}]],"by"," ","referring"," ","to"," ","a"," ","stat",".",StyleBox[
+"mech",IgnoreSpellCheck -> True],StyleBox[RowBox[{"."," "}]],"book"," ","for"," ","analytical"," ","solution",")"}],
+"Text",ExpressionUUID -> "06ba42bb-8417-462c-986f-05e23adbe49b"]},Open],ExpressionUUID -> "a2a7f80a-758d-433a-b3c4-827d493fad3c"]},
+Open],ExpressionUUID -> "99512a1a-6245-4424-a47c-8d97c5eed48e"]},StyleDefinitions -> "Default.nb",
+FrontEndVersion -> "12.1 for Wolfram Cloud 1.54.2 (March 10, 2020)"]
