@@ -24,3 +24,8 @@ PREREQUISITES	       :  	Newtonian Mechanics, Modern Physics, Electrostatics.
 
 BOOKS AND REFERENCES:  
 We aim to make the lectures self-contained. Standard undergraduate texts for Mechanics (Kleppner and Kolenkow), Electrostatics (Griffiths), Modern Physics (Beiser) could be useful aids. 
+
+### Footnotes
+
+This course was first taken in [IISER Bhopal in 2019](https://creates.iiserb.ac.in/resource.html) (offline classes), which was more rigorous than the 2020 NPTEL online course.  
+The old lecture materials can be found here: [Physics Through Computational Thinking - PMMMNMTT Course, 2019](https://creates.iiserb.ac.in/Physics_through_Computational_Thinking.html).
