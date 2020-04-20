@@ -1,0 +1,1179 @@
+Notebook[{Cell[
+CellGroupData[{Cell[
+TextData[{"Week"," ","8",StyleBox[RowBox[{" "," "}]],"-"," ","Lecture"," ","7",StyleBox[
+RowBox[{":"," "}]],"First"," ","Passage"," ","Problem"," ","-"," ","Random"," ","Walks"}],
+"Section",ExpressionUUID -> "2b50e8f2-a659-4c2e-9492-0237c25358c3",TextAlignment -> Center,
+TextJustification -> 0],Cell[
+TextData[{StyleBox["Resources",FontWeight -> Bold],StyleBox[
+RowBox[{" "," ","--"," "," "}]],ButtonBox["Video",BaseStyle -> "Hyperlink",ButtonData -> {URL[
+"https://youtu.be/1D2SuGSGFoE"],None}],StyleBox[RowBox[{" "," ","&&"," "," "}]],ButtonBox[
+"Notes",BaseStyle -> "Hyperlink",ButtonData -> {URL["https://drive.google.com/drive/folders/1fn2DAKnWawV5E4gKSqsGPQth-YbFlmB7"],None}],ButtonBox[
+" ",BaseStyle -> "Hyperlink",ButtonData -> {URL["https://drive.google.com/drive/folders/1fn2DAKnWawV5E4gKSqsGPQth-YbFlmB7"],None}],ButtonBox[
+"8g",BaseStyle -> "Hyperlink",ButtonData -> {URL["https://drive.google.com/drive/folders/1fn2DAKnWawV5E4gKSqsGPQth-YbFlmB7"],None}]}],
+"Text",ExpressionUUID -> "84c24dc0-20a7-4c5a-a816-de35d3354c2a"],Cell[
+TextData[{"Check"," ","page"," ","3"," ","for"," ","basics",".","\n","So",StyleBox[
+RowBox[{","," "}]],"an"," ","investor"," ","wants"," ","to"," ","understand"," ","if"," ","a"," ","share"," ","price"," ","will"," ","return"," ","to"," ","the"," ","price"," ","at"," ","which"," ","he"," ","bought"," ","it","?\n","If yes, how long will it take to hit that spot for the first time.\n","(so that if for example shares have dropped, he can wait to sell it ",StyleBox[
+"atleast",IgnoreSpellCheck -> True]," without loss)"}],"Text",ExpressionUUID -> "7628fd9d-8704-4779-9d45-d9b7d5475ccd"],Cell[
+CellGroupData[
+{Cell[
+TextData[{"Number"," ","of"," ","steps"," ","vs"," ","Avg"," ","fraction"," ","of"," ","first"," ","passage"}],
+"Subsubsection",ExpressionUUID -> "d1e92c0d-b49a-4953-8721-3347c6c3229d"],Cell[
+BoxData[
+RowBox[{RowBox[{"data"," ","="," ",RowBox[{"Table","[","\n",RowBox[{RowBox[{RowBox[
+{"num","=",RowBox[{"Table","[","\n",RowBox[{RowBox[{RowBox[{"a","=",RowBox[{"{","0","}"}]}],";"," ",RowBox[
+{"fp","=","0"}],";","\n",RowBox[{"Do","["," ",RowBox[{"(*"," ",RowBox[{"Find"," ","if"," ","a"," ","random"," ","walk"," ","encountered"," ","First"," ","Passage"}]," ","*)"}],"\n",RowBox[
+{RowBox[{RowBox[{"AppendTo","[",RowBox[{"a",",",RowBox[{RowBox[{"a","[",RowBox[{"[",RowBox[
+{"n","-","1"}],"]"}],"]"}]," ","+"," ",RowBox[{"RandomChoice","[",RowBox[{"{",RowBox[
+{RowBox[{"-","1"}],",","1"}],"}"}],"]"}]}]}],"]"}],";","\n",RowBox[{"If","[",RowBox[
+{RowBox[{RowBox[{"a","[",RowBox[{"[","n","]"}],"]"}],"==","0"}],","," ","\n",RowBox[
+{RowBox[{"fp","=","1"}],";"," ",RowBox[{"Break","[","]"}]}]}],"]"}]}],","," ",RowBox[
+{"(*"," ",RowBox[{RowBox[{"If"," ","FP"," ","reached"}],","," ",RowBox[{"stop"," ","the"," ","walk"}]}]," ","*)"}],"\n",RowBox[
+{"{",RowBox[{"n",",","2",",","nsteps"}],"}"}]}],"]"}],";","\n","fp"}],","," ",RowBox[
+{"{","10000","}"}]}],"]"}]}],";"," ",RowBox[{"(*"," ",RowBox[{"Repeat"," ","for"," ","10","k"," ","random"," ","walks"}]," ","*)"}],"\n",RowBox[
+{"{",RowBox[{"nsteps",","," ",RowBox[{RowBox[{"Mean","[","num","]"}],"//","N"}]}],"}"}]}],","," ",RowBox[
+{"(*"," ",RowBox[{"Num"," ","steps"," ","and"," ","fraction"," ","of"," ","FP"}]," ","*)"}],"\n",RowBox[
+{"{",RowBox[{"nsteps",","," ",RowBox[{"{",RowBox[{"10",",","50",",","100",",","200",",","500",",","1000",",","2000",",","5000",",","10000"}],"}"}]}],"}"}]}],"]"}]}],";"}]],
+"Input",ExpressionUUID -> "a7183bcb-c5c4-4423-ab85-688b717759cf",CellLabel -> "In[9]:= "],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{"ListPlot","[",RowBox[{"data",","," ",RowBox[{"Joined","\[Rule]","True"}],","," ",RowBox[
+{"PlotMarkers","\[Rule]","Automatic"}]}],"]"}]],"Input",ExpressionUUID -> "14833303-f961-47cb-ac6b-d544244f1a73",
+CellLabel -> "In[11]:= "],Cell[
+BoxData[GraphicsBox[{{},{{{},{},{Hue[0.67,0.6,0.6],Directive[
+PointSize[0.012833333333333334],RGBColor[0.368417,0.506779,0.709798],AbsoluteThickness[
+1.6]],LineBox[CompressedData["1:eJxTTMoPSmViYGDgBGIQDQEqDr9Pvzt52Om5PYTv6TD7mezyFx5voPxIh0mn6z32176F8jMd7E3jdnnyvIPwHeodrAvOdVy6B+P3O9xVYWuc6vweyp/vEDxNsa+0EMrv2OzwbJ3qk+Z5MP5hBybtdrGb597bAwDDRjCe"]]}},{{Directive[
+PointSize[0.012833333333333334],RGBColor[0.368417,0.506779,0.709798],AbsoluteThickness[
+1.6]],GeometricTransformationBox[InsetBox[BoxData[FormBox[StyleBox[GraphicsBox[{EdgeForm[],DiskBox[
+{0,0}]},ExpressionUUID -> "40559008-3109-400f-9819-3eff17666362",ImageSize -> {6,6}],
+GraphicsBoxOptions -> {DefaultBaseStyle -> Directive[PointSize[0.012833333333333334],
+RGBColor[0.368417,0.506779,0.709798],AbsoluteThickness[1.6]]},StripOnInput -> False],
+TraditionalForm]],{0.0,0.0},Automatic,Offset[6.272]],{{{10.0,0.7269}},{{50.0,0.8839}},{{100.0,0.9216}},{{200.0,0.939}},{{500.0,0.9647}},{{1000.0,0.977}},{{2000.0,0.9826}},{{5000.0,0.9881}},{{10000.0,0.994}}}]}},{{Directive[
+PointSize[0.012833333333333334],RGBColor[0.368417,0.506779,0.709798],AbsoluteThickness[
+1.6]]},{}},{{Directive[PointSize[0.012833333333333334],RGBColor[0.368417,0.506779,
+0.709798],AbsoluteThickness[1.6]]},{}}},{{},{}}},DisplayFunction -> Identity,DisplayFunction -> Identity,
+AspectRatio -> NCache[Power[GoldenRatio,-1],0.6180339887498948],Axes -> {True,True},
+AxesLabel -> {None,None},AxesOrigin -> {0,0.7120611111111115},RuleDelayed[DisplayFunction,
+Identity],Frame -> {{False,False},{False,False}},FrameLabel -> {{None,None},{None,None}},
+FrameTicks -> {{Automatic,Automatic},{Automatic,Automatic}},GridLines -> {None,None},
+GridLinesStyle -> Directive[GrayLevel[0.5,0.4]],Method -> CompressedData["1:eJzNUD0LwjAUjB+Dm4Pg7m+pCIJiaYt7NC/wMOaF5GWov96kaIvQSReX4y539ziyuVClZ0KIME9wwMB6+lZVNFCvEjk5xjs+oDTER+lv4EMXaHyE3+LrRAoir9BKhtAQmdwmG4bgyKhlIlsMzsh2F+01F/QkJxYJ+pfPC72/V2AZuR38UvqXn1WdZmNWHXzTy4GRfynIIaizNBH+dfUT3rB0HA=="],
+PlotRange -> {{0,10000.0},{0.7120611111111115,0.994}},PlotRangeClipping -> True,PlotRangePadding -> {{Scaled[
+0.02],Scaled[0.02]},{Scaled[0.05],Scaled[0.05]}},Ticks -> {Automatic,Automatic},ExpressionUUID -> "3d8c580e-a9c7-4096-bd41-7cc2b0e9518a"],
+StandardForm],"Output",ExpressionUUID -> "43978375-ef61-4e2d-be76-75c4dd9f471e",CellLabel -> "Out[11]= "]},
+Open],ExpressionUUID -> "487ca6cf-dff1-4621-a062-9afbe5a95868"],Cell[
+TextData[{"Hence"," ","if"," ","the"," ","investor"," ","waits"," ","for"," ","a"," ","significant"," ","time",StyleBox[
+RowBox[{","," "}]],"first"," ","passage"," ","will"," ","definitely"," ","occur","."}],
+"Text",ExpressionUUID -> "e3003628-f2a2-455d-9187-e8c71fda66e4"]},Open],ExpressionUUID -> "90f2be6c-b1f9-46db-ad01-0ec253bd8e0d"],Cell[
+CellGroupData[
+{Cell[
+TextData[{"Finding"," ","the"," ","mean"," ","time"," ","for"," ","FP"," ","to"," ","occur"}],
+"Subsubsection",ExpressionUUID -> "4114e3ae-a47e-46a4-a48f-d13824979112"],Cell[
+BoxData[
+RowBox[{RowBox[{"data"," ","="," ",RowBox[{"Table","[","\n",RowBox[{RowBox[{RowBox[
+{"a","=",RowBox[{"{",RowBox[{"RandomChoice","[",RowBox[{"{",RowBox[{RowBox[{"-","1"}],",","1"}],"}"}],"]"}],"}"}]}],";"," ",RowBox[
+{"n","=","2"}],";","\n",RowBox[{"While","[",RowBox[{RowBox[{"n","\[LessEqual]","10000"}],",","\n",RowBox[
+{RowBox[{"AppendTo","[",RowBox[{"a",",",RowBox[{RowBox[{"a","[",RowBox[{"[",RowBox[
+{"n","-","1"}],"]"}],"]"}],"+"," ",RowBox[{"RandomChoice","[",RowBox[{"{",RowBox[
+{RowBox[{"-","1"}],",","1"}],"}"}],"]"}]}]}],"]"}],";","\n",RowBox[{"If","[",RowBox[
+{RowBox[{RowBox[{"a","[",RowBox[{"[","n","]"}],"]"}]," ","=="," ","0"}],",",RowBox[
+{"Break","[","]"}]}],"]"}],";","\n",RowBox[{"n","++"}]}]}],"]"}],";","\n","n"}],","," ",RowBox[
+{"{","10000","}"}]}],"]"}]}],";"}]],"Input",ExpressionUUID -> "bedf5516-0b30-4e0e-8649-4635ebee956a",
+CellLabel -> "In[56]:= "],Cell[
+BoxData[RowBox[{RowBox[{RowBox[{"Tally","[",RowBox[
+{"data"," ","//"," ","Sort"}],"]"}]," ","//"," ","TableForm"}],";"," ",RowBox[{"(*"," ",RowBox[
+{"Shows"," ","histogram"," ","as"," ","a"," ","table"}]," ","*)"}]}]],"Input",ExpressionUUID -> "08deb300-ef3e-428f-b0e1-c883abda3a70",
+CellLabel -> "In[58]:= "],Cell[
+CellGroupData[{Cell[
+BoxData[RowBox[{"Histogram","[","data","]"}]],
+"Input",ExpressionUUID -> "c364e1a8-0428-4fd9-8583-3a1cfaa9b202",CellLabel -> "In[61]:= "],Cell[
+BoxData[
+GraphicsBox[{{Directive[EdgeForm[Directive[Thickness[Small],Opacity[0.609]]],RGBColor[
+0.987148,0.8073604000000001,0.49470040000000004]],{{},{Directive[EdgeForm[Directive[
+Thickness[Small],Opacity[0.609]]],RGBColor[0.987148,0.8073604000000001,0.49470040000000004]],{{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{0.0,0},
+{9.999,7183.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],7183]],TagBoxNote -> "7183"],StyleBox["7183",{},StripOnInput -> False]],Function[
+Annotation[Slot[1],Style[7183,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[
+DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[
+1.5],Opacity[0.66]}],{},{}],RectangleBox[{9.999,0},{19.998,927.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],927]],TagBoxNote -> "927"],
+StyleBox["927",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[927,{}],
+"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue[
+"MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[
+{19.998,0},{29.997,369.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[
+StatusArea[Slot[1],369]],TagBoxNote -> "369"],StyleBox["369",{},StripOnInput -> False]],
+Function[Annotation[Slot[1],Style[369,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[
+{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[
+1.5],Opacity[0.66]}],{},{}],RectangleBox[{29.997,0},{39.996,201.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],201]],TagBoxNote -> "201"],
+StyleBox["201",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[201,{}],
+"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue[
+"MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[
+{39.996,0},{49.995,138.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[
+StatusArea[Slot[1],138]],TagBoxNote -> "138"],StyleBox["138",{},StripOnInput -> False]],
+Function[Annotation[Slot[1],Style[138,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[
+{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[
+1.5],Opacity[0.66]}],{},{}],RectangleBox[{49.995,0},{59.994,106.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],106]],TagBoxNote -> "106"],
+StyleBox["106",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[106,{}],
+"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue[
+"MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[
+{59.994,0},{69.993,74.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[
+StatusArea[Slot[1],74]],TagBoxNote -> "74"],StyleBox["74",{},StripOnInput -> False]],
+Function[Annotation[Slot[1],Style[74,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[
+{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[
+1.5],Opacity[0.66]}],{},{}],RectangleBox[{69.993,0},{79.992,61.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],61]],TagBoxNote -> "61"],
+StyleBox["61",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[61,{}],
+"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue[
+"MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[
+{79.992,0},{89.991,72.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[
+StatusArea[Slot[1],72]],TagBoxNote -> "72"],StyleBox["72",{},StripOnInput -> False]],
+Function[Annotation[Slot[1],Style[72,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[
+{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[
+1.5],Opacity[0.66]}],{},{}],RectangleBox[{89.991,0},{99.99,43.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],43]],TagBoxNote -> "43"],
+StyleBox["43",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[43,{}],
+"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue[
+"MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[
+{99.99,0},{109.989,45.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[
+StatusArea[Slot[1],45]],TagBoxNote -> "45"],StyleBox["45",{},StripOnInput -> False]],
+Function[Annotation[Slot[1],Style[45,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[
+{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[
+1.5],Opacity[0.66]}],{},{}],RectangleBox[{109.989,0},{119.988,26.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],26]],TagBoxNote -> "26"],
+StyleBox["26",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[26,{}],
+"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue[
+"MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[
+{119.988,0},{129.987,33.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[
+StatusArea[Slot[1],33]],TagBoxNote -> "33"],StyleBox["33",{},StripOnInput -> False]],
+Function[Annotation[Slot[1],Style[33,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[
+{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[
+1.5],Opacity[0.66]}],{},{}],RectangleBox[{129.987,0},{139.986,26.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],26]],TagBoxNote -> "26"],
+StyleBox["26",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[26,{}],
+"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue[
+"MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[
+{139.986,0},{149.985,28.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[
+StatusArea[Slot[1],28]],TagBoxNote -> "28"],StyleBox["28",{},StripOnInput -> False]],
+Function[Annotation[Slot[1],Style[28,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[
+{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[
+1.5],Opacity[0.66]}],{},{}],RectangleBox[{149.985,0},{159.984,20.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],20]],TagBoxNote -> "20"],
+StyleBox["20",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[20,{}],
+"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue[
+"MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[
+{159.984,0},{169.983,18.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[
+StatusArea[Slot[1],18]],TagBoxNote -> "18"],StyleBox["18",{},StripOnInput -> False]],
+Function[Annotation[Slot[1],Style[18,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[
+{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[
+1.5],Opacity[0.66]}],{},{}],RectangleBox[{169.983,0},{179.982,20.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],20]],TagBoxNote -> "20"],
+StyleBox["20",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[20,{}],
+"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue[
+"MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[
+{179.982,0},{189.981,18.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[
+StatusArea[Slot[1],18]],TagBoxNote -> "18"],StyleBox["18",{},StripOnInput -> False]],
+Function[Annotation[Slot[1],Style[18,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[
+{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[
+1.5],Opacity[0.66]}],{},{}],RectangleBox[{189.981,0},{199.98,20.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],20]],TagBoxNote -> "20"],
+StyleBox["20",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[20,{}],
+"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue[
+"MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[
+{199.98,0},{209.979,18.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[
+StatusArea[Slot[1],18]],TagBoxNote -> "18"],StyleBox["18",{},StripOnInput -> False]],
+Function[Annotation[Slot[1],Style[18,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[
+{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[
+1.5],Opacity[0.66]}],{},{}],RectangleBox[{209.979,0},{219.978,11.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],11]],TagBoxNote -> "11"],
+StyleBox["11",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[11,{}],
+"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue[
+"MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[
+{219.978,0},{229.977,8.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[
+StatusArea[Slot[1],8]],TagBoxNote -> "8"],StyleBox["8",{},StripOnInput -> False]],
+Function[Annotation[Slot[1],Style[8,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[
+DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[
+1.5],Opacity[0.66]}],{},{}],RectangleBox[{229.977,0},{239.976,5.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],5]],TagBoxNote -> "5"],StyleBox[
+"5",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[5,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{239.976,0},
+{249.975,7.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],7]],TagBoxNote -> "7"],StyleBox["7",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[7,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{249.975,0},{259.974,8.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},
+Function[StatusArea[Slot[1],8]],TagBoxNote -> "8"],StyleBox["8",{},StripOnInput -> False]],
+Function[Annotation[Slot[1],Style[8,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[
+DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[
+1.5],Opacity[0.66]}],{},{}],RectangleBox[{259.974,0},{269.973,8.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],8]],TagBoxNote -> "8"],StyleBox[
+"8",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[8,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{269.973,0},
+{279.972,10.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],10]],TagBoxNote -> "10"],StyleBox["10",{},StripOnInput -> False]],Function[
+Annotation[Slot[1],Style[10,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[
+{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[
+1.5],Opacity[0.66]}],{},{}],RectangleBox[{279.972,0},{289.971,8.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],8]],TagBoxNote -> "8"],StyleBox[
+"8",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[8,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{289.971,0},
+{299.97,9.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],9]],TagBoxNote -> "9"],StyleBox["9",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[9,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{299.97,0},{309.969,13.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},
+Function[StatusArea[Slot[1],13]],TagBoxNote -> "13"],StyleBox["13",{},StripOnInput -> False]],
+Function[Annotation[Slot[1],Style[13,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[
+{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[
+1.5],Opacity[0.66]}],{},{}],RectangleBox[{309.969,0},{319.968,6.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],6]],TagBoxNote -> "6"],StyleBox[
+"6",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[6,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{319.968,0},
+{329.967,8.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],8]],TagBoxNote -> "8"],StyleBox["8",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[8,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{329.967,0},{339.966,9.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},
+Function[StatusArea[Slot[1],9]],TagBoxNote -> "9"],StyleBox["9",{},StripOnInput -> False]],
+Function[Annotation[Slot[1],Style[9,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[
+DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[
+1.5],Opacity[0.66]}],{},{}],RectangleBox[{339.966,0},{349.965,13.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],13]],TagBoxNote -> "13"],
+StyleBox["13",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[13,{}],
+"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue[
+"MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[
+{349.965,0},{359.964,6.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[
+StatusArea[Slot[1],6]],TagBoxNote -> "6"],StyleBox["6",{},StripOnInput -> False]],
+Function[Annotation[Slot[1],Style[6,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[
+DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[
+1.5],Opacity[0.66]}],{},{}],RectangleBox[{359.964,0},{369.963,7.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],7]],TagBoxNote -> "7"],StyleBox[
+"7",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[7,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{369.963,0},
+{379.962,6.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],6]],TagBoxNote -> "6"],StyleBox["6",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[6,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{379.962,0},{389.961,9.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},
+Function[StatusArea[Slot[1],9]],TagBoxNote -> "9"],StyleBox["9",{},StripOnInput -> False]],
+Function[Annotation[Slot[1],Style[9,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[
+DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[
+1.5],Opacity[0.66]}],{},{}],RectangleBox[{389.961,0},{399.96,8.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],8]],TagBoxNote -> "8"],StyleBox[
+"8",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[8,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{399.96,0},
+{409.959,3.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],3]],TagBoxNote -> "3"],StyleBox["3",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[3,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{409.959,0},{419.958,7.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},
+Function[StatusArea[Slot[1],7]],TagBoxNote -> "7"],StyleBox["7",{},StripOnInput -> False]],
+Function[Annotation[Slot[1],Style[7,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[
+DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[
+1.5],Opacity[0.66]}],{},{}],RectangleBox[{419.958,0},{429.957,5.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],5]],TagBoxNote -> "5"],StyleBox[
+"5",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[5,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{429.957,0},
+{439.956,7.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],7]],TagBoxNote -> "7"],StyleBox["7",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[7,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{439.956,0},{449.955,4.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},
+Function[StatusArea[Slot[1],4]],TagBoxNote -> "4"],StyleBox["4",{},StripOnInput -> False]],
+Function[Annotation[Slot[1],Style[4,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[
+DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[
+1.5],Opacity[0.66]}],{},{}],RectangleBox[{449.955,0},{459.954,2.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],2]],TagBoxNote -> "2"],StyleBox[
+"2",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[2,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{459.954,0},
+{469.953,3.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],3]],TagBoxNote -> "3"],StyleBox["3",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[3,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{469.953,0},{479.952,4.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},
+Function[StatusArea[Slot[1],4]],TagBoxNote -> "4"],StyleBox["4",{},StripOnInput -> False]],
+Function[Annotation[Slot[1],Style[4,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[
+DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[
+1.5],Opacity[0.66]}],{},{}],RectangleBox[{479.952,0},{489.951,2.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],2]],TagBoxNote -> "2"],StyleBox[
+"2",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[2,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{489.951,0},
+{499.95,4.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],4]],TagBoxNote -> "4"],StyleBox["4",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[4,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{499.95,0},{509.949,5.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},
+Function[StatusArea[Slot[1],5]],TagBoxNote -> "5"],StyleBox["5",{},StripOnInput -> False]],
+Function[Annotation[Slot[1],Style[5,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[
+DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[
+1.5],Opacity[0.66]}],{},{}],RectangleBox[{519.948,0},{529.947,4.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],4]],TagBoxNote -> "4"],StyleBox[
+"4",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[4,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{529.947,0},
+{539.946,5.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],5]],TagBoxNote -> "5"],StyleBox["5",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[5,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{539.946,0},{549.945,2.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},
+Function[StatusArea[Slot[1],2]],TagBoxNote -> "2"],StyleBox["2",{},StripOnInput -> False]],
+Function[Annotation[Slot[1],Style[2,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[
+DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[
+1.5],Opacity[0.66]}],{},{}],RectangleBox[{549.945,0},{559.944,3.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],3]],TagBoxNote -> "3"],StyleBox[
+"3",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[3,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{569.943,0},
+{579.942,3.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],3]],TagBoxNote -> "3"],StyleBox["3",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[3,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{579.942,0},{589.941,2.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},
+Function[StatusArea[Slot[1],2]],TagBoxNote -> "2"],StyleBox["2",{},StripOnInput -> False]],
+Function[Annotation[Slot[1],Style[2,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[
+DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[
+1.5],Opacity[0.66]}],{},{}],RectangleBox[{589.941,0},{599.94,2.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],2]],TagBoxNote -> "2"],StyleBox[
+"2",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[2,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{599.94,0},
+{609.939,5.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],5]],TagBoxNote -> "5"],StyleBox["5",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[5,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{609.939,0},{619.938,7.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},
+Function[StatusArea[Slot[1],7]],TagBoxNote -> "7"],StyleBox["7",{},StripOnInput -> False]],
+Function[Annotation[Slot[1],Style[7,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[
+DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[
+1.5],Opacity[0.66]}],{},{}],RectangleBox[{619.938,0},{629.937,4.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],4]],TagBoxNote -> "4"],StyleBox[
+"4",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[4,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{629.937,0},
+{639.936,2.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],2]],TagBoxNote -> "2"],StyleBox["2",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[2,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{639.936,0},{649.935,4.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},
+Function[StatusArea[Slot[1],4]],TagBoxNote -> "4"],StyleBox["4",{},StripOnInput -> False]],
+Function[Annotation[Slot[1],Style[4,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[
+DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[
+1.5],Opacity[0.66]}],{},{}],RectangleBox[{649.935,0},{659.934,1.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],1]],TagBoxNote -> "1"],StyleBox[
+"1",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{659.934,0},
+{669.933,1.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],1]],TagBoxNote -> "1"],StyleBox["1",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{669.933,0},{679.932,4.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},
+Function[StatusArea[Slot[1],4]],TagBoxNote -> "4"],StyleBox["4",{},StripOnInput -> False]],
+Function[Annotation[Slot[1],Style[4,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[
+DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[
+1.5],Opacity[0.66]}],{},{}],RectangleBox[{679.932,0},{689.931,4.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],4]],TagBoxNote -> "4"],StyleBox[
+"4",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[4,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{689.931,0},
+{699.93,4.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],4]],TagBoxNote -> "4"],StyleBox["4",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[4,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{699.93,0},{709.929,4.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},
+Function[StatusArea[Slot[1],4]],TagBoxNote -> "4"],StyleBox["4",{},StripOnInput -> False]],
+Function[Annotation[Slot[1],Style[4,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[
+DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[
+1.5],Opacity[0.66]}],{},{}],RectangleBox[{709.929,0},{719.928,3.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],3]],TagBoxNote -> "3"],StyleBox[
+"3",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[3,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{719.928,0},
+{729.927,2.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],2]],TagBoxNote -> "2"],StyleBox["2",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[2,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{729.927,0},{739.926,5.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},
+Function[StatusArea[Slot[1],5]],TagBoxNote -> "5"],StyleBox["5",{},StripOnInput -> False]],
+Function[Annotation[Slot[1],Style[5,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[
+DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[
+1.5],Opacity[0.66]}],{},{}],RectangleBox[{739.926,0},{749.925,5.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],5]],TagBoxNote -> "5"],StyleBox[
+"5",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[5,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{749.925,0},
+{759.924,1.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],1]],TagBoxNote -> "1"],StyleBox["1",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{769.923,0},{779.922,1.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},
+Function[StatusArea[Slot[1],1]],TagBoxNote -> "1"],StyleBox["1",{},StripOnInput -> False]],
+Function[Annotation[Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[
+DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[
+1.5],Opacity[0.66]}],{},{}],RectangleBox[{779.922,0},{789.921,2.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],2]],TagBoxNote -> "2"],StyleBox[
+"2",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[2,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{799.92,0},
+{809.919,2.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],2]],TagBoxNote -> "2"],StyleBox["2",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[2,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{809.919,0},{819.918,3.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},
+Function[StatusArea[Slot[1],3]],TagBoxNote -> "3"],StyleBox["3",{},StripOnInput -> False]],
+Function[Annotation[Slot[1],Style[3,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[
+DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[
+1.5],Opacity[0.66]}],{},{}],RectangleBox[{819.918,0},{829.917,2.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],2]],TagBoxNote -> "2"],StyleBox[
+"2",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[2,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{829.917,0},
+{839.916,2.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],2]],TagBoxNote -> "2"],StyleBox["2",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[2,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{839.916,0},{849.915,3.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},
+Function[StatusArea[Slot[1],3]],TagBoxNote -> "3"],StyleBox["3",{},StripOnInput -> False]],
+Function[Annotation[Slot[1],Style[3,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[
+DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[
+1.5],Opacity[0.66]}],{},{}],RectangleBox[{859.914,0},{869.913,1.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],1]],TagBoxNote -> "1"],StyleBox[
+"1",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{869.913,0},
+{879.912,2.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],2]],TagBoxNote -> "2"],StyleBox["2",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[2,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{879.912,0},{889.911,2.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},
+Function[StatusArea[Slot[1],2]],TagBoxNote -> "2"],StyleBox["2",{},StripOnInput -> False]],
+Function[Annotation[Slot[1],Style[2,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[
+DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[
+1.5],Opacity[0.66]}],{},{}],RectangleBox[{889.911,0},{899.91,1.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],1]],TagBoxNote -> "1"],StyleBox[
+"1",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{909.909,0},
+{919.908,2.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],2]],TagBoxNote -> "2"],StyleBox["2",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[2,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{929.907,0},{939.906,1.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},
+Function[StatusArea[Slot[1],1]],TagBoxNote -> "1"],StyleBox["1",{},StripOnInput -> False]],
+Function[Annotation[Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[
+DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[
+1.5],Opacity[0.66]}],{},{}],RectangleBox[{969.903,0},{979.902,1.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],1]],TagBoxNote -> "1"],StyleBox[
+"1",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{1019.898,0},
+{1029.897,3.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],3]],TagBoxNote -> "3"],StyleBox["3",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[3,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{1039.896,0},{1049.895,1.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],1]],TagBoxNote -> "1"],StyleBox[
+"1",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{1059.894,0},
+{1069.893,3.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],3]],TagBoxNote -> "3"],StyleBox["3",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[3,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{1069.893,0},{1079.892,3.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],3]],TagBoxNote -> "3"],StyleBox[
+"3",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[3,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{1079.892,0},
+{1089.891,2.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],2]],TagBoxNote -> "2"],StyleBox["2",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[2,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{1089.891,0},{1099.89,2.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},
+Function[StatusArea[Slot[1],2]],TagBoxNote -> "2"],StyleBox["2",{},StripOnInput -> False]],
+Function[Annotation[Slot[1],Style[2,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[
+DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[
+1.5],Opacity[0.66]}],{},{}],RectangleBox[{1109.889,0},{1119.888,2.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],2]],TagBoxNote -> "2"],StyleBox[
+"2",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[2,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{1139.886,0},
+{1149.885,4.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],4]],TagBoxNote -> "4"],StyleBox["4",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[4,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{1149.885,0},{1159.884,1.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],1]],TagBoxNote -> "1"],StyleBox[
+"1",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{1169.883,0},
+{1179.882,1.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],1]],TagBoxNote -> "1"],StyleBox["1",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{1209.879,0},{1219.878,1.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],1]],TagBoxNote -> "1"],StyleBox[
+"1",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{1249.875,0},
+{1259.874,2.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],2]],TagBoxNote -> "2"],StyleBox["2",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[2,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{1259.874,0},{1269.873,2.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],2]],TagBoxNote -> "2"],StyleBox[
+"2",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[2,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{1269.873,0},
+{1279.872,2.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],2]],TagBoxNote -> "2"],StyleBox["2",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[2,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{1289.871,0},{1299.87,2.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},
+Function[StatusArea[Slot[1],2]],TagBoxNote -> "2"],StyleBox["2",{},StripOnInput -> False]],
+Function[Annotation[Slot[1],Style[2,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[
+DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[
+1.5],Opacity[0.66]}],{},{}],RectangleBox[{1299.87,0},{1309.869,1.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],1]],TagBoxNote -> "1"],StyleBox[
+"1",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{1369.863,0},
+{1379.862,2.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],2]],TagBoxNote -> "2"],StyleBox["2",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[2,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{1399.86,0},{1409.859,1.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},
+Function[StatusArea[Slot[1],1]],TagBoxNote -> "1"],StyleBox["1",{},StripOnInput -> False]],
+Function[Annotation[Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[
+DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[
+1.5],Opacity[0.66]}],{},{}],RectangleBox[{1419.858,0},{1429.857,1.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],1]],TagBoxNote -> "1"],StyleBox[
+"1",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{1429.857,0},
+{1439.856,1.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],1]],TagBoxNote -> "1"],StyleBox["1",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{1439.856,0},{1449.855,2.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],2]],TagBoxNote -> "2"],StyleBox[
+"2",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[2,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{1449.855,0},
+{1459.854,1.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],1]],TagBoxNote -> "1"],StyleBox["1",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{1469.853,0},{1479.852,1.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],1]],TagBoxNote -> "1"],StyleBox[
+"1",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{1479.852,0},
+{1489.851,1.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],1]],TagBoxNote -> "1"],StyleBox["1",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{1489.851,0},{1499.85,2.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},
+Function[StatusArea[Slot[1],2]],TagBoxNote -> "2"],StyleBox["2",{},StripOnInput -> False]],
+Function[Annotation[Slot[1],Style[2,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[
+DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[
+1.5],Opacity[0.66]}],{},{}],RectangleBox[{1499.85,0},{1509.849,1.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],1]],TagBoxNote -> "1"],StyleBox[
+"1",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{1519.848,0},
+{1529.847,4.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],4]],TagBoxNote -> "4"],StyleBox["4",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[4,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{1549.845,0},{1559.844,1.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],1]],TagBoxNote -> "1"],StyleBox[
+"1",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{1559.844,0},
+{1569.843,3.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],3]],TagBoxNote -> "3"],StyleBox["3",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[3,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{1569.843,0},{1579.842,2.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],2]],TagBoxNote -> "2"],StyleBox[
+"2",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[2,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{1579.842,0},
+{1589.841,1.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],1]],TagBoxNote -> "1"],StyleBox["1",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{1619.838,0},{1629.837,1.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],1]],TagBoxNote -> "1"],StyleBox[
+"1",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{1629.837,0},
+{1639.836,1.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],1]],TagBoxNote -> "1"],StyleBox["1",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{1639.836,0},{1649.835,1.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],1]],TagBoxNote -> "1"],StyleBox[
+"1",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{1649.835,0},
+{1659.834,1.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],1]],TagBoxNote -> "1"],StyleBox["1",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{1659.834,0},{1669.833,1.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],1]],TagBoxNote -> "1"],StyleBox[
+"1",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{1679.832,0},
+{1689.831,1.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],1]],TagBoxNote -> "1"],StyleBox["1",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{1689.831,0},{1699.83,2.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},
+Function[StatusArea[Slot[1],2]],TagBoxNote -> "2"],StyleBox["2",{},StripOnInput -> False]],
+Function[Annotation[Slot[1],Style[2,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[
+DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[
+1.5],Opacity[0.66]}],{},{}],RectangleBox[{1699.83,0},{1709.829,1.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],1]],TagBoxNote -> "1"],StyleBox[
+"1",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{1709.829,0},
+{1719.828,2.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],2]],TagBoxNote -> "2"],StyleBox["2",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[2,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{1759.824,0},{1769.823,1.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],1]],TagBoxNote -> "1"],StyleBox[
+"1",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{1819.818,0},
+{1829.817,1.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],1]],TagBoxNote -> "1"],StyleBox["1",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{1839.816,0},{1849.815,1.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],1]],TagBoxNote -> "1"],StyleBox[
+"1",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{1889.811,0},
+{1899.81,1.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],1]],TagBoxNote -> "1"],StyleBox["1",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{1919.808,0},{1929.807,1.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],1]],TagBoxNote -> "1"],StyleBox[
+"1",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{1969.803,0},
+{1979.802,1.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],1]],TagBoxNote -> "1"],StyleBox["1",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{1989.801,0},{1999.8,3.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},
+Function[StatusArea[Slot[1],3]],TagBoxNote -> "3"],StyleBox["3",{},StripOnInput -> False]],
+Function[Annotation[Slot[1],Style[3,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[
+DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[
+1.5],Opacity[0.66]}],{},{}],RectangleBox[{2009.799,0},{2019.798,1.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],1]],TagBoxNote -> "1"],StyleBox[
+"1",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{2029.797,0},
+{2039.796,1.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],1]],TagBoxNote -> "1"],StyleBox["1",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{2049.795,0},{2059.794,1.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],1]],TagBoxNote -> "1"],StyleBox[
+"1",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{2079.792,0},
+{2089.791,1.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],1]],TagBoxNote -> "1"],StyleBox["1",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{2119.788,0},{2129.787,1.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],1]],TagBoxNote -> "1"],StyleBox[
+"1",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{2139.786,0},
+{2149.785,2.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],2]],TagBoxNote -> "2"],StyleBox["2",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[2,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{2149.785,0},{2159.784,1.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],1]],TagBoxNote -> "1"],StyleBox[
+"1",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{2159.784,0},
+{2169.783,1.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],1]],TagBoxNote -> "1"],StyleBox["1",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{2169.783,0},{2179.782,1.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],1]],TagBoxNote -> "1"],StyleBox[
+"1",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{2229.777,0},
+{2239.776,1.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],1]],TagBoxNote -> "1"],StyleBox["1",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{2259.774,0},{2269.773,1.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],1]],TagBoxNote -> "1"],StyleBox[
+"1",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{2269.773,0},
+{2279.772,1.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],1]],TagBoxNote -> "1"],StyleBox["1",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{2299.77,0},{2309.769,1.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},
+Function[StatusArea[Slot[1],1]],TagBoxNote -> "1"],StyleBox["1",{},StripOnInput -> False]],
+Function[Annotation[Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[
+DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[
+1.5],Opacity[0.66]}],{},{}],RectangleBox[{2359.764,0},{2369.763,1.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],1]],TagBoxNote -> "1"],StyleBox[
+"1",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{2429.757,0},
+{2439.756,1.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],1]],TagBoxNote -> "1"],StyleBox["1",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{2469.753,0},{2479.752,1.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],1]],TagBoxNote -> "1"],StyleBox[
+"1",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{2539.746,0},
+{2549.745,2.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],2]],TagBoxNote -> "2"],StyleBox["2",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[2,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{2549.745,0},{2559.744,1.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],1]],TagBoxNote -> "1"],StyleBox[
+"1",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{2619.738,0},
+{2629.737,1.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],1]],TagBoxNote -> "1"],StyleBox["1",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{2629.737,0},{2639.736,3.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],3]],TagBoxNote -> "3"],StyleBox[
+"3",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[3,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{2639.736,0},
+{2649.735,1.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],1]],TagBoxNote -> "1"],StyleBox["1",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{2739.726,0},{2749.725,1.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],1]],TagBoxNote -> "1"],StyleBox[
+"1",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{2759.724,0},
+{2769.723,1.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],1]],TagBoxNote -> "1"],StyleBox["1",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{2809.719,0},{2819.718,1.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],1]],TagBoxNote -> "1"],StyleBox[
+"1",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{2839.716,0},
+{2849.715,1.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],1]],TagBoxNote -> "1"],StyleBox["1",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{3059.694,0},{3069.693,1.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],1]],TagBoxNote -> "1"],StyleBox[
+"1",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{3139.686,0},
+{3149.685,1.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],1]],TagBoxNote -> "1"],StyleBox["1",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{3149.685,0},{3159.684,1.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],1]],TagBoxNote -> "1"],StyleBox[
+"1",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{3169.683,0},
+{3179.682,1.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],1]],TagBoxNote -> "1"],StyleBox["1",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{3259.674,0},{3269.673,1.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],1]],TagBoxNote -> "1"],StyleBox[
+"1",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{3269.673,0},
+{3279.672,1.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],1]],TagBoxNote -> "1"],StyleBox["1",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{3319.668,0},{3329.667,1.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],1]],TagBoxNote -> "1"],StyleBox[
+"1",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{3329.667,0},
+{3339.666,1.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],1]],TagBoxNote -> "1"],StyleBox["1",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{3469.653,0},{3479.652,1.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],1]],TagBoxNote -> "1"],StyleBox[
+"1",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{3599.64,0},
+{3609.639,1.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],1]],TagBoxNote -> "1"],StyleBox["1",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{3659.634,0},{3669.633,1.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],1]],TagBoxNote -> "1"],StyleBox[
+"1",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{3709.629,0},
+{3719.628,1.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],1]],TagBoxNote -> "1"],StyleBox["1",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{3729.627,0},{3739.626,1.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],1]],TagBoxNote -> "1"],StyleBox[
+"1",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{3739.626,0},
+{3749.625,1.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],1]],TagBoxNote -> "1"],StyleBox["1",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{3799.62,0},{3809.619,1.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},
+Function[StatusArea[Slot[1],1]],TagBoxNote -> "1"],StyleBox["1",{},StripOnInput -> False]],
+Function[Annotation[Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[
+DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[
+1.5],Opacity[0.66]}],{},{}],RectangleBox[{3809.619,0},{3819.618,1.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],1]],TagBoxNote -> "1"],StyleBox[
+"1",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{3999.6,0},
+{4009.599,1.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],1]],TagBoxNote -> "1"],StyleBox["1",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{4019.598,0},{4029.597,1.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],1]],TagBoxNote -> "1"],StyleBox[
+"1",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{4069.593,0},
+{4079.592,1.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],1]],TagBoxNote -> "1"],StyleBox["1",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{4329.567,0},{4339.566,1.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],1]],TagBoxNote -> "1"],StyleBox[
+"1",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{4439.556,0},
+{4449.555,1.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],1]],TagBoxNote -> "1"],StyleBox["1",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{4549.545,0},{4559.544,1.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],1]],TagBoxNote -> "1"],StyleBox[
+"1",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{4579.542,0},
+{4589.541,3.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],3]],TagBoxNote -> "3"],StyleBox["3",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[3,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{4589.541,0},{4599.54,1.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},
+Function[StatusArea[Slot[1],1]],TagBoxNote -> "1"],StyleBox["1",{},StripOnInput -> False]],
+Function[Annotation[Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[
+DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[
+1.5],Opacity[0.66]}],{},{}],RectangleBox[{4599.54,0},{4609.539,1.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],1]],TagBoxNote -> "1"],StyleBox[
+"1",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{4619.538,0},
+{4629.537,1.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],1]],TagBoxNote -> "1"],StyleBox["1",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{4849.515,0},{4859.514,1.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],1]],TagBoxNote -> "1"],StyleBox[
+"1",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{4869.513,0},
+{4879.512,1.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],1]],TagBoxNote -> "1"],StyleBox["1",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{5319.468,0},{5329.467,1.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],1]],TagBoxNote -> "1"],StyleBox[
+"1",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{5329.467,0},
+{5339.466,2.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],2]],TagBoxNote -> "2"],StyleBox["2",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[2,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{5469.453,0},{5479.452,1.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],1]],TagBoxNote -> "1"],StyleBox[
+"1",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{5579.442,0},
+{5589.441,1.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],1]],TagBoxNote -> "1"],StyleBox["1",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{5649.435,0},{5659.434,1.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],1]],TagBoxNote -> "1"],StyleBox[
+"1",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{5749.425,0},
+{5759.424,1.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],1]],TagBoxNote -> "1"],StyleBox["1",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{5899.41,0},{5909.409,1.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},
+Function[StatusArea[Slot[1],1]],TagBoxNote -> "1"],StyleBox["1",{},StripOnInput -> False]],
+Function[Annotation[Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[
+DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[
+1.5],Opacity[0.66]}],{},{}],RectangleBox[{6029.397,0},{6039.396,1.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],1]],TagBoxNote -> "1"],StyleBox[
+"1",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{6369.363,0},
+{6379.362,1.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],1]],TagBoxNote -> "1"],StyleBox["1",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{6579.342,0},{6589.341,1.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],1]],TagBoxNote -> "1"],StyleBox[
+"1",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{6919.308,0},
+{6929.307,1.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],1]],TagBoxNote -> "1"],StyleBox["1",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{6989.301,0},{6999.3,1.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},
+Function[StatusArea[Slot[1],1]],TagBoxNote -> "1"],StyleBox["1",{},StripOnInput -> False]],
+Function[Annotation[Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[
+DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[
+1.5],Opacity[0.66]}],{},{}],RectangleBox[{7149.285,0},{7159.284,1.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],1]],TagBoxNote -> "1"],StyleBox[
+"1",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{7899.21,0},
+{7909.209,1.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],1]],TagBoxNote -> "1"],StyleBox["1",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{8129.187,0},{8139.186,1.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],1]],TagBoxNote -> "1"],StyleBox[
+"1",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{8179.182,0},
+{8189.181,1.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],1]],TagBoxNote -> "1"],StyleBox["1",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{8389.161,0},{8399.16,1.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},
+Function[StatusArea[Slot[1],1]],TagBoxNote -> "1"],StyleBox["1",{},StripOnInput -> False]],
+Function[Annotation[Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[
+DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[
+1.5],Opacity[0.66]}],{},{}],RectangleBox[{8759.124,0},{8769.123,1.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],1]],TagBoxNote -> "1"],StyleBox[
+"1",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{8849.115,0},
+{8859.114,1.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],1]],TagBoxNote -> "1"],StyleBox["1",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{8869.113,0},{8879.112,1.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],1]],TagBoxNote -> "1"],StyleBox[
+"1",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{9099.09,0},
+{9109.089,1.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],1]],TagBoxNote -> "1"],StyleBox["1",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{9239.076,0},{9249.075,1.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],1]],TagBoxNote -> "1"],StyleBox[
+"1",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{9359.064,0},
+{9369.063,1.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],1]],TagBoxNote -> "1"],StyleBox["1",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{9519.048,0},{9529.047,1.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],1]],TagBoxNote -> "1"],StyleBox[
+"1",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[
+TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{9669.033,0},
+{9679.032,1.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},Function[StatusArea[
+Slot[1],1]],TagBoxNote -> "1"],StyleBox["1",{},StripOnInput -> False]],Function[Annotation[
+Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[DynamicBox[{FEPrivate`If[
+CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[
+0.66]}],{},{}],RectangleBox[{9889.011,0},{9899.01,1.0},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},
+Function[StatusArea[Slot[1],1]],TagBoxNote -> "1"],StyleBox["1",{},StripOnInput -> False]],
+Function[Annotation[Slot[1],Style[1,{}],"Tooltip"]]]},{TagBox[TooltipBox[TagBox[{TagBox[
+DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[
+1.5],Opacity[0.66]}],{},{}],RectangleBox[{9999.0,0},{10008.999,85.0},"RoundingRadius" -> 0]}],
+"DelayedMouseEffectStyle"]},Function[StatusArea[Slot[1],85]],TagBoxNote -> "85"],
+StyleBox["85",{},StripOnInput -> False]],Function[Annotation[Slot[1],Style[85,{}],
+"Tooltip"]]]}}},{},{}}},{{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{}}},
+AspectRatio -> NCache[Power[GoldenRatio,-1],0.6180339887498948],Axes -> {True,True},
+AxesLabel -> {None,None},AxesOrigin -> {-2.049795,0},FrameLabel -> {{None,None},{None,None}},
+FrameTicks -> {{Automatic,Automatic},{Automatic,Automatic}},GridLines -> {None,None},
+GridLinesStyle -> Directive[GrayLevel[0.5,0.4]],PlotRange -> {{0,102.48975},{All,All}},
+PlotRangePadding -> {{Scaled[0.02],Scaled[0.02]},{Scaled[0.02],Scaled[0.05]}},Ticks -> {Automatic,Automatic},
+ExpressionUUID -> "a8b8de91-5b33-42b5-8101-1f02a04a2fa9"],StandardForm],"Output",
+ExpressionUUID -> "3732970a-a14b-40f6-acdd-c691d48f858a",CellLabel -> "Out[61]= "]},
+Open],ExpressionUUID -> "ee857ef7-1bf6-4724-a44b-b249d186ae25"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{RowBox[{"Mean","[","data","]"}]," ","//"," ","N"}]],"Input",
+ExpressionUUID -> "239b51b4-3b81-41ee-b63e-1a99c5993dee",CellLabel -> "In[62]:= "],Cell[
+BoxData[
+"160.5413`",StandardForm],"Output",ExpressionUUID -> "7b812b10-5341-4e20-a0df-27846b8107d4",
+CellLabel -> "Out[62]= "]},Open],ExpressionUUID -> "c05ebc63-1070-45e0-997b-feea07b27c9d"]},
+Open],ExpressionUUID -> "0ea96bbd-3a4e-4495-8ef6-aa05a18ab81b"],Cell[
+CellGroupData[
+{Cell[
+TextData[{"How"," ","does"," ","the"," ","mean"," ","time"," ","required"," ","vary"," ","with"," ","num",StyleBox[
+RowBox[{"."," "}]],"samples","?"}],"Subsubsection",ExpressionUUID -> "b0456d37-5315-4775-a8c7-4ae3af17ff8a"],Cell[
+BoxData[
+RowBox[{RowBox[{"means","=",RowBox[{"Table","[","\n",RowBox[{RowBox[{RowBox[{"data"," ","="," ",RowBox[
+{"Table","[","\n",RowBox[{RowBox[{RowBox[{"a","=",RowBox[{"{",RowBox[{"RandomChoice","[",RowBox[
+{"{",RowBox[{RowBox[{"-","1"}],",","1"}],"}"}],"]"}],"}"}]}],";"," ",RowBox[{"n","=","2"}],";","\n",RowBox[
+{"While","[",RowBox[{RowBox[{"n","\[LessEqual]","20000"}],",","\n",RowBox[{RowBox[
+{"AppendTo","[",RowBox[{"a",",",RowBox[{RowBox[{"a","[",RowBox[{"[",RowBox[{"n","-","1"}],"]"}],"]"}],"+"," ",RowBox[
+{"RandomChoice","[",RowBox[{"{",RowBox[{RowBox[{"-","1"}],",","1"}],"}"}],"]"}]}]}],"]"}],";","\n",RowBox[
+{"If","[",RowBox[{RowBox[{RowBox[{"a","[",RowBox[{"[","n","]"}],"]"}]," ","=="," ","0"}],",",RowBox[
+{"Break","[","]"}]}],"]"}],";","\n",RowBox[{"n","++"}]}]}],"]"}],";","\n","n"}],","," ",RowBox[
+{"{","nWalks","}"}]}],"]"}]}],";","\n",RowBox[{"{",RowBox[{"nWalks",","," ",RowBox[
+{RowBox[{"Mean","[","data","]"}],"//","N"}]}],"}"}]}],","," ",RowBox[{"{",RowBox[
+{"nWalks",","," ","100",",","200",",","10"}],"}"}]}],"]"}]}],";"}]],"Input",ExpressionUUID -> "9a97d4ee-1276-48ae-8cb7-2d0682c07c4a",
+CellLabel -> "In[63]:= "],Cell[
+CellGroupData[{Cell[
+BoxData[RowBox[{"ListPlot","[",RowBox[
+{"means",","," ",RowBox[{"Joined","\[Rule]","True"}],","," ",RowBox[{"PlotMarkers","\[Rule]","Automatic"}]}],"]"}]],
+"Input",ExpressionUUID -> "4e0cc4ed-48b8-4d56-a623-fd57a635b848",CellLabel -> "In[64]:= "],Cell[
+BoxData[
+GraphicsBox[{{},{{{},{},{Hue[0.67,0.6,0.6],Directive[PointSize[0.012833333333333334],
+RGBColor[0.368417,0.506779,0.709798],AbsoluteThickness[1.6]],LineBox[CompressedData[
+"1:eJxTTMoPSmViYGDgBmIQDQGRDiLr3B9WiUQ5gLkN0Q5pIPCsAcJniIPw49IgfIcEhy9O+l+c+Kuh6hMdVjRbrWhelAvhH0hyiPzUrbr/RgBUfwpEv1k8VH+qw6+fQFDpBNWf5vD+HRCYZUP1pzscXXm/2FsHah9DpkPQDrnW13+zHQASXzec"]]}},{{Directive[
+PointSize[0.012833333333333334],RGBColor[0.368417,0.506779,0.709798],AbsoluteThickness[
+1.6]],GeometricTransformationBox[InsetBox[BoxData[FormBox[StyleBox[GraphicsBox[{EdgeForm[],DiskBox[
+{0,0}]},ExpressionUUID -> "851117ba-8aaa-4911-bf5c-135809bf5e6e",ImageSize -> {6,6}],
+GraphicsBoxOptions -> {DefaultBaseStyle -> Directive[PointSize[0.012833333333333334],
+RGBColor[0.368417,0.506779,0.709798],AbsoluteThickness[1.6]]},StripOnInput -> False],
+TraditionalForm]],{0.0,0.0},Automatic,Offset[6.272]],{{{100.0,104.32}},{{110.0,540.8}},{{120.0,178.95}},{{130.0,432.95384615384614}},{{140.0,237.07857142857142}},{{150.0,67.38666666666667}},{{160.0,124.85}},{{170.0,36.95294117647059}},{{180.0,217.71666666666667}},{{190.0,177.3842105263158}},{{200.0,223.935}}}]}},{{Directive[
+PointSize[0.012833333333333334],RGBColor[0.368417,0.506779,0.709798],AbsoluteThickness[
+1.6]]},{}},{{Directive[PointSize[0.012833333333333334],RGBColor[0.368417,0.506779,
+0.709798],AbsoluteThickness[1.6]]},{}}},{{},{}}},DisplayFunction -> Identity,DisplayFunction -> Identity,
+AspectRatio -> NCache[Power[GoldenRatio,-1],0.6180339887498948],Axes -> {True,True},
+AxesLabel -> {None,None},AxesOrigin -> {97.91666666666667,0},RuleDelayed[DisplayFunction,
+Identity],Frame -> {{False,False},{False,False}},FrameLabel -> {{None,None},{None,None}},
+FrameTicks -> {{Automatic,Automatic},{Automatic,Automatic}},GridLines -> {None,None},
+GridLinesStyle -> Directive[GrayLevel[0.5,0.4]],Method -> CompressedData["1:eJzNUD0LwjAUjB+Dm4Pg7m+pCIJiaYt7NC/wMOaF5GWov96kaIvQSReX4y539ziyuVClZ0KIME9wwMB6+lZVNFCvEjk5xjs+oDTER+lv4EMXaHyE3+LrRAoir9BKhtAQmdwmG4bgyKhlIlsMzsh2F+01F/QkJxYJ+pfPC72/V2AZuR38UvqXn1WdZmNWHXzTy4GRfynIIaizNBH+dfUT3rB0HA=="],
+PlotRange -> {{97.91666666666667,200.0},{0,540.8}},PlotRangeClipping -> True,PlotRangePadding -> {{Scaled[
+0.02],Scaled[0.02]},{Scaled[0.02],Scaled[0.05]}},Ticks -> {Automatic,Automatic},ExpressionUUID -> "65feb6a5-d6ed-4fca-85fd-5555b3325ed2"],
+StandardForm],"Output",ExpressionUUID -> "6d504ce0-cd46-4dbc-a6fc-14775bf1b2d8",CellLabel -> "Out[64]= "]},
+Open],ExpressionUUID -> "639ea361-e264-45d4-84d6-94beadedcda3"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{"Mean","[",RowBox[{"means","[",RowBox[{"[",RowBox[{";;",",","2"}],"]"}],"]"}],"]"}]],
+"Input",ExpressionUUID -> "e4e15886-7fea-4207-8250-a1d17be39f8b",CellLabel -> "In[65]:= "],Cell[
+BoxData[
+"212.93890023804886`",StandardForm],"Output",ExpressionUUID -> "a2e3dce2-13a3-44c4-a38d-f6686d1cfd6b",
+CellLabel -> "Out[65]= "]},Open],ExpressionUUID -> "b6395a6f-4ca7-496f-b0fe-5520eec02c2d"],Cell[
+TextData[
+{"We"," ","see"," ","that"," ","it"," ","has"," ","fluctuations","."}],"Text",ExpressionUUID -> "6723e704-a9fd-41be-ba71-0e7759ebead4"]},
+Open],ExpressionUUID -> "0403d981-b2e5-467c-8545-5de4c439d4ae"],Cell[
+CellGroupData[
+{Cell[
+TextData[{"What"," ","if"," ","we"," ","progressively"," ","average"," ","a"," ","single"," ","sweep"," ","of"," ","random"," ","walks","?"}],
+"Subsubsection",ExpressionUUID -> "8862bd6c-2881-4473-92a6-1a2f8c304283"],Cell[
+TextData[
+{"The"," ","above"," ","method"," ","generate"," ","many"," ","different"," ","sweeps",StyleBox[
+RowBox[{","," "}]],"and"," ","plotted"," ","the"," ","average"," ","for"," ","each"," ","sweep",".","\n","Here",StyleBox[
+RowBox[{","," "}]],"we"," ","try"," ","running"," ","only"," ","1"," ","sweep",StyleBox[
+RowBox[{","," "}]],"and"," ","cumulatively"," ","average"," ","for"," ","time"," ","from"," ","1"," ","to"," ","t",StyleBox[
+RowBox[{" ","("}]],"where"," ","t"," ","goes"," ","from"," ","2"," ","to"," ","nWalks",")."}],
+"Text",ExpressionUUID -> "30386432-b733-4358-93f3-8a68155a209a"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{RowBox[{"Take","[",RowBox[{RowBox[{"{",RowBox[{"1",",","2",",","3",",","4",",","5",",","6",",","7"}],"}"}],","," ","5"}],"]"}]," ",RowBox[
+{"(*"," ",RowBox[{"What"," ","is"," ",RowBox[{RowBox[{"Take","[","]"}]," ","?"}]}]," ","*)"}]}]],
+"Input",ExpressionUUID -> "8d375673-a7fd-4eeb-b6b4-46937cdff8e0",CellLabel -> "In[67]:= "],Cell[
+BoxData[
+RowBox[{"{",RowBox[{"1",",","2",",","3",",","4",",","5"}],"}"}],StandardForm],"Output",
+ExpressionUUID -> "2f658858-5e46-4305-84e1-03946e4ec82b",CellLabel -> "Out[67]= "]},
+Open],ExpressionUUID -> "97f4c233-15c1-44b0-b837-f2efc99f3279"],Cell[
+BoxData[RowBox[
+{RowBox[{"data"," ","="," ",RowBox[{"Table","[","\n",RowBox[{RowBox[{RowBox[{"a","=",RowBox[
+{"{",RowBox[{"RandomChoice","[",RowBox[{"{",RowBox[{RowBox[{"-","1"}],",","1"}],"}"}],"]"}],"}"}]}],";"," ",RowBox[
+{"n","=","2"}],";","\n",RowBox[{"While","[",RowBox[{RowBox[{"n","\[LessEqual]","10000"}],",","\n",RowBox[
+{RowBox[{"AppendTo","[",RowBox[{"a",",",RowBox[{RowBox[{"a","[",RowBox[{"[",RowBox[
+{"n","-","1"}],"]"}],"]"}],"+"," ",RowBox[{"RandomChoice","[",RowBox[{"{",RowBox[
+{RowBox[{"-","1"}],",","1"}],"}"}],"]"}]}]}],"]"}],";","\n",RowBox[{"If","[",RowBox[
+{RowBox[{RowBox[{"a","[",RowBox[{"[","n","]"}],"]"}]," ","=="," ","0"}],",",RowBox[
+{"Break","[","]"}]}],"]"}],";","\n",RowBox[{"n","++"}]}]}],"]"}],";","\n","n"}],","," ",RowBox[
+{"{","1000","}"}]}],"]"}]}],";"}]],"Input",ExpressionUUID -> "cc3f8a2d-3aa0-45f6-b10a-e6751df50a01",
+CellLabel -> "In[6]:= "],Cell[
+BoxData[RowBox[{RowBox[{"means","=",RowBox[{"Table","[","\n",RowBox[
+{RowBox[{RowBox[{"Mean","[",RowBox[{"Take","[",RowBox[{"data",",","n"}],"]"}],"]"}]," ","//"," ","N"}],",","\n",RowBox[
+{"{",RowBox[{"n",",","1",",","1000"}],"}"}]}],"]"}]}],";"}]],"Input",ExpressionUUID -> "80b861f1-a756-423b-96c2-8ac276ce1ddd",
+CellLabel -> "In[2]:= "],Cell[
+CellGroupData[{Cell[
+BoxData[RowBox[{"ListPlot","[",RowBox[
+{"means",","," ",RowBox[{"Joined","\[Rule]","True"}],",",RowBox[{"PlotMarkers","\[Rule]","Automatic"}]}],"]"}]],
+"Input",ExpressionUUID -> "abcfb560-11be-479f-949f-d106d6441638",CellLabel -> "In[3]:= "],Cell[
+BoxData[
+GraphicsBox[{{},{{{},{},{Hue[0.67,0.6,0.6],Directive[PointSize[0.004583333333333334],
+RGBColor[0.368417,0.506779,0.709798],AbsoluteThickness[1.6]],LineBox[CompressedData[
+"1:eJxdm3dYE1sTxhFUsIOCAjZsiIKKFRSVF5GioKJYUFFCr2LoHRJCIKSBHTuWq9ixgyg3igUVERUVy+VSLNixo+C9X2LO3D++8+R59vmxbM7Ozr4zc2Y3g3xWL/DX1NDQaNLS0FBt1aPZVr2dBPYHtjVjWx0s+j0GMdZl2wFsq48tm1XDiLEhDh1UDdrfD+FPzqx6coaON2FbK7YdzL5/GuOhbGvDtqZ4tVsy+lyT9f+dFx0/EsNjfZSfiYwt2HYC245G7V+qMZ6xpXqrGMd4LC6XqcZYxuMwWd5oLW9k/6cxHjVuK+0TutH+CbhVoRyutH8ibn+eqvyMYUzXcfR/57m0fEbvE7mjGFv/3/7J+GbmmXPpK533lP+zwwbXIvopP+aMp2Lt0FnKz0jG07DT0eN9cMYIxtPx4b1q0HWyxQydQRm6M4jB7B+u3vKA4VvDTlw3Zaxhh9OnVMOU7bdDaYO58sNYYwa7PsPY/hlIedBtX3kgYw17mB3bdT7zE/Mjzx4TnQUTnAXk15nq+8WI9s/EafP5JT1PD2H7Hdj9wpjngKYuP9NL82m/Ixz7rIi+40D7HfHMWnVCtN8JX/dZXXg1h/Y7YWrfr9tlPwez/c7s/mTMc8bFmyPiJ3eg42chYlrnh3u47HryZmHtGtWg6zub/X0q285GgnlrvwW9GGu44NSmqpUzkmi/C+x29Hw2wo72u6r9d53d3zxXdv/T/T4HGc93KD3K7gPeHFgfaP1UI6b7Yi7G/x60fy4iruse3nNrMts/D6FHTj9YFsqYNw9lll2VH9rvpt4q2H0IN1zs0abo0caY54ZzTSrBMVa4If3Go1FtIXTfzse+P5RjGB0/H8qLvTrxHtMjbz5sCgRTCgSMFfNR9gK7DSaRXheor/9rphMsgLCzwciFBYx5C2CVN3hnjICxYgF+u2Ma6cod6x8qBfmD6R3uyNcNfD78MmOeO67MfXt57lvGCncskWy1/PMQxYeFav2G0fELcUNx78gPbzp+Ify40zu+9KXjFyL4ddtj+9F0/CJ2Pen4RXjzWjVYvOEtwpERoTe2nGCsWATv4v16G5MoHi1m9y9jLMYuHQezGXp0/GKc4XRRfuj4xTiFLsoPHb8Ec5VXe2sti2dYgqL6zL7hRYx5S2C6RHeduYixYglsFptIT/lS/PNgx9HxHtic+S4goScd74HJHcbsr3vO4qPCg90PFC+XQhmslBGLMZZixvufj3z8GfOWwuX3oOOXwix3duXNwXT8Mral45chY4rqhlnCjl8G/532IekRjBXLsP6qk2mVDWON5Ujq9G7YqU1kx3J8WmEtGuDFmLccBe0TZucOZ6xYrr6ftBhreGKYKnwGeLPjPXH+V67iyTzGPE/1/TmSscITj0Oa+/EHM9ZYgb/u6dyc9ovDjl8B8faa7O01jHkrMGC53oRtpxgrVkD6o1ryYz1jjZXq+JdAx6/Eorx428hldPxKePdfVbvfmo5fibyvqUs/9KHjvVA5+eW2qPde7HgvXI8t3Wl8jDHPC22lH1pLVzNWeMGit+SKz1jGGurvUUwLVrMJB2mKgc3a/RiDg+O9bI73ehOkZg4Hd7QXXqs9x5jHUcerd+z/8zmovGPl9Pd5xgoOrs1MzI/cx7iOA//t5j2cYxlreOPeXeVwpPm9UdvOSZxpSPN7w1oVUF7T/N74/OVOSM9LNL83qu36V9ttYJzvjW13z7f0Cmas8MbxyblBwmmM67yRsu/Ix7hejDV81NvXgWx+H4i0BqRZKxjDB6ltLR8bNzHm+OCLKr2vZszzQT/XNbfPzWKc74OYimGX1g1mrPDB2/lFA4StAWx+Jd/7+upnNWMNX1zI/GR84xhjE19ssH293lbMGL64Vq2oHevPmOML74F9vkXYMeb5QlXtDB/AON8XEzizxqT99Gfz+yL8UtvR3i8Z1/ki/ePib5MvM9bwU+eP3YxN/GDUfL1+HI8x/LCg447wW16MOX7Q/Or6/Jw9Y54fXKqPznw3mHG+HxoXm4ULNWl+P3zPvSnmN/ix+f1w61v2a7syxhr+OKvM7qv2Mzbxx8PBdnOEIsbwx88fyhHMmOOPssTOb0a4Mlae5yT/OUvdRzPO90fTvHG97+syVvir66Evvmx+f3y+qmP68wljjQBIldXk7ouMTQKwrTolIewPxgjAhB0fpYFSxpwAHA9LHn9qI2NegPr+T2GcH4D6lFC/mGLGigD8ujvm192dNH8AVHIuyqD5A9X1STDNH4jjPJtfeqE0fyD4HXp7cObT/IH4nS6saP5AqKL79f40fyASd7xM2KFN8wfi+URlhnzvw+YPxMK0nWdnPWSsodYBr5SxSRAcKl7c3bWPMZS8z7tkqZwxJwjcHxtX/4hlzAvCC/3z29K9GOcHof0j4RVnZ8aKINQLekxvsaT5g3D661ntScY0f7A6f2jR/MFIMJJqdn9H8TgY3Jn8WfsfMOYE498GP90EBcXnYAjSleMg4/xgFPeT3byTR/E6GHkOyZoH1jOuC8aV22Yfx9P/a4RAVR1cpv0mIVj1fXGwOI3mD8Hv8iWE5g9B18iNb48tovlDEO08x7J2Bs0fgkr+TPOw0TR/CF4v6x7+rS/NH4Ljsp29nxjS/KH4XT63p/lDYReRb+3WRvkgFJLi+0YHmhhzQuHe6vJuzH3KD6HqfHyJcX6oOv8UUb4IhZfRkw9NfzCuC0W+ecDkT+sof4Sp62s+Y5Mw/Nw77+fe1TR/GMaJo/rvCaL5w2BzueN0Xw+aPwwDL6a0/z6L5g/DjriPOnn/5aswTIyX444pzR+mjmcGNP8qbEwy9i7WovlXwXZMt+qXzymfrVKvL8oYc1ahT7tpHnMOUX5bBWV2rU7JZpy/Cq3xVcu/B1K+WwXNYlPNYkfGdasQK5/Ys91/+S8cAarRk7FJOOrfjq1/+3Elmz8cYV/f6hbdYcwJh2r1de04Y1449t5q1d90nnF+OEI/FZ3M2M5YEY4dTxuuj0plXBcOzcjUkYM4jDVWQzr2qqHvTMYmqzFnu1dS+TCafzX4G+wlYdo0/2oM1d5a9LETzb9avR58u4LNvxqL+p164TqUrv9qZM8cvMZZn67/avipRnu6/tzfW7xi9utyES2NkkZV0PXgwv3B+on+RxhbcvGx/YFrPXPIP1zopNZpp3IZu3Hxb8Ueh2ELyF9cnDg7yTXKijGXiz+faQ2VGZH/uMhQhoe6VmZPLhfxfjUm4bV0Pbno9Y9ry/iLjAu5sP15Jyf1FF1fLtpCXPdqb2FcpZz/8ukOPil0vbno4fyg+BNd72Yu/DqXmBbT9daIwCjVGMFYNwLPXSufuXYnf0Rga4f7O9bR9baMwDGL5huaH9j1RgSUi3mhRTVjtwg8vmybo1fMmBOBkxfe8MIPM+ZGYL/jlT8PrGHMi8BHA6+PBnGMcyMQEvYx54Qn+TMChmmD69c7Mi6MwO12j/vLLBgrIlBSve7jEwPGVREo6xV5enSbJ7M/At4b12sNbmTcHIGFA3xGn7rBWCNSra/jjHUjUSLjjO+4mbFJJMoHdo9v4zO2jERSm/ljj2DGiET3ftbcOjfGbpHs74w5kdh9fPqEB8MZcyNx6qXA40EPxrxIGPw43Nf1x3JmfyS0rfd3X9LIOD8SVpyCfb6VjAsjoeCMqg+9ylgRCY7FjytrjzGuikTv6Z8PRuUxrotEsHyC0xYB4+ZI7MoR+10LY6wRpe5PLGasG8XOn7FJFL7smPVlxwjGllG4KJpg49uLMaJQ6hvC+RDE2C0Kq0YstnZdyJgThZUODYuGTmfMjYL9LL13JmaMeVH43a66TfZH4dYonX1/FZP9UXD/6HlyymGyPwo+wxb7DNtI9kfBZGT/R+N5ZH8UrMI0L/qHkP1RiOiYsdbGn+yPwr1rk50fu5H90er4Z0P2R6O9zaTz+qZkfzRq4iekFeqR/dG4Eaq8Ym1s3YZoPGwrdDZqYuwWjcoTPwJd7zHmRGP9N7tx+aWMudHYNb1qmf5BxrxoxA0LWbL7KOPcaIza6JSxbwvjfHZ+mYwLozG6omlzlyjGimiU+19BJy/GVdGwdJj+puM6xnXRcNncvqRzGuPmaHSwKn8hD6V1Z4x6/f6MxUPdGJiG/3n53UPKRzGwSv4nb081Y8sYNPKfThhQTvkxBk+fKEcJY7cYfLjwvTbpGOXLGLgGjt1+hdZ/3BjclsmHHymg/BkDZfX6YP12xrkxuL707y7cNZRPY/BN88zkFULGhTFoG+DjPSGJ4nsMbL5sPWJP+boqBiE2Sdbz/Cjex2Dwy+klPMrXzTGoMGyILXOl+B8LVTnZx47sj4XRjheayRPJ/lh8yZoR2W4M2R+Lhyc8vguGkP2xmLsqxH2rMdkfizEv3Me86EX2x6Kkx1neJR2yPxbb1u0fotlK8T8WYRd7h118wTg3Ft1UBWsV5fNY9LE0jWguZVwYi599jOe/LKD8HgtLVYG9lnFVLJ5dyxlom0r5PhY9TvKS1wQxbo7Fy74F3hWLKP/HYZTfoC5LQfkvDu1Wcxw8zSn/xcGnXdzPIb0p/8VhYUNQi047yn9xsChUaHZ5y/KDWxyK9lblPnpI+ToO9r+ei/TLGHOV37eE9zT0KOXvOOwpPTn/782U/+KQ+u3XshuZlP/iMC6u/OmgKMp/cRhzsaPmy5WU/+Lwa8fyhup5lP/ikHOt8WP8VMp/ceiik+knMaP8p5x/7fJO3Q0o/8Wr1y/tKP/F43e79R3LJybx0B+71SXrMWPLePSMu9w/4hrlv3gsrJMcGniK8l88ulh2abTZRfkvHg39Kuv7ySn/xWNwtd/r3kmU/+Kxcu7FmyOCKP+x81lE+S8ejf3vH7a1p/wXD+9UVQeP8l88BiY3X9Q+y+rnqngM23N7Up/DVG/H41h5cnBDPuPmeHj+G/6rZAPV3wnq/q6YsW4C7H62PN5M9b9JAgZPc5tcEsPYMgHfExSSCloPIAG+/i2O+hzGbgk4MHR0XztaH3AS8LvdN5sxNwHzl640PQ1aPySotzMZ5ybA/Wn+kvXmPsz+BPxuP5owLkxAYc+rAXYGjBUJ0Dzw7LxFZ8ZVCThyYd/tYf+S/Qnq+uQL2Z8AnVGvzuW8IvsTYaNq8NSS/YmwHvpHr7p7ZH8itjRsmuncgX2/ZSJOrVzyZN1Psj8RyVeWJF+xZfvdErEq23HbvQmMOYkQvogdmTOdMTcRBf03Oxwaz5iXiNob07OqzRjnJmJ6xN6HnQeQ/YnQP2k7cG4vsj8Rh/aVOu7QIfsTETNK26r1F/k/Ub3+aSH7E9GlPuaQ7nuyPxFVxwo8nzaS/Un43vOxS9Ajsj8JujHLNmn0YN9vkoQy9/oDze3J/iS1P/+zPwn8Oa3XezaT/5OQ4tXJ8sxz8r/y/682GEuekP+TMKLH7KyCyWR/krr/MobsT0LEH0laN4aS/UlIOxeadq4v2Z+Ex+Pic0/okf1JaO1/YdwZbcZVSSh9H3Msia5HXRL6/yj22fiZ7E+Cpv3E/lH/+T/59/pveR3Zn4wNJXFH59J62yQZA4Vv5hdV0v2fDP8tbvs6XSH7k1E2e96ow21kfzKOzXu4/w3Nx0mGwYdn2lF0/bnJWOwhXORB14eXjO96T524dH1yk2E10ahk8F1aTydjQLte9tHljAuTse9SdmufP2l9nYz6yZoOy0+T/5MxKtTmVcUhsj9Z3d/dTfYnQ38ip/uUzWR/irp/a8f6RbopiH3kv2nFJOpHpcDFs2JxtjljyxRYGe1z+TSY+lMp2GtnrPwwdktB4NnmQ2P1qF+Voq5fOjLmpuCz4tDTfa3Uv0nBi+MGdmUfGeemAFv6GrR7T/2cFIx7PPdkeiPjwhTkGOgMeVdD/Z0UfPWZ/tWnknFVCp4/ihzX+Q71m5TnwzlXefwq4+YUBPkmOsw4T/2nVMSpxgiyPxXvvZ3jaweQ/akocftyzk2f7E/FrddnH9rnU38yFdfGmRmYbmTsloqv3IaHy6l/yUmFrcWCjjtSGXNTsaCtTvo2kvqXqXgT9Hn6lWDGuamYKLaOvruS+pmpWDrQ+I29O+PCVIxuCbvV4MRYkYqYGucs2VTGVanwGmfTceZY6remQvW09vkwxs2pSOp/4OEaY+q/pmGccvkt7cFYNw3+b/Yvc2tP/dg0/H7c08r6mZZpmFa5bKJOM/VH01AYGbTm3TPGbmnQvy9wrH1E/dI01K51s39cyZibhsW7NsTWl1H/NA0BSzf6Lz3HODcNo5oC+sceo35qGj79IX20fS/jwjT4LFuSXbWZ+qvK84uesn1uDuOqNExNcW/YmEH93jTMUY13rB/dnIY+oz2LuPWMNXi/t/n3GevwsONybM8n1xnr8jC4dlDtoFLGhjysOiucH32C+uU8DIhweqq3n7EZD7zNl1yStjK25OHfgxFjmnMYW/NgcdA7lptB/XUeXI5Uzz5C7MzDTMcRrikJjN14sJem8IzCGXvwECv7NbrOh/rxPKxZG2h0ZwnjIB4i35/sIprDmMvDhQXTvofPYBzPw/dbZuvtrKh/z4OqfBhowVjEg36s6wztQYxzlez++OjJ3ozzeBgyx+RDYRfq9/PQddzo8iINxgU8eJi1vXz1le5XHh4ZW5zp+IZxEQ+BhiUfRtXR/cuDsroQet1nXM7DvW7Lg7feoPuZh01/GEcPUDCu4WGjVOdg+Gm6v3lQlc+9DzNu4uH9Xy/libvofuehwmO6TxPps0Vp70uXi49z6f7nY5lqZDLW4aO0i/adxiTSAx+Dut016UZ6NeTjzPXWhgOBpA8+5PrdPl5bwdiMj6Yh3x/EkV4t+ThQufF12CzG1nzInEa6h9pS/OBjW+2XfVYTGTvzsfjB9bBu5hRP+PhiuGbTWxPGHnysKp5tfL83xRc+npR0b7ralXEQHwt2XXk8wY493+HyoZL32EmM4/mYdM1+obU5PT/iq/ODCWORcv/BpIs1Boxz+civcp/5qzPjPD7CT99UOGvQ8yY+Xtv0/br9K/mfj5dTHCOOarH9hXx0kC/d7/CD7S/iY0OURsLh9/R8iK/ePmNczkeCxPhdwiPGVXw0Fw+b+6uScQ0fNqdCeosvM67jo0vArMkm5xg38dHDxfrgn8dI73wcrt9+x+UPxi18JOkfdarfQvpP/73l5ZL+07HFNNh9ZibpPx0FmivO6iWT/pVscf3ezQjSfzqaW8ra5QSS/tPRw3FVUNwK0n86tLw8f+W7k/7TEb9bc9I9el6GdNiqHrDZkv7T4WO00dtoEuk/Hb57drVyRpH+0/Euf87IlCGk/3QYZnobZhqR/tMx80vHwk09SP/p4Pf/tPpVB9J/Osz3vjHp2kb5Jx2CEZ+WWn1iLErH94yuny80UT5Kx7oA7+8/ahnnpWOSajyg/JQO1eO+9ArGBek4emmB/cNLpP90NPr3zZ9XTPpPh2OoVvkpet6nSMdg1dhH+k9HXq/BlsP3kv6V9k+dlrdrC+k/HS8cl98cv5b0rzx/h4u7Odmk/3SU3TbaacYj/adjVmzFgkuxpP90LOtt8Cl1FelfgATVgjuR9C/AcEG51pII0r8Azwf+PNMxiPQvwIvaodallJ9NBNA5uULn5CLSvwCfut76mOBK+hdgytI+Umd70r8AnlOLr6yzIf0LcHnpj04R40j/AkxcevEf8QjSvwCy0k+31/ynfwEK0103CPuQ/gWw6hZ0j9ed9C/AoPvafEEHqjcEuJv1a72sjeXDeAGqXo3ouPMz5V8B5qkeAL1mLBJAOvt1+wl0f+cKsLuzpGMR3d95Aowse3DVfiXFfwECYwz9Ry4m/QsQ6by47bIr40IBrPm9rPn2pH/l9Vxv1c58CulfAGPRbKdvlqR/5f//Jex/bDjpX/n9vK+6Th6kfwFOfOo5xHwe6V8A26zq9o0OpH8B9tc91z8/lfQvwIeDBk/mk55aBFhQ8U+yNelJI+P3+y9dh5L+M2DocG91kzHpPwOdv8xdcVOP9J+Bbb/ajTjZmfSfgbttF6/uaUf6z0D03wdmfv9F/ld+X2zxOFA+tM6AWcb07jPfkv8zYNJ7hNa8RvJ/BoqX3XBKfEz+z8DJH4Gu6+6Q/5Xnuztg/sly8n8GnPSy5j7+k/yfgaEfNtronCX/Z+BSkWvk4KeM4zOgOVNusfYb6T8DFqrXzd6R/jMwt8iqvvYZ6T8DD6Wfc3rQ8XkZcAx+09vpHuk/Q/28m/J1QQb2nv5TduMi6T8DPo1z5TV0vkUZUKXTu5TPFcrrUS/bV1lC+s/AhPrbGbYnSf8ZGH/m7zvmxDUZSM6aoyk/SPrPgN+IdZwlB0j/GVjewfhtGdXnzRkY11DwLjCP9J+B/hVxifU5pH8hmhJ2vEzIIv0LsfNfjrdGGulfiLsWE7f8QfHDUKh+vy6c9C/E3ujWG6/p/QQzIUYefHFVTPWApRDDDLq6LThO/hfCz1kx+mkB+V+IMNWg83UWYtva17p96XzdhMC/bZ9v0/l6COFYsV0vis6XI0SU0S3/CXS+QUKMMG7IWR5H/hci4a54pN5q8r8QU8wnVDwLIP8L1e8TUjwTCSFpvekSvYT8L4TxsFTH7HnkfyHSxlsFS2n9kS/E65G3L1/rxvJ9gRCF+gVfzTtQ/hdi2qZOswLbSP9CjN7wboX2F9K/EAvOw/TKG9K/EHv8Vsb1aiT9CzFp9Ont056S/oUw+KT3a9M90r9yvhbxsZYbpH8h9KbEmF+4RPpXnv/vBSo7nxYh5NeGDnthTe+/ZKqfH1sy1slEs7nT1MfDGetm4qhu9pAxAxkbZqLB4f58cW/GJpnYneupeEP2m2XizT+mGSFkv2UmtmplL64h+60zUWj2Y6Er2Y9MfIg5lvQX2e+ciapFnc6sIPvdMtHp2RadZ48p/2ei3q4mjHuX8n8mDntMKjUi+4My0ZgzaOSJi5T/M/Hz7IL1bsWU/zPh1erz7Ush1f+ZUL1dd6aA6n/l9+/rPCMgn+K/8vyWPOs+Po/ifyaUq+Ev56heys+ES1plbLKI4n8mdLWn/sPlUfzPBL/vzfyF8eT/TPyTvpA7nEv+z2TnTf7PxMD5dmcGccj/mUjX0u7e77/4n4m/TbUMpG7k/0zMSROEP5xN/s+E6blA+5u03mnOxPnR64YIKB+0ZOKU/96ao5QPNLLU7yOPpvifhQt/1uTajqD4n4VBVfqac2g9ZJiFTqNef/GiesskS/0+XS+K/1koLh9YvZbWR5ZZEDfdl9/UIv9nwUY6xtiC1kvIUr+v2EL6z0JpQLeInc2k/yyUWJ42fEv1mEcWehQfNjSrJ/1nYWy1l9yZOCgLybOOJEgfkf6z4P/lzOH7lD/is+D4vsvnyRSveVmIn6Ss4K+Q/rOw5APmDyol/WcpK9TgOalnSP9ZmCdaFld3lPSfhWyrIbVSimcFWbj1+OvzFopnhUp748UH0jZT/M9Cxfu99V/XUPzPwv7U26MiqF9SngVP7qXRKwQU/7MwvDR7dQOtx2qysPBff659DMX/LNz/++Wqu1TPNWXhTpLpnSSKb81ZuLjr05t6Wr+1ZGHH45xj3cMo/ovU7zf6UfwXoef1vXo3KR7qijBb78U+IcVDQxEsq8ZUjXGj+C+CVmr9g1pniv8i6F8cdmYtvZ9mKcLZvaOCXaZQ/BfhpNzyjc54iv8iXJ8QZnWT1nvOyvmOWnntH0r+F+FR6dWRUf3J/yLs8jp7po2YI0L4M8fwZ7QeDFLyoeyKKurncEXY/WHlo8M65H8RTPcMmRZKzBNB9fghvh35XwSdoON1XvT+XK4Ix7mt3b2pXswTYf8Nl1W5b6k/o7T/hdYj4XPGBSL8GbL1L7t66teI0HdG93+CHjMuEmHm8s4mofeof6P8/wX5D45VMC4X4XXj++QO16ifozw/31SLQAXjGhF8raYOvFVM/R0RappWrPlxgnGTCNORV5t1hHGzCGGqB9z7GLco/bv0wbT6nfT+XzbqE5ULQuon6WTj+b1ZP6LXMtbNxmH7SUm3JYwNs5H2YnVoByG9L5iNCo4+NyiVsVk2ZvqMmVcSR/2ybOzR8C/xjWBsna2+30Kof5YNrXVzbwn8GDtnIyDmiu69FdRPy8aB+tXu0mWMPbKxee6Grw3u1F/LVvdv5zAOysbGHMNzBk7Ub8vGpBfTL8eD6n/l+S9M8bKcQvV/NgqPKcd4qv+zITzg3mHgKPJ/Norz3sauNSX/Z0Mn3UT5If9no3PNTt4vI/J/NhZmPdBtGEj+V9o/6J+iGNpflA2LTWeiqnuR/7NxrSpau7Ub+T8b5f7xnpna5P9s5BzRMZ7bmfyfDV6v8d6ftMj/2ZBwXW5l/mL92aZsnBUmWQ78zrg5G5XdDbNKmhm3ZKP9nMRby1/T+5di9fYZYx0xvq3s0rfgL+oHi1Gpp9V34UPGhmLMG7mgTesO9YfFCOgfVHL2BmMzMUKvPWtveY36xWKUN+3a/lrB2FqMS56FC7StSf9ieKlegKF+rbMYWf33ay20IP2L0Utmvf8A9W89xPhkcXl0pDXlfzFCermJE8dS/hfDU/fT8yMjKf+L4ZQSuKeU+gXxYpRdbl1zrx/lfzHut2888taA8r8YRR8Wfe5E/YNcMVour1lprkP5X4yts2veuNF6J1+M9JnmYd2pn1AgBl/b5f3c//p/Yph4Gyeve0/xX4yUfI+m8pcU/8VwCE7206T8VS6Gb3X9W1ta/1SJ8fQQZ+N6Wm/UiCG5UFGWUknxX4zwtlM1V69R/BfDIvBViVkZxX8xdut6miecp/gvxlKX6WtvUf9QQwJT1Q9UqB+hI8FQx8+dSyif6UpQq2M3ru9uiv8SvFv0p9narRT/JWga/8Xo53qK/xJETz//zl9O8V8CzzXuVw2oP2EtAS+l8ZsonfwvgebWb+uGJZP/JUjOsw7Mp/zmJsEV9zldB1L97iFBB9njtF3Uj+BI0EX1cxHiIAkau9ffWeRD8V8Cs6FzF39ZTvFfgikPx6/dSP0KnkRd/1I+E0nw9o8Nc65QvzJXglt9evQ+SP2LPAmMXp2ydJ5G+V+CoFrlh+rFAgkU5Q2Wfam/ViiB36zP9cvXUf0nQc4I3fh8KdV/EviqHuBRv61cgubvrb9S06j+k8Cne1ReGfXfaiSwFK0N8I6j+k+Cjv4eR85SPdmkPD6sOm5SCNV/EszWbO+UfJ3qfwkeffs7J47en9eQ/t4qSqj+l6JwY/PEslNU/0thfupy4I0jVP9LYflZfrTTQar/pXBJPf6szx6q/6UIf6HXbeQ2qv+lcNBcOBT0fr61FMkLf7qEyRlDiivF8vnbshg7SzHQ5nvAFx5jNymCCmr/MUpk7CGFlme4JDaafg8gRfXbxDWnVzEOkuLItB9xowOp/ytFt9vNXW9zqP8rBe9RwFztZdT/lap/P+RO/V8piv7l9t/vSv1fKYZV6t696Ej9XymyRrZ81gH1f6U4Y3S6Y+QUWv9J4bnL0erueFr/SXG5br/RpFGMi6QouXblgcSUfp8ghbQ1ZtZzWl+VK+d7ava11IhxlRS1E/t22Ua/V6iRQvO+hpMGrbfqpOjXbsQ7Rx3GTVKcnsf5crwd42YpCrym7TRppfpfinMNizbtpfWXhgwFehuTjKkfrSODc9+Un+teUv0vg55q0PMiQxmkvRPfdn1C9b8MomeF2muqqf6X4dO3iuOG1K+2lKHf3+7bW69R/S/D4M/WbkdofQYZom2/R9mW0PpPhvU9PTe9OEXrPxmqpR2HXj1O6z8ZuntX/+19iOK/8v+D6nq3o/52kAy+tu5X9+yg+K8833EGtyfS86h4GZ52Lmj9sJ7iv0z9+xw5xX8ZMk+kWK6g9VyuDKWddkzVTaf4L4PFBAcNIekxX4ai9/Mqh9HzqgIZLCe3bWgfRfqXYXymw6jLYaR/GfR/bvbMCyD9y9CL79mLT+u9chlWjRUdmb2M9C/D/r9st/dZSPqXIcjO75/jtB6sk2H4M+GR9AWkfxku/ZV2I5D6j80ybF65RtfWkfyvvB5dV+cbgfwv//389/tk8r8clW1d1tWMJ//L8bQst/k89QsN5dhsHv3ImNaHJnK4dTg0rwPlVzM5jl44/lOrP/lfDtWv077Q8zNrOXjdbn5v0iX/yzHezMC0ltaLznI4HH8kGqlN/pejpeG1dn/q33vIcU+wt/DFvxT/5bAxPHm36QfFfzlOb2js+/4zxX85NrjHLa/9QPFfjg4C39BXryj+yzHYw2nrd+o/iuRY1HakSYf6/blyWFSE6EfUUPyXw3Pj1jTRXYr/cpxb/Ih7+b/+vxzhn3x/1V+l/C9H+iJ9Fzd6HlAkR3RMF9cMyscKOdpvmZE/gvqB5XJM8N6y8tQ5yv9yhN5falt7ivK/HHpOI4d3oXxdJ4eRx7tfsv/6f3IYdh6V6Ezr5WY5Tlw33RrWQPlfjk2dO5Wto36mRg62R1VOfkn1h04ORM0l2v/1S3VzIBgsq/Si5x2GOXg2eYN+bhXl/xxkvq+5X0j2m+VA/0bw+hdkv2UOnMaFuAykfqh1Ds7I1rQso34nctS/f1PWI/8D6zVU5w=="]]}},{{Directive[
+PointSize[0.004583333333333334],RGBColor[0.368417,0.506779,0.709798],AbsoluteThickness[
+1.6]],GeometricTransformationBox[InsetBox[BoxData[FormBox[StyleBox[GraphicsBox[{EdgeForm[],DiskBox[
+{0,0}]},ExpressionUUID -> "aff9c253-4941-4b87-9e11-43e5262d9e53",ImageSize -> {6,6}],
+GraphicsBoxOptions -> {DefaultBaseStyle -> Directive[PointSize[0.004583333333333334],
+RGBColor[0.368417,0.506779,0.709798],AbsoluteThickness[1.6]]},StripOnInput -> False],
+TraditionalForm]],{0.0,0.0},Automatic,Offset[6.272]],{{{1.0,22.0}},{{2.0,12.0}},{{3.0,8.666666666666666}},{{4.0,7.5}},{{5.0,6.4}},{{6.0,7.666666666666667}},{{7.0,8.857142857142858}},{{8.0,23.0}},{{9.0,29.333333333333332}},{{10.0,27.0}},{{11.0,24.90909090909091}},{{12.0,23.0}},{{13.0,21.384615384615383}},{{14.0,20.0}},{{15.0,19.866666666666667}},{{16.0,18.75}},{{17.0,17.764705882352942}},{{18.0,16.88888888888889}},{{19.0,17.05263157894737}},{{20.0,16.3}},{{21.0,15.619047619047619}},{{22.0,15.0}},{{23.0,14.782608695652174}},{{24.0,15.0}},{{25.0,14.48}},{{26.0,14.0}},{{27.0,13.555555555555555}},{{28.0,13.142857142857142}},{{29.0,12.758620689655173}},{{30.0,12.466666666666667}},{{31.0,12.129032258064516}},{{32.0,11.875}},{{33.0,11.575757575757576}},{{34.0,11.352941176470589}},{{35.0,11.085714285714285}},{{36.0,10.944444444444445}},{{37.0,10.702702702702704}},{{38.0,10.473684210526315}},{{39.0,10.256410256410257}},{{40.0,10.05}},{{41.0,9.853658536585366}},{{42.0,9.857142857142858}},{{43.0,9.813953488372093}},{{44.0,9.636363636363637}},{{45.0,9.777777777777779}},{{46.0,9.652173913043478}},{{47.0,9.48936170212766}},{{48.0,9.333333333333334}},{{49.0,9.510204081632653}},{{50.0,12.72}},{{51.0,12.784313725490197}},{{52.0,28.5}},{{53.0,28.07547169811321}},{{54.0,28.48148148148148}},{{55.0,28.254545454545454}},{{56.0,27.785714285714285}},{{57.0,27.333333333333332}},{{58.0,26.93103448275862}},{{59.0,26.54237288135593}},{{60.0,26.2}},{{61.0,25.80327868852459}},{{62.0,25.419354838709676}},{{63.0,25.047619047619047}},{{64.0,24.75}},{{65.0,24.984615384615385}},{{66.0,24.727272727272727}},{{67.0,24.417910447761194}},{{68.0,24.147058823529413}},{{69.0,23.82608695652174}},{{70.0,23.514285714285716}},{{71.0,23.211267605633804}},{{72.0,22.916666666666668}},{{73.0,22.65753424657534}},{{74.0,22.513513513513512}},{{75.0,22.24}},{{76.0,21.973684210526315}},{{77.0,21.766233766233768}},{{78.0,21.923076923076923}},{{79.0,21.670886075949365}},{{80.0,21.425}},{{81.0,21.382716049382715}},{{82.0,21.390243902439025}},{{83.0,21.180722891566266}},{{84.0,21.047619047619047}},{{85.0,20.91764705882353}},{{86.0,20.697674418604652}},{{87.0,20.482758620689655}},{{88.0,20.272727272727273}},{{89.0,20.06741573033708}},{{90.0,20.044444444444444}},{{91.0,20.043956043956044}},{{92.0,19.869565217391305}},{{93.0,19.72043010752688}},{{94.0,19.53191489361702}},{{95.0,19.389473684210525}},{{96.0,19.25}},{{97.0,19.072164948453608}},{{98.0,18.897959183673468}},{{99.0,18.727272727272727}},{{100.0,18.56}},{{101.0,18.396039603960396}},{{102.0,18.294117647058822}},{{103.0,18.135922330097088}},{{104.0,18.0}},{{105.0,94.62857142857143}},{{106.0,93.77358490566037}},{{107.0,92.93457943925233}},{{108.0,98.37037037037037}},{{109.0,97.4862385321101}},{{110.0,96.61818181818182}},{{111.0,96.05405405405405}},{{112.0,139.19642857142858}},{{113.0,138.49557522123894}},{{114.0,137.33333333333334}},{{115.0,137.0782608695652}},{{116.0,135.91379310344828}},{{117.0,134.76923076923077}},{{118.0,133.64406779661016}},{{119.0,132.65546218487395}},{{120.0,131.8}},{{121.0,130.82644628099175}},{{122.0,129.7704918032787}},{{123.0,128.7479674796748}},{{124.0,127.7258064516129}},{{125.0,126.736}},{{126.0,125.74603174603175}},{{127.0,124.77165354330708}},{{128.0,201.9296875}},{{129.0,200.87596899224806}},{{130.0,199.34615384615384}},{{131.0,197.83969465648855}},{{132.0,207.41666666666666}},{{133.0,205.90225563909775}},{{134.0,205.20149253731344}},{{135.0,203.6962962962963}},{{136.0,202.21323529411765}},{{137.0,200.76642335766422}},{{138.0,199.32608695652175}},{{139.0,198.06474820143885}},{{140.0,196.6642857142857}},{{141.0,195.2836879432624}},{{142.0,193.92253521126761}},{{143.0,192.6083916083916}},{{144.0,191.3125}},{{145.0,190.00689655172414}},{{146.0,188.74657534246575}},{{147.0,187.47619047619048}},{{148.0,186.30405405405406}},{{149.0,185.08053691275168}},{{150.0,183.86}},{{151.0,182.65562913907286}},{{152.0,181.4934210526316}},{{153.0,180.3202614379085}},{{154.0,179.16233766233765}},{{155.0,178.04516129032257}},{{156.0,176.94230769230768}},{{157.0,175.828025477707}},{{158.0,175.22151898734177}},{{159.0,174.1320754716981}},{{160.0,173.06875}},{{161.0,172.0062111801242}},{{162.0,170.99382716049382}},{{163.0,170.11656441717793}},{{164.0,169.09146341463415}},{{165.0,168.0787878787879}},{{166.0,167.07831325301206}},{{167.0,166.10179640718562}},{{168.0,165.23214285714286}},{{169.0,164.2662721893491}},{{170.0,163.31176470588235}},{{171.0,162.38011695906434}},{{172.0,161.44767441860466}},{{173.0,160.52601156069363}},{{174.0,159.63793103448276}},{{175.0,158.87428571428572}},{{176.0,158.05113636363637}},{{177.0,157.16949152542372}},{{178.0,156.3876404494382}},{{179.0,156.7094972067039}},{{180.0,155.91666666666666}},{{181.0,157.79558011049724}},{{182.0,156.9945054945055}},{{183.0,156.14754098360655}},{{184.0,155.30978260869566}},{{185.0,155.34594594594594}},{{186.0,154.54301075268816}},{{187.0,153.72727272727272}},{{188.0,152.93085106382978}},{{189.0,152.23809523809524}},{{190.0,151.44736842105263}},{{191.0,150.72774869109946}},{{192.0,149.953125}},{{193.0,149.20725388601036}},{{194.0,148.44845360824743}},{{195.0,147.71794871794873}},{{196.0,146.98469387755102}},{{197.0,146.25888324873097}},{{198.0,145.53030303030303}},{{199.0,144.81909547738692}},{{200.0,144.105}},{{201.0,143.40796019900498}},{{202.0,142.70792079207922}},{{203.0,142.01477832512316}},{{204.0,141.32843137254903}},{{205.0,140.77560975609757}},{{206.0,140.64563106796118}},{{207.0,141.31884057971016}},{{208.0,140.64903846153845}},{{209.0,139.98564593301435}},{{210.0,139.32857142857142}},{{211.0,138.6777251184834}},{{212.0,138.08962264150944}},{{213.0,137.45070422535213}},{{214.0,136.87383177570092}},{{215.0,136.7767441860465}},{{216.0,136.15277777777777}},{{217.0,135.8847926267281}},{{218.0,135.27064220183487}},{{219.0,134.662100456621}},{{220.0,134.0681818181818}},{{221.0,133.76923076923077}},{{222.0,133.1846846846847}},{{223.0,132.62331838565024}},{{224.0,132.05803571428572}},{{225.0,131.48888888888888}},{{226.0,131.26991150442478}},{{227.0,130.76211453744494}},{{228.0,130.31140350877192}},{{229.0,129.76855895196508}},{{230.0,129.21304347826086}},{{231.0,128.66233766233765}},{{232.0,128.11637931034483}},{{233.0,127.5922746781116}},{{234.0,127.05555555555556}},{{235.0,126.67659574468085}},{{236.0,126.14830508474576}},{{237.0,125.62447257383967}},{{238.0,125.10504201680672}},{{239.0,124.76569037656904}},{{240.0,124.2875}},{{241.0,123.78008298755186}},{{242.0,123.27685950413223}},{{243.0,122.77777777777777}},{{244.0,122.94672131147541}},{{245.0,122.46122448979592}},{{246.0,121.97154471544715}},{{247.0,121.50202429149797}},{{248.0,121.06854838709677}},{{249.0,120.59036144578313}},{{250.0,120.116}},{{251.0,120.15537848605578}},{{252.0,119.69444444444444}},{{253.0,129.13438735177866}},{{254.0,128.63385826771653}},{{255.0,128.13725490196077}},{{256.0,127.64453125}},{{257.0,127.19455252918289}},{{258.0,126.70930232558139}},{{259.0,126.23552123552123}},{{260.0,125.75769230769231}},{{261.0,125.28352490421456}},{{262.0,124.86641221374046}},{{263.0,124.39923954372624}},{{264.0,123.93560606060606}},{{265.0,123.47547169811321}},{{266.0,123.0187969924812}},{{267.0,122.82022471910112}},{{268.0,122.40671641791045}},{{269.0,121.95910780669145}},{{270.0,121.51481481481481}},{{271.0,121.07380073800738}},{{272.0,120.64338235294117}},{{273.0,120.22344322344323}},{{274.0,120.14963503649635}},{{275.0,119.73454545454545}},{{276.0,119.31521739130434}},{{277.0,118.89169675090253}},{{278.0,118.69424460431655}},{{279.0,118.27598566308244}},{{280.0,117.86071428571428}},{{281.0,117.44839857651246}},{{282.0,117.10283687943263}},{{283.0,116.69611307420494}},{{284.0,116.34154929577464}},{{285.0,115.94035087719298}},{{286.0,115.54895104895105}},{{287.0,115.16724738675958}},{{288.0,114.77430555555556}},{{289.0,114.39100346020761}},{{290.0,114.03103448275863}},{{291.0,113.64604810996563}},{{292.0,113.26369863013699}},{{293.0,113.0}},{{294.0,112.62244897959184}},{{295.0,112.24745762711865}},{{296.0,111.89527027027027}},{{297.0,111.55218855218855}},{{298.0,111.2248322147651}},{{299.0,111.10033444816054}},{{300.0,110.74333333333334}},{{301.0,110.38205980066445}},{{302.0,110.05629139072848}},{{303.0,109.6996699669967}},{{304.0,109.35197368421052}},{{305.0,109.0}},{{306.0,108.65032679738562}},{{307.0,108.3029315960912}},{{308.0,109.6396103896104}},{{309.0,109.31715210355988}},{{310.0,108.97096774193548}},{{311.0,108.62700964630226}},{{312.0,111.24038461538461}},{{313.0,110.90415335463258}},{{314.0,110.69108280254777}},{{315.0,110.34603174603174}},{{316.0,110.00316455696202}},{{317.0,109.66246056782335}},{{318.0,109.58176100628931}},{{319.0,109.26332288401254}},{{320.0,108.928125}},{{321.0,108.59501557632399}},{{322.0,108.27639751552795}},{{323.0,107.94736842105263}},{{324.0,107.62654320987654}},{{325.0,107.30153846153846}},{{326.0,106.97852760736197}},{{327.0,106.65749235474006}},{{328.0,106.72865853658537}},{{329.0,106.41641337386018}},{{330.0,106.1}},{{331.0,105.79758308157099}},{{332.0,105.48493975903614}},{{333.0,106.29729729729729}},{{334.0,105.98502994011976}},{{335.0,105.68059701492537}},{{336.0,135.13095238095238}},{{337.0,134.74777448071217}},{{338.0,134.6449704142012}},{{339.0,134.2536873156342}},{{340.0,133.87058823529412}},{{341.0,133.48387096774192}},{{342.0,133.64912280701753}},{{343.0,133.27113702623907}},{{344.0,132.92441860465115}},{{345.0,132.54492753623188}},{{346.0,132.16763005780348}},{{347.0,131.850144092219}},{{348.0,131.47701149425288}},{{349.0,131.134670487106}},{{350.0,130.7657142857143}},{{351.0,130.3988603988604}},{{352.0,130.0340909090909}},{{353.0,129.671388101983}},{{354.0,129.4689265536723}},{{355.0,129.10985915492958}},{{356.0,128.8314606741573}},{{357.0,128.6218487394958}},{{358.0,128.27374301675977}},{{359.0,127.92200557103064}},{{360.0,127.60555555555555}},{{361.0,127.26315789473684}},{{362.0,126.98342541436465}},{{363.0,126.63911845730027}},{{364.0,126.2967032967033}},{{365.0,125.97260273972603}},{{366.0,125.63387978142076}},{{367.0,125.34059945504087}},{{368.0,125.0054347826087}},{{369.0,124.67750677506776}},{{370.0,124.34594594594594}},{{371.0,124.01617250673854}},{{372.0,123.68817204301075}},{{373.0,123.37265415549598}},{{374.0,123.04812834224599}},{{375.0,122.72533333333334}},{{376.0,122.40425531914893}},{{377.0,122.10610079575596}},{{378.0,121.7989417989418}},{{379.0,121.48284960422164}},{{380.0,121.24736842105263}},{{381.0,120.94488188976378}},{{382.0,120.63350785340315}},{{383.0,120.3289817232376}},{{384.0,120.02083333333333}},{{385.0,119.71428571428571}},{{386.0,119.41450777202073}},{{387.0,119.11627906976744}},{{388.0,118.81443298969072}},{{389.0,118.51928020565553}},{{390.0,118.22051282051282}},{{391.0,117.923273657289}},{{392.0,117.62755102040816}},{{393.0,117.33333333333333}},{{394.0,117.05076142131979}},{{395.0,116.75949367088607}},{{396.0,141.71969696969697}},{{397.0,141.37783375314862}},{{398.0,141.02763819095478}},{{399.0,140.67919799498748}},{{400.0,140.3325}},{{401.0,139.98753117206982}},{{402.0,139.67910447761193}},{{403.0,139.33746898263027}},{{404.0,139.00247524752476}},{{405.0,138.6641975308642}},{{406.0,138.32758620689654}},{{407.0,138.02211302211302}},{{408.0,138.125}},{{409.0,145.36185819070906}},{{410.0,145.0121951219512}},{{411.0,144.66423357664235}},{{412.0,144.31796116504853}},{{413.0,143.97336561743342}},{{414.0,143.6304347826087}},{{415.0,143.2987951807229}},{{416.0,142.9591346153846}},{{417.0,142.62110311750598}},{{418.0,144.16507177033492}},{{419.0,143.83054892601433}},{{420.0,145.99285714285713}},{{421.0,145.65083135391924}},{{422.0,145.95497630331752}},{{423.0,145.6146572104019}},{{424.0,145.2759433962264}},{{425.0,144.93882352941176}},{{426.0,144.6032863849765}},{{427.0,144.26932084309132}},{{428.0,143.93691588785046}},{{429.0,143.76923076923077}},{{430.0,143.43953488372094}},{{431.0,143.12064965197214}},{{432.0,142.7939814814815}},{{433.0,144.4688221709007}},{{434.0,144.15437788018434}},{{435.0,143.82758620689654}},{{436.0,143.50229357798165}},{{437.0,143.17848970251717}},{{438.0,142.86073059360731}},{{439.0,145.8018223234624}},{{440.0,145.475}},{{441.0,145.14965986394557}},{{442.0,144.86651583710406}},{{443.0,144.5530474040632}},{{444.0,144.24099099099098}},{{445.0,143.92134831460675}},{{446.0,143.6121076233184}},{{447.0,143.29530201342283}},{{448.0,143.01116071428572}},{{449.0,142.69710467706014}},{{450.0,142.46}},{{451.0,142.15742793791574}},{{452.0,143.89601769911505}},{{453.0,143.6225165562914}},{{454.0,143.45154185022025}},{{455.0,143.16703296703298}},{{456.0,142.85745614035088}},{{457.0,142.5667396061269}},{{458.0,142.264192139738}},{{459.0,141.97167755991285}},{{460.0,141.66739130434783}},{{461.0,141.36876355748373}},{{462.0,141.07142857142858}},{{463.0,140.78833693304534}},{{464.0,162.03879310344828}},{{465.0,161.69892473118279}},{{466.0,161.36051502145924}},{{467.0,161.09207708779442}},{{468.0,160.82051282051282}},{{469.0,160.53731343283582}},{{470.0,160.2}},{{471.0,159.86411889596602}},{{472.0,159.5550847457627}},{{473.0,159.43763213530656}},{{474.0,159.10970464135022}},{{475.0,158.77894736842106}},{{476.0,158.44957983193277}},{{477.0,158.53249475890985}},{{478.0,158.2092050209205}},{{479.0,157.8830897703549}},{{480.0,161.29583333333332}},{{481.0,160.96465696465697}},{{482.0,160.63485477178423}},{{483.0,181.00828157349898}},{{484.0,180.69214876033058}},{{485.0,180.3237113402062}},{{486.0,179.95679012345678}},{{487.0,179.59137577002053}},{{488.0,179.30532786885246}},{{489.0,178.96319018404907}},{{490.0,178.60204081632654}},{{491.0,178.24643584521385}},{{492.0,177.89227642276424}},{{493.0,177.5395537525355}},{{494.0,177.18421052631578}},{{495.0,176.83030303030304}},{{496.0,176.4858870967742}},{{497.0,176.1348088531187}},{{498.0,175.84939759036143}},{{499.0,175.50100200400803}},{{500.0,175.154}},{{501.0,174.80838323353294}},{{502.0,174.4641434262948}},{{503.0,174.12127236580517}},{{504.0,173.8234126984127}},{{505.0,173.4831683168317}},{{506.0,173.14426877470356}},{{507.0,172.80670611439842}},{{508.0,172.47834645669292}},{{509.0,172.1434184675835}},{{510.0,191.4156862745098}},{{511.0,191.0450097847358}},{{512.0,190.67578125}},{{513.0,190.30799220272905}},{{514.0,189.94163424124514}},{{515.0,189.57669902912622}},{{516.0,189.22093023255815}},{{517.0,188.85880077369438}},{{518.0,188.4980694980695}},{{519.0,188.1387283236994}},{{520.0,188.14615384615385}},{{521.0,187.79654510556622}},{{522.0,187.44061302681993}},{{523.0,187.08986615678776}},{{524.0,186.74427480916032}},{{525.0,186.42285714285714}},{{526.0,186.07604562737643}},{{527.0,185.7267552182163}},{{528.0,185.37878787878788}},{{529.0,185.0321361058601}},{{530.0,184.70943396226414}},{{531.0,184.3653483992467}},{{532.0,184.02255639097746}},{{533.0,183.68480300187616}},{{534.0,183.34456928838952}},{{535.0,183.0056074766355}},{{536.0,182.6679104477612}},{{537.0,182.3314711359404}},{{538.0,182.00371747211895}},{{539.0,181.66975881261595}},{{540.0,181.37777777777777}},{{541.0,181.04621072088725}},{{542.0,180.71586715867159}},{{543.0,180.5267034990792}},{{544.0,180.1985294117647}},{{545.0,179.87155963302752}},{{546.0,179.56410256410257}},{{547.0,179.23948811700183}},{{548.0,178.93065693430657}},{{549.0,178.60837887067396}},{{550.0,178.29454545454544}},{{551.0,177.98185117967333}},{{552.0,177.66304347826087}},{{553.0,177.34538878842676}},{{554.0,177.028880866426}},{{555.0,176.7135135135135}},{{556.0,176.39928057553956}},{{557.0,194.03770197486534}},{{558.0,193.69354838709677}},{{559.0,193.35062611806796}},{{560.0,193.00892857142858}},{{561.0,192.68270944741533}},{{562.0,192.34341637010675}},{{563.0,192.00888099467142}},{{564.0,191.6755319148936}},{{565.0,192.1150442477876}},{{566.0,191.78975265017667}},{{567.0,191.4585537918871}},{{568.0,191.125}},{{569.0,190.79613356766257}},{{570.0,190.46842105263158}},{{571.0,190.14185639229422}},{{572.0,189.81643356643357}},{{573.0,189.49214659685865}},{{574.0,189.16550522648083}},{{575.0,188.84}},{{576.0,188.515625}},{{577.0,188.19584055459273}},{{578.0,187.87716262975778}},{{579.0,187.55613126079447}},{{580.0,187.23620689655172}},{{581.0,186.92082616179002}},{{582.0,186.61340206185568}},{{583.0,186.30703259005145}},{{584.0,185.99828767123287}},{{585.0,185.6905982905983}},{{586.0,185.41808873720137}},{{587.0,185.1090289608177}},{{588.0,184.79761904761904}},{{589.0,184.48726655348048}},{{590.0,184.18474576271186}},{{591.0,183.87648054145515}},{{592.0,183.56925675675674}},{{593.0,183.27318718381113}},{{594.0,182.96801346801348}},{{595.0,182.69411764705882}},{{596.0,182.39093959731542}},{{597.0,182.08877721943048}},{{598.0,181.79096989966555}},{{599.0,181.4908180300501}},{{600.0,181.19166666666666}},{{601.0,181.1297836938436}},{{602.0,180.83222591362127}},{{603.0,180.56882255389718}},{{604.0,180.2930463576159}},{{605.0,180.00495867768595}},{{606.0,179.71122112211222}},{{607.0,179.42174629324546}},{{608.0,179.83059210526315}},{{609.0,179.54187192118226}},{{610.0,179.25081967213114}},{{611.0,178.96072013093288}},{{612.0,178.6781045751634}},{{613.0,178.38988580750407}},{{614.0,178.1026058631922}},{{615.0,177.8617886178862}},{{616.0,177.5762987012987}},{{617.0,177.29821717990276}},{{618.0,177.0177993527508}},{{619.0,176.73505654281098}},{{620.0,176.45322580645163}},{{621.0,176.17230273752014}},{{622.0,175.89228295819936}},{{623.0,175.6131621187801}},{{624.0,175.34134615384616}},{{625.0,187.5376}},{{626.0,187.241214057508}},{{627.0,186.9457735247209}},{{628.0,186.69267515923568}},{{629.0,186.39904610492846}},{{630.0,186.1095238095238}},{{631.0,185.8177496038035}},{{632.0,185.53006329113924}},{{633.0,185.24012638230647}},{{634.0,186.75867507886434}},{{635.0,186.4740157480315}},{{636.0,186.18396226415095}},{{637.0,185.89795918367346}},{{638.0,185.6974921630094}},{{639.0,185.4131455399061}},{{640.0,185.1265625}},{{641.0,184.8408736349454}},{{642.0,184.55607476635515}},{{643.0,184.33437013996888}},{{644.0,184.05124223602485}},{{645.0,183.93643410852712}},{{646.0,183.6640866873065}},{{647.0,183.38330757341578}},{{648.0,183.1033950617284}},{{649.0,182.82742681047765}},{{650.0,182.54923076923077}},{{651.0,182.27188940092165}},{{652.0,181.99539877300614}},{{653.0,181.71975497702908}},{{654.0,182.87920489296636}},{{655.0,183.7053435114504}},{{656.0,183.4283536585366}},{{657.0,183.15220700152207}},{{658.0,182.87689969604864}},{{659.0,182.60242792109256}},{{660.0,182.3287878787879}},{{661.0,182.05597579425114}},{{662.0,182.2764350453172}},{{663.0,182.02564102564102}},{{664.0,181.86897590361446}},{{665.0,181.6015037593985}},{{666.0,181.5990990990991}},{{667.0,181.32983508245877}},{{668.0,181.29191616766468}},{{669.0,181.02391629297458}},{{670.0,180.76268656716417}},{{671.0,180.4962742175857}},{{672.0,180.23363095238096}},{{673.0,179.96879643387817}},{{674.0,179.70771513353117}},{{675.0,179.44444444444446}},{{676.0,179.18491124260356}},{{677.0,178.92319054652882}},{{678.0,181.54129793510324}},{{679.0,181.27687776141386}},{{680.0,181.01323529411764}},{{681.0,180.75330396475772}},{{682.0,180.4941348973607}},{{683.0,180.23279648609076}},{{684.0,179.9751461988304}},{{685.0,179.72992700729927}},{{686.0,179.47084548104957}},{{687.0,179.21542940320234}},{{688.0,178.96075581395348}},{{689.0,178.73294629898405}},{{690.0,178.4855072463768}},{{691.0,178.23589001447178}},{{692.0,192.4306358381503}},{{693.0,192.16161616161617}},{{694.0,191.88760806916426}},{{695.0,191.62589928057554}},{{696.0,191.367816091954}},{{697.0,191.0961262553802}},{{698.0,190.88252148997134}},{{699.0,190.61230329041487}},{{700.0,190.34285714285716}},{{701.0,190.08559201141227}},{{702.0,194.05128205128204}},{{703.0,193.77809388335703}},{{704.0,193.5056818181818}},{{705.0,193.24539007092199}},{{706.0,192.97450424929178}},{{707.0,192.7043847241867}},{{708.0,192.43502824858757}},{{709.0,192.16925246826517}},{{710.0,191.90140845070422}},{{711.0,191.63431786216597}},{{712.0,191.37078651685394}},{{713.0,191.10518934081347}},{{714.0,190.8403361344538}},{{715.0,190.57622377622377}},{{716.0,190.31564245810057}},{{717.0,190.05299860529985}},{{718.0,189.79108635097492}},{{719.0,189.5299026425591}},{{720.0,189.2722222222222}},{{721.0,189.0124826629681}},{{722.0,188.7562326869806}},{{723.0,188.52282157676348}},{{724.0,188.26519337016575}},{{725.0,188.01379310344828}},{{726.0,187.7603305785124}},{{727.0,187.5048143053645}},{{728.0,187.25}},{{729.0,187.00411522633746}},{{730.0,186.75342465753425}},{{731.0,186.51709986320108}},{{732.0,186.33879781420765}},{{733.0,186.08731241473396}},{{734.0,185.8910081743869}},{{735.0,185.70884353741496}},{{736.0,185.45923913043478}},{{737.0,185.2890094979647}},{{738.0,185.04065040650406}},{{739.0,184.79296346414074}},{{740.0,184.6081081081081}},{{741.0,184.361673414305}},{{742.0,184.11859838274933}},{{743.0,184.00538358008075}},{{744.0,183.76344086021504}},{{745.0,183.5194630872483}},{{746.0,183.27882037533513}},{{747.0,183.03614457831324}},{{748.0,183.04010695187165}},{{749.0,182.79839786381842}},{{750.0,182.55733333333333}},{{751.0,182.3195739014647}},{{752.0,182.1595744680851}},{{753.0,181.94156706507303}},{{754.0,181.70291777188328}},{{755.0,181.46490066225167}},{{756.0,181.26719576719577}},{{757.0,181.03038309114928}},{{758.0,180.79683377308706}},{{759.0,180.56126482213438}},{{760.0,180.32631578947368}},{{761.0,180.10512483574246}},{{762.0,179.8713910761155}},{{763.0,179.66448230668414}},{{764.0,179.43193717277487}},{{765.0,179.20261437908496}},{{766.0,179.59007832898172}},{{767.0,179.3767926988266}},{{768.0,179.14583333333334}},{{769.0,178.96228868660597}},{{770.0,178.73506493506494}},{{771.0,178.5058365758755}},{{772.0,178.27720207253887}},{{773.0,178.0491591203105}},{{774.0,177.8217054263566}},{{775.0,177.59483870967742}},{{776.0,177.36855670103094}},{{777.0,177.14543114543113}},{{778.0,176.92030848329048}},{{779.0,176.93709884467265}},{{780.0,176.7153846153846}},{{781.0,176.49423815620997}},{{782.0,176.27109974424553}},{{783.0,176.2630906768838}},{{784.0,176.04591836734693}},{{785.0,175.82420382165606}},{{786.0,175.60559796437659}},{{787.0,175.39263024142312}},{{788.0,175.17258883248732}},{{789.0,175.03929024081114}},{{790.0,174.8253164556962}},{{791.0,174.60682680151706}},{{792.0,174.39646464646464}},{{793.0,174.21941992433796}},{{794.0,174.0125944584383}},{{795.0,173.8062893081761}},{{796.0,173.5929648241206}},{{797.0,173.4228356336261}},{{798.0,173.21052631578948}},{{799.0,172.99624530663328}},{{800.0,172.79}},{{801.0,172.57677902621722}},{{802.0,172.36907730673317}},{{803.0,172.15691158156912}},{{804.0,171.9502487562189}},{{805.0,171.7416149068323}},{{806.0,171.54342431761788}},{{807.0,171.33333333333334}},{{808.0,171.1410891089109}},{{809.0,170.9320148331273}},{{810.0,170.82962962962964}},{{811.0,170.62145499383476}},{{812.0,170.41379310344828}},{{813.0,170.22140221402213}},{{814.0,170.014742014742}},{{815.0,169.81840490797546}},{{816.0,169.61519607843138}},{{817.0,169.41003671970626}},{{818.0,169.20537897310513}},{{819.0,169.015873015873}},{{820.0,168.81219512195122}},{{821.0,168.99634591961023}},{{822.0,168.79562043795622}},{{823.0,168.61968408262453}},{{824.0,168.4368932038835}},{{825.0,168.23515151515153}},{{826.0,168.32203389830508}},{{827.0,168.12333736396613}},{{828.0,167.92270531400968}},{{829.0,167.72255729794935}},{{830.0,167.52289156626506}},{{831.0,167.323706377858}},{{832.0,167.125}},{{833.0,166.9267707082833}},{{834.0,166.72901678657075}},{{835.0,166.5317365269461}},{{836.0,166.33492822966508}},{{837.0,166.22461170848268}},{{838.0,166.0286396181384}},{{839.0,177.75089392133492}},{{840.0,177.56071428571428}},{{841.0,177.38525564803805}},{{842.0,177.1769596199525}},{{843.0,185.76393831553975}},{{844.0,185.5462085308057}},{{845.0,185.33372781065088}},{{846.0,185.11702127659575}},{{847.0,184.900826446281}},{{848.0,184.68514150943398}},{{849.0,184.46996466431096}},{{850.0,184.25529411764705}},{{851.0,184.04112808460636}},{{852.0,183.8767605633803}},{{853.0,183.66588511137164}},{{854.0,183.45550351288057}},{{855.0,183.24327485380118}},{{856.0,183.03154205607476}},{{857.0,182.8203033838973}},{{858.0,182.6118881118881}},{{859.0,182.45285215366707}},{{860.0,182.24302325581397}},{{861.0,182.09872241579558}},{{862.0,181.88979118329468}},{{863.0,181.68134414831982}},{{864.0,181.48032407407408}},{{865.0,181.2728323699422}},{{866.0,181.06581986143186}},{{867.0,180.86159169550174}},{{868.0,180.65552995391704}},{{869.0,180.4499424626007}},{{870.0,180.283908045977}},{{871.0,180.0792192881745}},{{872.0,179.8795871559633}},{{873.0,179.6758304696449}},{{874.0,179.47254004576658}},{{875.0,179.2697142857143}},{{876.0,179.2705479452055}},{{877.0,179.07297605473204}},{{878.0,178.873576309795}},{{879.0,178.67463026166098}},{{880.0,178.5056818181818}},{{881.0,178.30533484676505}},{{882.0,178.11451247165533}},{{883.0,177.91506228765573}},{{884.0,189.02714932126696}},{{885.0,188.81581920903955}},{{886.0,188.60496613995485}},{{887.0,188.39458850056369}},{{888.0,188.1936936936937}},{{889.0,187.98425196850394}},{{890.0,187.8988764044944}},{{891.0,187.73063973063972}},{{892.0,187.52242152466368}},{{893.0,187.31914893617022}},{{894.0,198.29642058165547}},{{895.0,198.07709497206704}},{{896.0,197.8671875}},{{897.0,197.64882943143812}},{{898.0,197.43095768374164}},{{899.0,197.31368186874306}},{{900.0,197.09666666666666}},{{901.0,196.88013318534962}},{{902.0,196.6640798226164}},{{903.0,196.45071982281286}},{{904.0,196.23783185840708}},{{905.0,196.02983425414365}},{{906.0,195.81567328918322}},{{907.0,195.63947078280043}},{{908.0,195.4284140969163}},{{909.0,195.22442244224422}},{{910.0,195.02527472527473}},{{911.0,194.81339187705817}},{{912.0,194.60197368421052}},{{913.0,194.39539978094194}},{{914.0,194.21115973741794}},{{915.0,194.00109289617487}},{{916.0,193.8264192139738}},{{917.0,193.6194111232279}},{{918.0,193.41285403050108}},{{919.0,193.20457018498368}},{{920.0,192.99673913043478}},{{921.0,192.80456026058633}},{{922.0,192.6127982646421}},{{923.0,192.40628385698807}},{{924.0,192.25865800865802}},{{925.0,192.05297297297298}},{{926.0,191.8477321814255}},{{927.0,191.64509169363538}},{{928.0,191.4407327586207}},{{929.0,191.2368137782562}},{{930.0,191.03333333333333}},{{931.0,190.8453276047261}},{{932.0,190.64270386266094}},{{933.0,190.44051446945338}},{{934.0,190.24946466809422}},{{935.0,190.0524064171123}},{{936.0,189.85149572649573}},{{937.0,189.65314834578442}},{{938.0,189.55543710021323}},{{939.0,189.35569755058572}},{{940.0,189.1563829787234}},{{941.0,188.95749202975557}},{{942.0,188.85031847133757}},{{943.0,188.6542948038176}},{{944.0,188.45656779661016}},{{945.0,188.26137566137567}},{{946.0,188.0644820295983}},{{947.0,187.89123548046462}},{{948.0,187.78586497890296}},{{949.0,187.59430979978924}},{{950.0,187.39894736842106}},{{951.0,187.20609884332282}},{{952.0,187.015756302521}},{{953.0,186.82161594963273}},{{954.0,186.62788259958072}},{{955.0,186.7717277486911}},{{956.0,186.5784518828452}},{{957.0,186.3876698014629}},{{958.0,186.19519832985387}},{{959.0,186.00312825860271}},{{960.0,185.81145833333332}},{{961.0,185.62018730489075}},{{962.0,185.42931392931393}},{{963.0,185.28452751817238}},{{964.0,185.09439834024897}},{{965.0,184.90673575129534}},{{966.0,184.7173913043478}},{{967.0,184.52843846949327}},{{968.0,184.37086776859505}},{{969.0,184.22394220846232}},{{970.0,184.159793814433}},{{971.0,183.9969104016478}},{{972.0,183.809670781893}},{{973.0,183.62281603288798}},{{974.0,183.4958932238193}},{{975.0,183.3097435897436}},{{976.0,183.12397540983608}},{{977.0,182.93858751279427}},{{978.0,182.7638036809816}},{{979.0,182.5791624106231}},{{980.0,182.39897959183673}},{{981.0,182.2150866462793}},{{982.0,182.07230142566192}},{{983.0,181.8911495422177}},{{984.0,182.005081300813}},{{985.0,181.83451776649747}},{{986.0,181.6521298174442}},{{987.0,181.47011144883484}},{{988.0,181.29858299595142}},{{989.0,183.25884732052577}},{{990.0,183.07575757575756}},{{991.0,182.8930373360242}},{{992.0,183.05947580645162}},{{993.0,182.87915407854985}},{{994.0,182.69919517102616}},{{995.0,182.5175879396985}},{{996.0,182.39658634538154}},{{997.0,182.21564694082247}},{{998.0,182.03507014028057}},{{999.0,181.85485485485486}},{{1000.0,181.675}}}]}},{{Directive[
+PointSize[0.004583333333333334],RGBColor[0.368417,0.506779,0.709798],AbsoluteThickness[
+1.6]]},{}},{{Directive[PointSize[0.004583333333333334],RGBColor[0.368417,0.506779,
+0.709798],AbsoluteThickness[1.6]]},{}}},{{},{}}},DisplayFunction -> Identity,DisplayFunction -> Identity,
+AspectRatio -> NCache[Power[GoldenRatio,-1],0.6180339887498948],Axes -> {True,True},
+AxesLabel -> {None,None},AxesOrigin -> {0.0,0},RuleDelayed[DisplayFunction,Identity],
+Frame -> {{False,False},{False,False}},FrameLabel -> {{None,None},{None,None}},FrameTicks -> {{Automatic,Automatic},{Automatic,Automatic}},
+GridLines -> {None,None},GridLinesStyle -> Directive[GrayLevel[0.5,0.4]],Method -> CompressedData[
+"1:eJzNUD0LwjAUjB+Dm4Pg7m+pCIJiaYt7NC/wMOaF5GWov96kaIvQSReX4y539ziyuVClZ0KIME9wwMB6+lZVNFCvEjk5xjs+oDTER+lv4EMXaHyE3+LrRAoir9BKhtAQmdwmG4bgyKhlIlsMzsh2F+01F/QkJxYJ+pfPC72/V2AZuR38UvqXn1WdZmNWHXzTy4GRfynIIaizNBH+dfUT3rB0HA=="],
+PlotRange -> {{0.0,1000.0},{0,207.41666666666666}},PlotRangeClipping -> True,PlotRangePadding -> {{Scaled[
+0.02],Scaled[0.02]},{Scaled[0.02],Scaled[0.05]}},Ticks -> {Automatic,Automatic},ExpressionUUID -> "d9763ce7-bce6-4531-9bc7-f637fe395468"],
+StandardForm],"Output",ExpressionUUID -> "3ff0cf0d-a566-4e09-a1ab-079bf2a9914a",CellLabel -> "Out[3]= "]},
+Open],ExpressionUUID -> "b2a00a5d-aaea-4c15-a3e3-4f378eeb8455"],Cell[
+TextData[{"We"," ","see"," ","that"," ","even"," ","this"," ","does"," ","not"," ","converge",".","\n","Hence",StyleBox[
+RowBox[{","," "}]],StyleBox["eventhough",IgnoreSpellCheck -> True]," ","we"," ","can"," ","say"," ","that"," ","first"," ","passage"," ","will"," ","occur",StyleBox[
+RowBox[{","," "}]],"we"," ","cannot"," ","accurately"," ","give"," ","a"," ","mean"," ","value"," ","for"," ","number"," ","of"," ","time"," ","steps","."}],
+"Text",ExpressionUUID -> "219c57e7-5ca1-4d10-944e-a9daf21dc49d"]},Open],ExpressionUUID -> "c4ea3914-4ca1-4b78-9669-f446e0b0e432"]},
+Open],ExpressionUUID -> "6cfc9f7e-4e9d-45e8-87cb-aec1fff56fab"]},StyleDefinitions -> "Default.nb",
+FrontEndVersion -> "12.1 for Wolfram Cloud 1.54.2 (March 10, 2020)"]
